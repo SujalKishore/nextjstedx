@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { Mona_Sans } from 'next/font/google';
 import gsap from 'gsap';
@@ -11,13 +11,27 @@ const mona = Mona_Sans({
 })
 
 const Ticket = () => {
-  useGSAP(() => {
-      gsap.to('#ticketasset', {
-           x: 100,
-          duration: 0.75,
-          opacity: 1
-      })
-  }, [])
+  const ticketRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (ticketRef.current) {
+        const rect = ticketRef.current.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          gsap.to(ticketRef.current, {
+            x: 100,
+            duration: 0.75,
+            opacity: 1
+          });
+          window.removeEventListener('scroll', handleScroll);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const [fonts, setFonts] = useState(mona)
   useEffect(() => {
     const applyFonts = async () => {
@@ -41,35 +55,14 @@ const Ticket = () => {
         <div className="absolute inset-0 z-[-1]">
           <WaveSection />
         </div>
-        <div className="w-[50vw] h-[50vh] text-9xl text-center font-bold bg-white bg-opacity-30 backdrop-blur-lg rounded-lg pt-16 drop-shadow-sm">
-          <div className="text-6xl text-[#eb0028]">Buy</div>
+        <div className="w-full h-screen lg:text-9xl text-7xl text-center font-bold bg-white bg-opacity-20 backdrop-blur-lg pt-16 drop-shadow-sm flex flex-col items-center justify-center">
+          <div className="lg:text-6xl text-[#eb0028] text-5xl">Buy</div>
           <div className={fonts.className}>Tickets</div>
-          <div className="text-4xl">Now</div>
+          <div className="lg:text-4xl text-3xl">Now</div>
         </div>
       </div>
-
-      <div
-        className="h-screen bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/Ticket Page bg.png')" }}>
-        <div className="content flex gap-5 h-full mt-20">
-          <div className="border-2 border-white w-[25%] h-[80%] opacity-0 bg-red-700" id='ticketasset'>
-              heya bitches... here is ya ticket
-          </div>
-          <div className="content w-{75%} ml-40 text-white">
-              <div className=" heading pt-36 font-bold text-6xl">
-                  <span className='text-[#eb0028]'>Leisure </span><span>Experience</span>
-              </div>
-              <div className="perks">
-                  <ul className='list-disc ml-24 text-xl font-semibold'>
-                      <li className='mb-3 mt-8'>Perk 1</li>
-                      <li className='mb-3 mt-3'>Perk 2</li>
-                      <li className='mb-3 mt-3'>Perk 3</li>
-                      <li className='mb-3 mt-3'>Perk 4</li>
-                      <li className='mt-3'>Perk 5</li>
-                  </ul>
-              </div>
-          </div>
-        </div>
+      <div className="flex justify-center items-center h-[100vh]">
+        {/*Baaki code idhr aayega */}
       </div>
     </div>
   );
