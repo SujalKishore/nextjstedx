@@ -21,8 +21,8 @@ const Ticket = () => {
   const [fonts, setFonts] = useState(mona)
   useEffect(() => {
     const applyFonts = async () => {
-      let delay = 10; // Initial delay in milliseconds
-      const maxDelay = 250; // Maximum delay
+      let delay = 150; // Initial delay in milliseconds
+      const maxDelay = 200; // Maximum delay
       const increment = 20; // Increment value for each step
   
       for (const font of fontArray) {
