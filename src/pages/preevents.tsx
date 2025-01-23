@@ -55,6 +55,17 @@ const events: Event[] = [
     images: ["/pre-events/salon1.jpg", "/pre-events/salon3.jpg"],
     status: "past",
   },
+  {
+    id: "event3",
+    title: "TEDx AI and the Future of Work",
+    date: "2023-09-05",
+    time: "18:30 - 21:00",
+    location: "Tech Hub Conference Center",
+    description:
+      "Explore the impact of artificial intelligence on the future of work. Engage in thought-provoking discussions with experts in AI and workforce development.",
+    images: ["/pre-events/salon1.jpg", "/pre-events/salon3.jpg"],
+    status: "past",
+  },
 ];
 
 const PreEventsPage: React.FC = () => {
