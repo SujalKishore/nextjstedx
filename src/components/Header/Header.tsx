@@ -138,7 +138,7 @@ export default function Header() {
                 objectFit="cover"
                 className="z-0"
               />
-              <div className="absolute inset-0"></div> {/* Black overlay */}
+              <div className="absolute inset-0"></div>
             </div>
           </button>
         </nav>
