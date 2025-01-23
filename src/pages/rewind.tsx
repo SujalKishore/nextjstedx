@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { YearSelector } from "@/components/YearSelector/YearSelector";
 import { ThemeImage } from "@/components/ThemeImage/ThemeImage";
@@ -10,7 +9,6 @@ import TopBanner from "@/components/XHero/XHero";
 import dynamic from "next/dynamic";
 import { FC } from "react";
 
-// Sample data for each year
 const yearContent: {
   [key: number]: {
     theme: string;
@@ -233,28 +231,26 @@ const yearContent: {
       },
     ],
     gallery: [
-      "/gallery/2023-1.jpg",
-      "/gallery/2023-2.jpg",
-      "/gallery/2023-3.jpg",
+      "/bulletin/symp1.png",
+      "/gallery/bulletin/symp2.png",
+      "",
     ],
   },
 };
 const GalleryApp = dynamic(
   () => import("@/components/App").then((mod) => mod.default),
   {
-    ssr: false, // Optional: Set to false if you want to disable server-side rendering for this component
+    ssr: false,
   }
 );
 export default function RewindPage() {
   const [selectedYear, setSelectedYear] = useState<number>(2024);
   const [isLoading, setIsLoading] = useState(true);
   const [isGalleryFocused, setIsGalleryFocused] = useState(false);
-
   useEffect(() => {
     setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 500); // Simulating content load
+    setTimeout(() => setIsLoading(false), 500);
   }, [selectedYear]);
-
   useEffect(() => {
     if (isGalleryFocused) {
       document.body.style.overflow = "hidden";
@@ -263,9 +259,7 @@ export default function RewindPage() {
     }
     return () => { document.body.style.overflow = "auto"; };
   }, [isGalleryFocused]);
-
   const content = yearContent[selectedYear];
-
   if (!content) {
     return (
       <main className="min-h-screen bg-black text-white flex items-center justify-center">
@@ -273,12 +267,9 @@ export default function RewindPage() {
       </main>
     );
   }
-
   return (
     <main className="min-h-screen bg-black text-white">
       <TopBanner />
-
-      {/* Year Selector */}
       <section className="bg-[#1A0000] py-4 sticky top-0 z-20">
         <div className="container mx-auto">
           <YearSelector
@@ -287,8 +278,6 @@ export default function RewindPage() {
           />
         </div>
       </section>
-
-      {/* Content Section */}
       <AnimatePresence mode="wait">
         {isLoading ? (
           <motion.div
@@ -313,12 +302,13 @@ export default function RewindPage() {
               <ThemeImage theme={content.theme} imageSrc={content.themeImage} />
               <Description description={content.description} />
               <SpeakersList speakers={content.speakers} />
-              {/* Replace Gallery with the App component */}
               <div
                className="h-[80vh] overflow-hidden relative"
                onMouseEnter={() => setIsGalleryFocused(true)}
                onMouseLeave={() => setIsGalleryFocused(false)}>
+               <Suspense  fallback={null}>
                 <GalleryApp />
+                </Suspense>
               </div>
             </div>
           </motion.section>
