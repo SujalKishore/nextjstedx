@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";;
+import dynamic from "next/dynamic";
 import CardSpeaker from "@/components/speakersGrid/speakersGrid";
 
 const SpeakersPage: React.FC = () => {
@@ -9,31 +9,47 @@ const SpeakersPage: React.FC = () => {
   useEffect(() => {
     let VANTA: any;
 
-    if (!vantaEffect && typeof window !== "undefined") {
-      (async () => {
-        // @ts-ignore:
-        const module = await import("vanta/src/vanta.fog");
-        VANTA = module.default;
-        setVantaEffect(
-          VANTA({
-            el: vantaRef.current,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.0,
-            minWidth: 200.0,
-            highlightColor: 0xff0000,
-            midtoneColor: 0x4b160e,
-            lowlightColor: 0x660808,
-            baseColor: 0x552727,
-          })
-        );
-      })();
-    }
+    (async () => {
+      if (!vantaEffect && typeof window !== "undefined") {
+        try {
+          // Dynamically import three.js and attach it to window
+          const THREE = await import("three");
+          if (typeof window !== "undefined") {
+            (window as any).THREE = THREE;
+          }
 
-    // Cleanup on component unmount
+          // Dynamically import Vanta.js fog effect
+          //@ts-ignore
+          const module = await import("vanta/src/vanta.fog");
+          VANTA = module.default;
+
+          // Initialize Vanta effect
+          setVantaEffect(
+            VANTA({
+              el: vantaRef.current,
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: false,
+              minHeight: 200.0,
+              minWidth: 200.0,
+              highlightColor: 0xff0000,
+              midtoneColor: 0x4b160e,
+              lowlightColor: 0x660808,
+              baseColor: 0x552727,
+            })
+          );
+        } catch (error) {
+          console.error("Error loading Vanta.js or Three.js:", error);
+        }
+      }
+    })();
+
+    // Cleanup effect on component unmount
     return () => {
-      if (vantaEffect) vantaEffect.destroy();
+      if (vantaEffect) {
+        vantaEffect.destroy();
+        setVantaEffect(null);
+      }
     };
   }, [vantaEffect]);
 
