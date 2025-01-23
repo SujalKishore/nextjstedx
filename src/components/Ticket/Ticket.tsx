@@ -11,27 +11,6 @@ const mona = Mona_Sans({
 })
 
 const Ticket = () => {
-  const ticketRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (ticketRef.current) {
-        const rect = ticketRef.current.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-          gsap.to(ticketRef.current, {
-            x: 100,
-            duration: 0.75,
-            opacity: 1
-          });
-          window.removeEventListener('scroll', handleScroll);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const [fonts, setFonts] = useState(mona)
   useEffect(() => {
     const applyFonts = async () => {
