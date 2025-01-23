@@ -83,7 +83,7 @@ const Hero = () => {
       <div
         className={`hero-container ${
           isFadedIn ? "fade-in" : ""
-        } relative h-[70vh] w-full overflow-hidden bg-black text-white flex items-center justify-center mt-20`}
+        } relative h-[80vh] w-full overflow-hidden bg-black text-white flex items-center justify-center`}
       >
         {/* Background Image */}
         <div

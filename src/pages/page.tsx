@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import { useScroll, useSpring, useTransform } from "framer-motion";
-import { motion } from "framer-motion-3d";
-import { Environment, PerspectiveCamera } from "@react-three/drei";
-import Hourglass from "@/components/Hourglass/Hourglass";
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -57,86 +55,90 @@ const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
 };
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const themeContentRef = useRef<HTMLDivElement | null>(null);
+  const ticketsRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const speakersRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    damping: 50,
-    stiffness: 400,
-  });
-
-  const hourglassYPosition = useTransform(smoothProgress, [0, 0.7], [1, 3]);
-  const hourglassScale = useTransform(smoothProgress, [0, 0.4], [1, 0.5]);
-  const transformProgress = useTransform(smoothProgress, [0.4, 0.6], [0, 1]);
-
+  const scrollTo = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
   const eventDate = new Date(Date.now() + 42 * 24 * 60 * 60 * 1000);
 
   return (
-    <div
-      ref={containerRef}
-      className="relative min-h-[300vh] overflow-hidden bg-black"
-    >
-      <div
-        className="fixed inset-0 z-0"
-        style={{
-          background: `
-            linear-gradient(45deg, transparent 40%, #ff0000 40%, #ff0000 60%, transparent 60%),
-            linear-gradient(-45deg, transparent 40%, #ff0000 40%, #ff0000 60%, transparent 60%)
-          `,
-        }}
-      />
-
-      <div className="sticky top-0 h-screen flex items-center justify-center">
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 w-full h-full">
-          <div className="flex flex-col justify-center items-center p-12 bg-gradient-to-br from-black/95 to-black/90 backdrop-blur-sm">
-            <div className="max-w-xl mx-auto text-center space-y-12">
-              <div className="space-y-4">
-                <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-4">
-                  TEDx
-                </h2>
-                <div className="text-xl md:text-2xl text-red-600 font-bold tracking-wider">
-                  INVERSO CLESSIDRA
+    <main className="min-h-screen bg-black text-white">
+      {/* Hero Section with Cards */}
+      <section className="min-h-screen flex flex-col">
+        <div className="flex-1 bg-gradient p-4">
+          <motion.div
+            className="h-full rounded-lg overflow-hidden shadow-2xl relative"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
+              src="/tedx-hero.jpg"
+              alt="TEDx Event"
+              layout="fill"
+              objectFit="cover"
+              className="z-0"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+            <div className="absolute inset-0 z-20 flex flex-col md:flex-row">
+              <div className="w-full md:w-1/2 flex items-center justify-center p-8">
+                <div className="text-center md:text-left">
+                  <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gradient">
+                    TEDx Event 2023
+                  </h1>
+                  <p className="text-xl mb-8">Ideas Worth Spreading</p>
+                  <motion.button
+                    className="bg-red-600 text-white px-8 py-3 rounded-full text-lg font-semibold"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Get Tickets
+                  </motion.button>
                 </div>
               </div>
-              <CountdownTimer targetDate={eventDate} />
+              <div className="w-full md:w-1/2 flex items-center justify-center p-8">
+                <div className="bg-black bg-opacity-50 p-6 rounded-lg w-full max-w-md">
+                  <h2 className="text-2xl font-semibold mb-4 text-center">
+                    Event Starts In
+                  </h2>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div className="relative flex justify-center items-center">
-            <Canvas>
-              <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-              <Environment preset="studio" />
-              <motion.group
-                position-y={hourglassYPosition}
-                scale={hourglassScale}
-              >
-                <Hourglass transformProgress={transformProgress} />
-              </motion.group>
-            </Canvas>
-          </div>
+          </motion.div>
         </div>
-      </div>
-
-      <div
-        ref={themeContentRef}
-        className="sticky top-0 h-screen flex items-center justify-center bg-gradient-to-br from-black/95 to-black/90 backdrop-blur-sm"
-      >
-        <div className="max-w-4xl mx-auto text-center space-y-8 p-8">
-          <h2 className="text-4xl md:text-6xl font-bold text-white">
-            Our Theme
-          </h2>
-          <p className="text-xl text-white/90 leading-relaxed">
-            Inverso Clessidra represents the reversal of time, challenging our
-            perceptions and encouraging us to think differently about the past,
-            present, and future.
-          </p>
+        <div className="h-2/5 flex flex-col md:flex-row">
+          {["Tickets", "About", "Speakers"].map((title, index) => (
+            <motion.div
+              key={title}
+              className="flex-1 p-2"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <div className="h-full bg-gradient rounded-lg p-6 flex flex-col items-center justify-center card-hover">
+                <h2 className="text-3xl font-semibold mb-6">{title}</h2>
+                <p className="text-center mb-6">
+                  Discover more about our exciting {title.toLowerCase()} and
+                  what to expect at TEDx 2023.
+                </p>
+                <motion.button
+                  onClick={() =>
+                    scrollTo([ticketsRef, aboutRef, speakersRef][index])
+                  }
+                  className="bg-red-600 text-white px-6 py-3 rounded-full flex items-center text-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Explore <ArrowRight className="ml-2" size={20} />
+                </motion.button>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -7,6 +7,7 @@ import { Description } from "@/components/desc/desc";
 import { SpeakersList } from "@/components/SpeakersList/SpeakersList";
 import TopBanner from "@/components/XHero/XHero";
 import dynamic from "next/dynamic";
+import Carousel from "@/components/Carousel/Carousel";
 import { FC } from "react";
 
 const yearContent: {
@@ -179,15 +180,15 @@ const yearContent: {
     ],
   },
   2023: {
-    theme: "Synergy",
+    theme: "T.H.I.N.C",
     description:
       "In 2023, TEDxYouth@XYZ focused on the power of collaboration and interdisciplinary approaches.",
-    themeImage: "/themes/2023-synergy.jpg",
+    themeImage: "/themes/thinc.png",
     speakers: [
       {
         name: "Olivia Martinez",
         topic: "Biomimicry in Design",
-        image: "/speakers/2023-olivia-martinez.jpg",
+        image: "",
         socialLinks: {},
         tedTalkUrl:
           "https://www.ted.com/talks/olivia_martinez_biomimicry_in_design",
@@ -229,6 +230,94 @@ const yearContent: {
         tedTalkUrl:
           "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
       },
+      {
+        name: "Gaurav Juyal",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/gaurav24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Siddharth Jain",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/siddharth24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
+      {
+        name: "Vijendra Chauhan",
+        topic: "AI and Human Creativity",
+        image: "/prev-speakers/vijendra24.png",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+      },
     ],
     gallery: [
       "/bulletin/symp1.png",
@@ -257,7 +346,9 @@ export default function RewindPage() {
     } else {
       document.body.style.overflow = "auto";
     }
-    return () => { document.body.style.overflow = "auto"; };
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [isGalleryFocused]);
   const content = yearContent[selectedYear];
   if (!content) {
@@ -302,14 +393,7 @@ export default function RewindPage() {
               <ThemeImage theme={content.theme} imageSrc={content.themeImage} />
               <Description description={content.description} />
               <SpeakersList speakers={content.speakers} />
-              <div
-               className="h-[80vh] overflow-hidden relative"
-               onMouseEnter={() => setIsGalleryFocused(true)}
-               onMouseLeave={() => setIsGalleryFocused(false)}>
-               <Suspense  fallback={null}>
-                <GalleryApp />
-                </Suspense>
-              </div>
+              <Carousel />
             </div>
           </motion.section>
         )}

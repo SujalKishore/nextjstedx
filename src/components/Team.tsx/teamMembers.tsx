@@ -115,7 +115,7 @@ export default function AboutPage() {
         </div>
       </section>
       {/* About the Theme Section */}
-      <section className="py-20 bg-[#1A0000] relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-black to-[#1A0000] relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center text-[#FF3A3A]">
             Our Event Theme
