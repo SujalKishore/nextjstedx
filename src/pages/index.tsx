@@ -90,6 +90,7 @@ export default function Hero() {
           `,
         }}
       />
+      <canvas></canvas>
       <BulletinBoard recentEvents={recentEvents} nextEvent={nextEvent} />
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 min-h-screen">
         {/* Left side */}

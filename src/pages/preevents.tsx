@@ -80,7 +80,7 @@ const PreEventsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white relative">
       {/* Hero Section */}
-      <section className="relative h-[50vh] md:h-[80vh] overflow-hidden flex flex-col items-center justify-center z-20 text-center">
+      <section className="relative h-[50vh] md:h-[100vh] overflow-hidden flex flex-col items-center justify-center z-20 text-center">
         {/* Animated background limited to hero */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <AnimatedBackground />
