@@ -46,7 +46,7 @@ export default function Header() {
           className={`fixed left-0 right-0 top-5 mx-auto flex items-center justify-center rounded-full px-6 py-3 transition-all duration-500 ${
             isSticky
               ? "bg-white/10 backdrop-blur-md w-[90px] h-[90px]"
-              : "bg-white/15 backdrop-blur-lg w-[60%] h-[100px]"
+              : "bg-white/15 backdrop-blur-lg w-[60%] h-[90px]"
           }`}
         >
           <div className="flex items-center">
