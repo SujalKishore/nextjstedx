@@ -86,7 +86,7 @@ const AnimatedBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute top-0 left-0 z-0 w-full h-[80vh] pointer-events-none"
+      className="absolute top-0 left-0 z-0 w-full h-[100vh] pointer-events-none"
     />
   );
 };

@@ -3,23 +3,31 @@ import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import { useEffect } from "react";
+import MobileNavbar from "@/components/mobileHeader/mobileHeader";
+import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
   useEffect(() => {
-    const threeScript = document.createElement("script");
-    threeScript.setAttribute("id", "threeScript");
-    threeScript.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js");
-    document.getElementsByTagName("head")[0].appendChild(threeScript);
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreenSize(); // Initial check
+
+    window.addEventListener("resize", checkScreenSize);
+
     return () => {
-      if (threeScript) {
-        threeScript.remove();
-      }
-    }
+      window.removeEventListener("resize", checkScreenSize);
+    };
   }, []);
+
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">
-      <Header />
+      {/* Conditionally render the mobile or desktop navbar */}
+      {isMobile ? <MobileNavbar /> : <Header />}
+
       <Component {...pageProps} />
       <Footer />
     </ThemeProvider>
