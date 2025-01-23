@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false); // Tracks sticky state based on scroll
@@ -129,8 +130,16 @@ export default function Header() {
             }`}
             onClick={handleMenuToggle}
           >
-            <span className="block w-2/5 h-0.5 bg-white my-1"></span>
-            <span className="block w-2/5 h-0.5 bg-white my-1"></span>
+            <div className="relative inline-block w-[130px] h-[130px] mt-2">
+              <Image
+                src="/images/color_hourglass.png"
+                alt="TEDx Event"
+                fill
+                objectFit="cover"
+                className="z-0"
+              />
+              <div className="absolute inset-0"></div> {/* Black overlay */}
+            </div>
           </button>
         </nav>
       </header>
