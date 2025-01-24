@@ -76,13 +76,11 @@ const Hero = () => {
         //   background-color: rgba(0, 0, 0, 0.7); /* Increased opacity */
         // }
       `}</style>
-
       <div
         className={`hero-container ${
           isFadedIn ? "fade-in" : ""
         } relative h-[80vh] w-full overflow-hidden bg-black text-white flex items-center justify-center`}
       >
-        {/* Background Image */}
         <div
           className={`bg-image ${isActive ? "clip-active" : "clip-initial"}`}
         ></div>
@@ -111,5 +109,4 @@ const Hero = () => {
     </>
   );
 };
-
 export default Hero;
