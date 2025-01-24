@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const faqData = [
   {
     question: "What is TED?",
@@ -22,10 +21,8 @@ const faqData = [
       "Yes, we are always looking for passionate individuals to join our team. Please reach out to us through our contact page or follow our social media for opportunities.",
   },
 ];
-
 const FAQComponent = () => {
   const [activeIndex, setActiveIndex] = useState<number[]>([]);
-
   const handleToggle = (index: number) => {
     if (activeIndex.includes(index)) {
       setActiveIndex(activeIndex.filter((i) => i !== index));
@@ -33,7 +30,6 @@ const FAQComponent = () => {
       setActiveIndex([...activeIndex, index]);
     }
   };
-
   return (
     <section className="py-20 bg-black text-white">
       <div className="container mx-auto text-center">
@@ -69,5 +65,4 @@ const FAQComponent = () => {
     </section>
   );
 };
-
 export default FAQComponent;
