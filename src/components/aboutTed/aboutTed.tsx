@@ -1,18 +1,12 @@
 import React from "react";
-
 const TEDDescriptionComponent = () => {
   return (
     <section className="py-20 bg-black text-white relative">
-      {/* Large 'X' background design */}
       <div className="absolute top-0 left-0 w-full h-full bg-red-600 opacity-20 z-[0] transform rotate-45"></div>
-
       <div className="container mx-auto text-center z-10 relative">
-        {/* Title Section */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-red-600 mb-12 relative">
           What is TED and TEDx?
         </h2>
-
-        {/* TED Description */}
         <div className="space-y-12 max-w-5xl mx-auto">
           <div className="transition-all duration-700 ease-in-out transform hover:scale-105 group relative">
             <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
@@ -26,8 +20,6 @@ const TEDDescriptionComponent = () => {
               science to business to global issues — in more than 100 languages.
             </p>
           </div>
-
-          {/* TEDx Description */}
           <div className="transition-all duration-700 ease-in-out transform hover:scale-105 group relative">
             <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
               TEDx: Independently Organized Events
@@ -41,7 +33,6 @@ const TEDDescriptionComponent = () => {
               organized TED event.
             </p>
           </div>
-
           {/* Purpose of TEDx */}
           <div className="transition-all duration-700 ease-in-out transform hover:scale-105 group relative">
             <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
