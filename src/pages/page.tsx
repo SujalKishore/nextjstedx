@@ -101,13 +101,13 @@ export default function Hero() {
         <BulletinBoard recentEvents={recentEvents} nextEvent={nextEvent} />
         <div className="relative z-30 grid grid-cols-1 md:grid-cols-2 h-full">
           <div className="flex flex-col justify-center items-center p-8 bg-gradient-to-bl from-black/95 to-black/90 backdrop-blur-sm">
-            <div className="relative w-full h-full flex items-center justify-center">
-              <div className="absolute inset-0 -z-10">
+            <div className="relative w-full h-full flex items-center justify-center mt-12 ml-20">
+              <div className="absolute inset-0 -z-10 mt-36 ml-72">
                 <Image
                   src="/themes/inverso.jpeg"
                   alt="Background Image"
-                  width={300}
-                  height={300}
+                  width={500}
+                  height={500}
                   className="object-cover rounded-lg shadow-lg opacity-50"
                 />
               </div>
@@ -115,13 +115,24 @@ export default function Hero() {
                 <Image
                   src="/themes/color_hourglass.png"
                   alt="Color Hourglass"
-                  width={150}
-                  height={150}
+                  width={200}
+                  height={200}
                   className="object-cover rounded-lg shadow-lg relative z-10"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black rounded-lg pointer-events-none z-20" />
+
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black rounded-lg pointer-events-none z-20" />
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black rounded-lg pointer-events-none z-20" />
                 {/* <div className="absolute bottom-0 left-0 w-full h-1/3 bg-black/80 rounded-bl-lg pointer-events-none z-20" />
                 <div className="absolute top-0 left-0 w-1/3 h-full bg-black/80 rounded-tl-lg pointer-events-none z-20" /> */}
+              </div>
+              <div className="absolute inset-0 z-10 mt-96 ml-80">
+                <Image
+                  src="/themes/clessidra.jpeg"
+                  alt="Background Image"
+                  width={550}
+                  height={550}
+                  className="object-cover rounded-lg shadow-lg opacity-50"
+                />
               </div>
             </div>
           </div>
