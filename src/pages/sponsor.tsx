@@ -4,13 +4,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ImmersiveForm } from "@/components/ImmersiveForm/ImmersiveForm";
-
 export default function SponsorshipPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      {/* Hero Section with Background Video */}
       <section className="relative h-screen overflow-hidden">
-        {/* Background Video */}
         <div className="absolute inset-0 z-99">
           <video autoPlay loop muted className="object-cover w-full h-full">
             <source src="/videos/sponsorhero.mp4" />
