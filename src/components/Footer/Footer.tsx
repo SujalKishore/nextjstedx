@@ -43,8 +43,6 @@ const Footer = () => {
             </Link>
           </nav>
         </div>
-
-        {/* Contact Information */}
         <div className="pl-6 w-full md:w-auto">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
           <address className="not-italic space-y-2">
@@ -69,8 +67,6 @@ const Footer = () => {
             <p>Address: 123 Innovation St, Knowledge City</p>
           </address>
         </div>
-
-        {/* Social Media Links */}
         <div className="border-l border-gray-400 pl-6 w-full md:w-auto mt-4 md:mt-0">
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex justify-start space-x-4">
@@ -109,8 +105,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Vertical Copyright */}
       <div className="absolute top-1/2 right-4 transform -translate-y-1/2 rotate-90 text-xl font-bold hidden md:block">
         © 2025
       </div>
