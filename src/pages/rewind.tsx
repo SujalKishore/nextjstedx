@@ -8,8 +8,6 @@ import { SpeakersList } from "@/components/SpeakersList/SpeakersList";
 import TopBanner from "@/components/XHero/XHero";
 import dynamic from "next/dynamic";
 import Carousel from "@/components/Carousel/Carousel";
-import { FC } from "react";
-
 const yearContent: {
   [key: number]: {
     theme: string;
