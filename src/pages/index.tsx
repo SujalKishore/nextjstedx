@@ -1,6 +1,7 @@
 "use client";
 
 import { BulletinBoard } from "@/components/BulletinBoard/BulletinBoard";
+import DigitalWalls from "@/components/DigitalWalls/DigitalWalls";
 import { useState, useEffect } from "react";
 
 interface CountdownProps {

@@ -7,16 +7,16 @@ interface SpeakerCardProps {
   name: string;
   title: string;
   image: string;
-  description?: string;
   longDescription: string;
+  additionalStyles?: string; // New prop for conditional styles
 }
 
 const SpeakerCard: React.FC<SpeakerCardProps> = ({
   name,
   title,
   image,
-  description,
   longDescription,
+  additionalStyles,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -26,7 +26,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
     <div className="relative">
       {/* Card */}
       <motion.div
-        className="relative group overflow-hidden rounded-xl bg-gradient-to-br from-gray-800 to-black shadow-lg cursor-pointer h-96 w-[90%] transform transition-transform"
+        className="relative group overflow-hidden rounded-xl bg-gradient-to-br from-red-800/20 via-black to-gray-900 shadow-lg cursor-pointer h-96 w-[90%] transform transition-transform"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.2 }}
         onClick={toggleExpand}
@@ -45,9 +45,12 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
             />
           </svg>
         </div>
+        {/* Cool Red Gradient */}
+        <div className="absolute inset-0 z-[-1]">
+          <div className="w-full h-full bg-gradient-to-tr from-red-500/20 via-transparent to-red-800/10 opacity-60 transform rotate-45 scale-150"></div>
+        </div>
         {/* Image Above */}
         <div className="relative w-full h-[75%] grayscale group-hover:grayscale-0 transition-all duration-200">
-          {/* Faster grayscale transition */}
           <Image
             src={image || "/placeholder.svg"}
             alt={name}
@@ -64,7 +67,6 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
         </div>
         {/* Hover Effect */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-10" />
-        {/* Faster hover line transition */}
       </motion.div>
 
       {/* Expanded View */}
@@ -91,8 +93,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
               />
 
               <div className="absolute inset-0 z-[-10] transform scale-x-[1.75] scale-y-[1.75]">
-                <TeamMemberX className="text-red-600" />{" "}
-                {/* Apply text color to the TeamMemberX component */}
+                <TeamMemberX className="text-red-600" />
               </div>
 
               {/* Gradient Overlay and Details */}
