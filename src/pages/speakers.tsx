@@ -55,6 +55,7 @@ const SpeakersPage: React.FC = () => {
 
   return (
     <div style={{ minHeight: "100vh", position: "relative" }}>
+      {/* Vanta.js Background */}
       <div
         className="md:min-h-[80vh] min-h-[70vh] align-items-center flex flex-col"
         ref={vantaRef}
@@ -86,8 +87,20 @@ const SpeakersPage: React.FC = () => {
           who are set to share their valuable insights and experiences.
         </p>
       </div>
-      <div className="relative z-10 bg-black">
-        <CardSpeaker />
+
+      {/* Black Region with Gradient */}
+      <div
+        className="relative z-10 bg-black"
+        style={{
+          background:
+            "linear-gradient(360deg, rgba(50, 10, 10, 1), rgba(0, 0, 0, 1))",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div className="relative z-10">
+          <CardSpeaker />
+        </div>
       </div>
     </div>
   );

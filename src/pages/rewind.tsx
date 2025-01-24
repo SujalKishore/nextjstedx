@@ -319,11 +319,7 @@ const yearContent: {
           "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
       },
     ],
-    gallery: [
-      "/bulletin/symp1.png",
-      "/gallery/bulletin/symp2.png",
-      "",
-    ],
+    gallery: ["/bulletin/symp1.png", "/gallery/bulletin/symp2.png", ""],
   },
 };
 const GalleryApp = dynamic(
@@ -361,7 +357,7 @@ export default function RewindPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <TopBanner />
-      <section className="bg-[#1A0000] py-4 sticky top-0 z-20">
+      <section className="bg-[#1A0000] py-4  top-0 z-20">
         <div className="container mx-auto">
           <YearSelector
             onSelectYear={setSelectedYear}

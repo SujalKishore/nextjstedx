@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import DigitalWalls from "@/components/DigitalWalls/DigitalWalls";
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -138,6 +139,7 @@ export default function Hero() {
             </motion.div>
           ))}
         </div>
+        <DigitalWalls />
       </section>
     </main>
   );
