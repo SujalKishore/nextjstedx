@@ -14,11 +14,7 @@ export default function SponsorshipPage() {
             Your browser does not support the video tag.
           </video>
         </div>
-
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/50 to-transparent"></div>
-
-        {/* Content */}
         <div className="relative z-20 h-full flex items-center">
           <div className="container mx-auto px-4">
             <div className="w-full max-w-4xl mx-auto text-center">
