@@ -116,7 +116,6 @@ export default function AboutPage() {
           <Card className="bg-black/50 border border-[#FF3A3A]/20 overflow-hidden rounded-lg">
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {/* Theme Description */}
                 <div className="text-center md:text-left md:order-1">
                   <h3 className="text-3xl font-bold mb-4 text-[#FF3A3A]">
                     The Future of Innovation
@@ -132,8 +131,6 @@ export default function AboutPage() {
                     Learn More
                   </Button>
                 </div>
-
-                {/* Theme Image */}
                 <div className="relative w-full h-80 rounded-lg overflow-hidden md:order-2">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 rounded-lg" />
                   <Image
@@ -150,7 +147,6 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"></div>
         </div>
       </section>
-
       <section className="py-20 bg-gradient-to-b from-[#1A0000] to-black">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center text-[#FF3A3A]">
@@ -169,11 +165,9 @@ export default function AboutPage() {
                 }`}
               >
                 <div className="relative w-full aspect-square overflow-hidden rounded-xl bg-transparent mb-4">
-                  {/* Custom X Background */}
                   <div className="absolute inset-0 text-[#FF3A3A]/20 group-hover:text-[#FF3A3A]/30 transition-colors">
                     <TeamMemberX />
                   </div>
-                  {/* Member Image */}
                   <div className="absolute inset-0 z-10">
                     <Image
                       src={member.imgSrc}
