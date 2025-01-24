@@ -11,14 +11,12 @@ const DigitalWalls: React.FC = () => {
     };
   }, []);
   const getParallaxStyle = (offset: number) => {
-    const movement = scrollPosition * -offset; // Negative movement for upward direction
+    const movement = scrollPosition * -offset;
     return { transform: `translateY(${movement}px)` };
   };
   return (
     <div className="text-white bg-black mt-96">
-      {/* Main Content */}
       <main className="space-y-8">
-        {/* Vienna Section */}
         <section id="vienna" className="relative min-h-screen mb-8">
           <header
             className="relative h-[90vh] bg-cover bg-center"
@@ -30,18 +28,16 @@ const DigitalWalls: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
             <h1
               className="absolute top-20 left-8 z-10 text-5xl font-bold"
-              style={getParallaxStyle(0.05)} // Reduced offset for slower effect
+              style={getParallaxStyle(0.05)} 
             >
               Vienna
             </h1>
             <p
               className="absolute top-36 left-8 z-10 text-lg"
-              style={getParallaxStyle(0.02)} // Reduced offset for slower effect
+              style={getParallaxStyle(0.02)}
             >
               48.21°N, 16.36°E
             </p>
-
-            {/* Smaller Cards with Parallax Effect */}
             <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-5/6 grid grid-cols-3 gap-4">
               <div
                 className="bg-gray-800 p-4 rounded h-40 transform hover:scale-105 transition duration-300"
