@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import AboutPage from "@/components/Team.tsx/teamMembers";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 const About: React.FC = () => {
   useEffect(() => {
