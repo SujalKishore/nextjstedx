@@ -22,7 +22,11 @@ export default function MobileNavbar() {
       {/* Top Bar with Logo and Hamburger Button */}
       <div className="fixed top-4 left-0 w-full z-50 flex items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link
+          href="/"
+          onClick={() => setIsOpen(false)}
+          className="flex items-center"
+        >
           <Image
             src="/images/logo-rights.png"
             alt="Logo"
