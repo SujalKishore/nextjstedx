@@ -106,7 +106,6 @@ const PreEventsPage: React.FC = () => {
           }}
         />
         <div className="relative z-20 text-center">
-          {/* Larger and perfectly centered title */}
           <motion.h1
             className="text-6xl md:text-8xl font-extrabold mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -115,8 +114,6 @@ const PreEventsPage: React.FC = () => {
           >
             Pre<span className="text-red-600"> Events</span>
           </motion.h1>
-
-          {/* Morphing text moved to the next line */}
           <motion.div
             className=" text-white "
             style={{ marginTop: "20px" }}
