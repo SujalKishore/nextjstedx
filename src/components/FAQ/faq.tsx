@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// FAQ Data (Question & Answer)
 const faqData = [
   {
     question: "What is TED?",
@@ -29,10 +28,8 @@ const FAQComponent = () => {
 
   const handleToggle = (index: number) => {
     if (activeIndex.includes(index)) {
-      // Remove the index if it's already in the active state (close the item)
       setActiveIndex(activeIndex.filter((i) => i !== index));
     } else {
-      // Add the index to the active state (open the item)
       setActiveIndex([...activeIndex, index]);
     }
   };
@@ -47,7 +44,6 @@ const FAQComponent = () => {
               key={index}
               className="bg-gray-800 bg-opacity-70 p-6 rounded-lg shadow-md transition-all duration-700 ease-in-out"
             >
-              {/* FAQ Question */}
               <div
                 className="flex justify-between items-center cursor-pointer text-lg font-semibold border-b border-gray-600 pb-2"
                 onClick={() => handleToggle(index)}
@@ -57,8 +53,6 @@ const FAQComponent = () => {
                   {activeIndex.includes(index) ? "-" : "+"}
                 </span>
               </div>
-
-              {/* FAQ Answer */}
               <div
                 className={`mt-4 overflow-hidden transition-all duration-700 ease-in-out ${
                   activeIndex.includes(index)
