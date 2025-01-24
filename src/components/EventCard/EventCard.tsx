@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronDown, ChevronUp, Calendar, Clock, MapPin } from "lucide-react";
-
 interface Event {
   id: string;
   title: string;
@@ -13,11 +12,9 @@ interface Event {
   images: string[];
   status: "upcoming" | "past";
 }
-
 const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-
   return (
     <motion.div
       layout
@@ -95,5 +92,4 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
     </motion.div>
   );
 };
-
 export default EventCard;
