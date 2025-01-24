@@ -16,8 +16,6 @@ const SpeakersPage: React.FC = () => {
           //@ts-ignore
           const module = await import("vanta/src/vanta.fog");
           VANTA = module.default;
-
-          // Initialize Vanta effect
           setVantaEffect(
             VANTA({
               el: vantaRef.current,
@@ -37,8 +35,6 @@ const SpeakersPage: React.FC = () => {
         }
       }
     })();
-
-    // Cleanup effect on component unmount
     return () => {
       if (vantaEffect) {
         vantaEffect.destroy();
