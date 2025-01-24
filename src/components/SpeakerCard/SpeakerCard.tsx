@@ -9,7 +9,6 @@ interface SpeakerCardProps {
   longDescription: string;
   additionalStyles?: string; 
 }
-
 const SpeakerCard: React.FC<SpeakerCardProps> = ({
   name,
   title,
@@ -18,9 +17,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
   additionalStyles,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
   const toggleExpand = () => setIsExpanded(!isExpanded);
-
   return (
     <div className="relative">
       <motion.div
@@ -100,5 +97,4 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
     </div>
   );
 };
-
 export default SpeakerCard;
