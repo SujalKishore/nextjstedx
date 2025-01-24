@@ -84,7 +84,5 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     );
   },
 );
-
 RippleButton.displayName = "RippleButton";
-
 export default RippleButton;
