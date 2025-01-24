@@ -65,40 +65,30 @@ const useMorphingText = (texts: string[]) => {
       current1.style.opacity = "0%";
     }
   }, []);
-
   useEffect(() => {
     let animationFrameId: number;
-
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
-
       const newTime = new Date();
       const dt = (newTime.getTime() - timeRef.current.getTime()) / 1000;
       timeRef.current = newTime;
-
       cooldownRef.current -= dt;
-
       if (cooldownRef.current <= 0) doMorph();
       else doCooldown();
     };
-
     animate();
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
   }, [doMorph, doCooldown]);
-
   return { text1Ref, text2Ref };
 };
-
 interface MorphingTextProps {
   className?: string;
   texts: string[];
 }
-
 const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
   const { text1Ref, text2Ref } = useMorphingText(texts);
-
   return (
     <>
       <span
@@ -112,7 +102,6 @@ const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
     </>
   );
 };
-
 const SvgFilters: React.FC = () => (
   <svg
     id="filters"
@@ -133,7 +122,6 @@ const SvgFilters: React.FC = () => (
     </defs>
   </svg>
 );
-
 const MorphingText: React.FC<MorphingTextProps> = ({ texts, className }) => (
   <div
     className={cn(
