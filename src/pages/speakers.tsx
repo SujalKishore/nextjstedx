@@ -1,24 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import CardSpeaker from "@/components/speakersGrid/speakersGrid";
-
 const SpeakersPage: React.FC = () => {
   const [vantaEffect, setVantaEffect] = useState<any>(null);
-  const vantaRef = useRef<HTMLDivElement>(null);
-
+  const vantaRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     let VANTA: any;
-
     (async () => {
       if (!vantaEffect && typeof window !== "undefined") {
         try {
-          // Dynamically import three.js and attach it to window
           const THREE = await import("three");
           if (typeof window !== "undefined") {
             (window as any).THREE = THREE;
           }
-
-          // Dynamically import Vanta.js fog effect
           //@ts-ignore
           const module = await import("vanta/src/vanta.fog");
           VANTA = module.default;
