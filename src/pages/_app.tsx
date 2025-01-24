@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import "@/styles/globals.css";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import MobileNavbar from "@/components/mobileHeader/mobileHeader";
+import HeaderMob from "@/components/HeaderMob/HeaderMob";
 import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">
       {/* Conditionally render the mobile or desktop navbar */}
-      {isMobile ? <MobileNavbar /> : <Header />}
+      {isMobile ? <HeaderMob /> : <Header />}
 
       <Component {...pageProps} />
       <Footer />

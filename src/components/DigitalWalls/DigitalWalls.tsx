@@ -1,23 +1,51 @@
 import React, { useEffect, useState } from "react";
+import gsap from "gsap";
 const DigitalWalls: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
   useEffect(() => {
+    // Add scroll listener
     window.addEventListener("scroll", handleScroll);
+
+    // GSAP Animations
+    const sections = document.querySelectorAll(".animated-section");
+    sections.forEach((section, index) => {
+      gsap.fromTo(
+        section,
+        { autoAlpha: 0, y: 100 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top center",
+            end: "bottom center",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    });
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const getParallaxStyle = (offset: number) => {
-    const movement = scrollPosition * -offset;
-    return { transform: `translateY(${movement}px)` };
-  };
+
+  const getParallaxStyle = (offset: number) => ({
+    transform: `translateY(${scrollPosition * -offset}px)`,
+  });
+
   return (
     <div className="text-white bg-black mt-96">
       <main className="space-y-8">
-        <section id="vienna" className="relative min-h-screen mb-8">
+        {/* Vienna Section */}
+        <section
+          id="vienna"
+          className="relative min-h-screen mb-8 animated-section"
+        >
           <header
             className="relative h-[90vh] bg-cover bg-center"
             style={{
@@ -28,7 +56,7 @@ const DigitalWalls: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
             <h1
               className="absolute top-20 left-8 z-10 text-5xl font-bold"
-              style={getParallaxStyle(0.05)} 
+              style={getParallaxStyle(0.05)}
             >
               Vienna
             </h1>
