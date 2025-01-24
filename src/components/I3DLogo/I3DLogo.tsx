@@ -4,7 +4,6 @@ import { Text3D, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 const Logo: React.FC = () => {
   const meshRef = useRef<THREE.Mesh>(null);
-
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime) * 0.2;
