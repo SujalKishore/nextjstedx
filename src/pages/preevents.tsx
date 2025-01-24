@@ -125,8 +125,6 @@ const PreEventsPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Event Timeline Section */}
       <div className="container mx-auto px-4 py-16 z-10" id="events">
         <section ref={upcomingRef} className="mb-16">
           <h2 className="text-3xl font-semibold mb-8">Upcoming Events</h2>
@@ -136,7 +134,6 @@ const PreEventsPage: React.FC = () => {
             ))}
           </div>
         </section>
-
         <section ref={pastRef}>
           <h2 className="text-3xl font-semibold mb-8">Past Events</h2>
           <div className="space-y-8">
@@ -149,5 +146,4 @@ const PreEventsPage: React.FC = () => {
     </div>
   );
 };
-
 export default PreEventsPage;
