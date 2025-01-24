@@ -3,7 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 interface Speaker {
   name: string;
   topic: string;
@@ -14,11 +13,9 @@ interface Speaker {
   };
   tedTalkUrl: string;
 }
-
 interface SpeakersListProps {
   speakers: Speaker[];
 }
-
 export const SpeakersList: React.FC<SpeakersListProps> = ({ speakers }) => {
   return (
     <div className="mb-0">
