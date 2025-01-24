@@ -33,7 +33,6 @@ const TEDDescriptionComponent = () => {
               organized TED event.
             </p>
           </div>
-          {/* Purpose of TEDx */}
           <div className="transition-all duration-700 ease-in-out transform hover:scale-105 group relative">
             <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
               Why TEDx Matters
@@ -48,11 +47,8 @@ const TEDDescriptionComponent = () => {
           </div>
         </div>
       </div>
-
-      {/* Large 'X' icon at the bottom for style */}
       <div className="absolute bottom-0 left-0 right-0 w-full h-40 bg-red-600 opacity-20 z-0 transform rotate-45"></div>
     </section>
   );
 };
-
 export default TEDDescriptionComponent;
