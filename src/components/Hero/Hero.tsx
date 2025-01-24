@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 interface CountdownProps {
   targetDate: Date;
 }
-
 const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 9,
@@ -11,7 +9,6 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
     minutes: 10,
     seconds: 0,
   });
-
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
@@ -22,18 +19,14 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
       );
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
       setTimeLeft({ days, hours, minutes, seconds });
-
       if (difference < 0) {
         clearInterval(interval);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     }, 1000);
-
     return () => clearInterval(interval);
   }, [targetDate]);
-
   return (
     <div className="text-white flex justify-center items-center space-x-8">
       {Object.entries(timeLeft).map(([unit, value]) => (
