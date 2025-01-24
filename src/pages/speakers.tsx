@@ -42,7 +42,6 @@ const SpeakersPage: React.FC = () => {
       }
     };
   }, [vantaEffect]);
-
   return (
     <div style={{ minHeight: "100vh", position: "relative" }}>
       {/* Vanta.js Background */}
