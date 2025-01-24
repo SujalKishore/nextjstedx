@@ -5,12 +5,11 @@ import EventCard from "@/components/EventCard/EventCard";
 import AnimatedBackground from "@/components/AnimatedBackground/AnimatedBackground";
 import MorphingText from "@/components/ui/morphing-text";
 const texts = [
-  "S.Y.M.P",
-  "Trick or Terror",
-  "Beyond the Frame",
   "Adventure Day",
+  "Beyond the Frame",
+  "Trick or Terror",
+  "S.Y.M.P",
 ];
-
 interface Event {
   id: string;
   title: string;
@@ -21,7 +20,6 @@ interface Event {
   images: string[];
   status: "upcoming" | "past";
 }
-
 const events: Event[] = [
   {
     id: "Panel Reveal",
