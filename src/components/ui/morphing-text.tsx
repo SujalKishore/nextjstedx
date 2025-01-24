@@ -101,12 +101,10 @@ const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
 
   return (
     <>
-      {/* First text layer */}
       <span
         className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-auto whitespace-nowrap "
         ref={text1Ref}
       />
-      {/* Second text layer */}
       <span
         className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-auto whitespace-nowrap "
         ref={text2Ref}
