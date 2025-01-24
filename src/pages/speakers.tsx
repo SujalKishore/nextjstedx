@@ -94,5 +94,4 @@ const SpeakersPage: React.FC = () => {
     </div>
   );
 };
-
 export default dynamic(() => Promise.resolve(SpeakersPage), { ssr: false });
