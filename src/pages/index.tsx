@@ -81,7 +81,6 @@ export default function Hero() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-      {/* Large X background */}
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -108,8 +107,6 @@ export default function Hero() {
             <CountdownTimer targetDate={eventDate} />
           </div>
         </div>
-
-        {/* Right side */}
         <div className="flex flex-col justify-center items-center p-12 bg-gradient-to-bl from-black/95 to-black/90 backdrop-blur-sm">
           <div className="max-w-xl mx-auto text-center space-y-8">
             <div className="space-y-4">
