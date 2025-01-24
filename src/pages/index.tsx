@@ -44,15 +44,12 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
       );
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
       setTimeLeft({ days, hours, minutes, seconds });
-
       if (difference < 0) {
         clearInterval(interval);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     }, 1000);
-
     return () => clearInterval(interval);
   }, [targetDate]);
   return (
