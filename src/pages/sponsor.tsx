@@ -284,7 +284,6 @@ function SponsorShowcase() {
     </div>
   );
 }
-
 function ParallaxMountains() {
   return (
     <div className="absolute inset-x-0 bottom-0 h-64 pointer-events-none">
