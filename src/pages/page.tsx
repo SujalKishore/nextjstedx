@@ -122,8 +122,6 @@ export default function Hero() {
 
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black rounded-lg pointer-events-none z-20" />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black rounded-lg pointer-events-none z-20" />
-                {/* <div className="absolute bottom-0 left-0 w-full h-1/3 bg-black/80 rounded-bl-lg pointer-events-none z-20" />
-                <div className="absolute top-0 left-0 w-1/3 h-full bg-black/80 rounded-tl-lg pointer-events-none z-20" /> */}
               </div>
               <div className="absolute inset-0 z-10 mt-96 ml-80">
                 <Image
