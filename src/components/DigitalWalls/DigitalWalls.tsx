@@ -141,7 +141,7 @@ const DigitalWalls: React.FC = () => {
               </div>
               <div
                 className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300"
-                style={getParallaxStyle(0.05)} // Slightly more movement for the second card
+                style={getParallaxStyle(0.05)}
               >
                 <img
                   src="https://source.unsplash.com/600x400/?cityscape"
@@ -156,5 +156,4 @@ const DigitalWalls: React.FC = () => {
     </div>
   );
 };
-
 export default DigitalWalls;
