@@ -1,14 +1,10 @@
 "use client";
-
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
 import { cn } from "@/lib/utils";
-
 export const Accordion = AccordionPrimitive.Root;
-
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
@@ -20,7 +16,6 @@ const AccordionItem = React.forwardRef<
   />
 ));
 AccordionItem.displayName = "AccordionItem";
-
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
@@ -49,7 +44,6 @@ const AccordionContent = React.forwardRef<
     className="overflow-hidden text-sm"
     {...props}
   >
-    {/* Animate Presence to animate content on open/close */}
     <AnimatePresence initial={false}>
       <motion.div
         className={cn("pb-4 pt-0", className)}
