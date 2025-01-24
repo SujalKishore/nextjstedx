@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import AboutPage from "@/components/Team.tsx/teamMembers";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-
 const About: React.FC = () => {
   useEffect(() => {
     const script = document.createElement("script");
@@ -31,12 +30,10 @@ const About: React.FC = () => {
       waterMark: false,
     });
     document.getElementById("naker-container")?.appendChild(script);
-
     return () => {
       document.getElementById("naker-container")?.removeChild(script);
     };
   }, []);
-
   return (
     <div className="bg-black text-white min-h-screen">
       <div className="h-[100vh] bg-black flex items-center justify-center text-center relative">
