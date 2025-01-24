@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { TeamMemberX } from "../TeamMemberX/TeamMemberX";
-
 interface SpeakerCardProps {
   name: string;
   title: string;
   image: string;
   longDescription: string;
-  additionalStyles?: string; // New prop for conditional styles
+  additionalStyles?: string; 
 }
 
 const SpeakerCard: React.FC<SpeakerCardProps> = ({
@@ -24,14 +23,12 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
 
   return (
     <div className="relative">
-      {/* Card */}
       <motion.div
         className="relative group overflow-hidden rounded-xl bg-gradient-to-br from-red-800/20 via-black to-gray-900 shadow-lg cursor-pointer h-96 w-[90%] transform transition-transform"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.2 }}
         onClick={toggleExpand}
       >
-        {/* Decorative X */}
         <div className="absolute inset-0 top-[-96px] bg-slate-800 opacity-40 z-0">
           <svg className="w-full h-full scale-125" viewBox="0 0 100 100">
             <clipPath id="halfXClip">
@@ -45,11 +42,9 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
             />
           </svg>
         </div>
-        {/* Cool Red Gradient */}
         <div className="absolute inset-0 z-[-1]">
           <div className="w-full h-full bg-gradient-to-tr from-red-500/20 via-transparent to-red-800/10 opacity-60 transform rotate-45 scale-150"></div>
         </div>
-        {/* Image Above */}
         <div className="relative w-full h-[75%] grayscale group-hover:grayscale-0 transition-all duration-200">
           <Image
             src={image || "/placeholder.svg"}
@@ -60,16 +55,12 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
             className="rounded-t-lg"
           />
         </div>
-        {/* Name and Details at Bottom */}
         <div className="p-4 h-[30%] flex flex-col justify-start items-center text-center bg-black">
           <h3 className="text-xl font-bold text-white mb-1">{name}</h3>
           <p className="text-red-600">{title}</p>
         </div>
-        {/* Hover Effect */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-10" />
       </motion.div>
-
-      {/* Expanded View */}
       <AnimatePresence>
         {isExpanded && (
           <motion.div
@@ -81,7 +72,6 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
             onClick={toggleExpand}
           >
             <div className="relative w-full h-[85%] max-w-[900px]">
-              {/* Fullscreen Image */}
               <Image
                 src={image || "/placeholder.svg"}
                 alt={name}
@@ -91,12 +81,9 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
                 objectPosition="center"
                 quality={100}
               />
-
               <div className="absolute inset-0 z-[-10] transform scale-x-[1.75] scale-y-[1.75]">
                 <TeamMemberX className="text-red-600" />
               </div>
-
-              {/* Gradient Overlay and Details */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent">
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                   <h2 className="text-6xl font-bold mb-2">{name}</h2>
