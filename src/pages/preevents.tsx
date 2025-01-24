@@ -67,15 +67,12 @@ const events: Event[] = [
     status: "past",
   },
 ];
-
 const PreEventsPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState("upcoming");
   const { scrollY } = useViewportScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 100]);
-
   const [upcomingRef, upcomingInView] = useInView({ threshold: 0.5 });
   const [pastRef, pastInView] = useInView({ threshold: 0.5 });
-
   useEffect(() => {
     if (upcomingInView) {
       startTransition(() => setActiveSection("upcoming"));
@@ -84,7 +81,6 @@ const PreEventsPage: React.FC = () => {
       startTransition(() => setActiveSection("past"));
     }
   }, [upcomingInView, pastInView]);
-
   const upcomingEvents = events.filter((event) => event.status === "upcoming");
   const pastEvents = events.filter((event) => event.status === "past");
   return (
