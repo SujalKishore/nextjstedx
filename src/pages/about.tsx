@@ -39,7 +39,6 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-black text-white min-h-screen">
-      {/* Hero Section with Effect */}
       <div className="h-[100vh] bg-black flex items-center justify-center text-center relative">
         <div id="naker-container" className="absolute inset-0 z-0"></div>
         <div className="z-10">
@@ -65,8 +64,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* About Page */}
       <AboutPage />
     </div>
   );
