@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useState } from "react";
-
 const images = [
   "https://highflyer.sirv.com/cloud/15_voqq0c.png",
   "https://highflyer.sirv.com/cloud/21_wbsty7.png",
@@ -24,7 +22,6 @@ const Carousel: React.FC = () => {
   const handleImageClick = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
-
   return (
     <div className="relative flex items-center justify-center h-[70vh] ">
       <div className="flex gap-2 items-center overflow-y-auto">
@@ -58,8 +55,6 @@ const Carousel: React.FC = () => {
               `}
               style={{ backgroundImage: `url(${image})` }}
             >
-              {/* Nearby effect */}
-
               <div
                 className={`absolute inset-0 transition-all duration-500 transform
                   ${isHovered || isAdjacent ? "scale-100 brightness-100" : ""}
