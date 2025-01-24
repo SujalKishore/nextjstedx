@@ -1,16 +1,12 @@
 import { useState } from "react";
 import Link from "next/link";
-
 const MobileNavbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for tracking if menu is open
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   return (
     <>
-      {/* Mobile Menu Button */}
       <button
         onClick={handleMenuToggle}
         className="absolute top-4 right-4 w-8 h-8 bg-black/50 rounded-full flex justify-center items-center"
@@ -27,8 +23,6 @@ const MobileNavbar = () => {
         }`}
         onClick={handleMenuToggle}
       ></div>
-
-      {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 w-3/4 bg-white p-6 pt-12 transition-transform duration-500 ${
           isMenuOpen ? "transform translate-x-0" : "transform translate-x-full"

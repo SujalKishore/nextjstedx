@@ -1,10 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 interface FloatingNavProps {
   activeSection: string;
 }
-
 const FloatingNav: React.FC<FloatingNavProps> = ({ activeSection }) => {
   return (
     <motion.nav
@@ -34,5 +32,4 @@ const FloatingNav: React.FC<FloatingNavProps> = ({ activeSection }) => {
     </motion.nav>
   );
 };
-
 export default FloatingNav;
