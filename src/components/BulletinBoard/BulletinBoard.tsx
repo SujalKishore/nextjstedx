@@ -3,34 +3,28 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 interface Event {
   title: string;
   date: string;
   images: string[];
 }
-
 interface BulletinBoardProps {
   recentEvents: Event[];
   nextEvent: Event;
 }
-
 export const BulletinBoard: React.FC<BulletinBoardProps> = ({
   recentEvents,
   nextEvent,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleBoard = () => setIsOpen(!isOpen);
-
   return (
     <motion.div
       initial={{ right: 0 }}
-      animate={{ right: isOpen ? "0px" : "-320px" }} // Adjust for sliding out of view
+      animate={{ right: isOpen ? "0px" : "-320px" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
       className="fixed top-0 bottom-0 right-0 z-50 flex items-stretch"
     >
-      {/* Button to toggle the bulletin board */}
       <button
         onClick={toggleBoard}
         className="bg-[#fa3e3e] text-white h-[15vh] w-12 flex-shrink-0 flex flex-col items-center justify-center focus:outline-none mt-[110%] rounded-l-md"
@@ -38,8 +32,6 @@ export const BulletinBoard: React.FC<BulletinBoardProps> = ({
         <span className="transform -rotate-90 whitespace-nowrap text-lg font-bold"></span>
         {isOpen ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
       </button>
-
-      {/* Bulletin board content */}
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? 0 : "100%" }}

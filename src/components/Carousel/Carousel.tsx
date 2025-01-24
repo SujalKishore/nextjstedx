@@ -14,11 +14,9 @@ const images = [
   "https://highflyer.sirv.com/cloud/2_zja2bq.png",
   "https://highflyer.sirv.com/cloud/11_p1oi8m.png",
 ];
-
 const Carousel: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   const handleImageClick = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
@@ -31,7 +29,6 @@ const Carousel: React.FC = () => {
             hoveredIndex === index - 1 || hoveredIndex === index + 1;
           const isDistant =
             hoveredIndex === index - 2 || hoveredIndex === index + 2;
-
           return (
             <div
               key={index}
@@ -68,5 +65,4 @@ const Carousel: React.FC = () => {
     </div>
   );
 };
-
 export default Carousel;

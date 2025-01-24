@@ -1,8 +1,5 @@
-// components/NakerEffect.tsx
 "use client";
-
 import React, { useEffect } from "react";
-
 const NakerEffect: React.FC = () => {
   useEffect(() => {
     const script = document.createElement("script");
@@ -31,13 +28,10 @@ const NakerEffect: React.FC = () => {
       waterMark: false,
     });
     document.getElementById("naker-container")?.appendChild(script);
-
     return () => {
       document.getElementById("naker-container")?.removeChild(script);
     };
   }, []);
-
   return <div id="naker-container" className="absolute inset-0 z-[-1]" />;
 };
-
 export default NakerEffect;

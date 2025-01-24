@@ -1,14 +1,6 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -16,11 +8,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
 export function ImmersiveForm() {
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1A0000] to-[#FF3A3A] opacity-50 z-0" />
       <div className="relative container mx-auto px-4 text-center z-10">
         <h2 className="text-4xl font-bold mb-6 text-white">
@@ -30,7 +20,6 @@ export function ImmersiveForm() {
           Join us in shaping the future of adventure and conservation.
         </p>
         <Dialog>
-          {/* DialogTrigger wraps the button and makes it interactive */}
           <DialogTrigger asChild>
             <Button className="bg-[#FF3A3A] hover:bg-[#FF3A3A]/90 text-white text-lg px-8 py-3 z-20 relative">
               Start Your Journey
@@ -77,7 +66,6 @@ export function ImmersiveForm() {
           </DialogContent>
         </Dialog>
       </div>
-      {/* Background overlay */}
       <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1920')] bg-cover bg-center opacity-10 mix-blend-overlay z-0" />
     </section>
   );

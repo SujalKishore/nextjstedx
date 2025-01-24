@@ -2,16 +2,13 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Text3D, OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
-
 const Logo: React.FC = () => {
   const meshRef = useRef<THREE.Mesh>(null);
-
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime) * 0.2;
     }
   });
-
   return (
     <mesh ref={meshRef}>
       <Text3D
@@ -31,7 +28,6 @@ const Logo: React.FC = () => {
     </mesh>
   );
 };
-
 const Interactive3DLogo: React.FC = () => {
   return (
     <Canvas camera={{ position: [0, 0, 10] }}>
@@ -42,5 +38,4 @@ const Interactive3DLogo: React.FC = () => {
     </Canvas>
   );
 };
-
 export default Interactive3DLogo;
