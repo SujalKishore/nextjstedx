@@ -108,7 +108,6 @@ const DigitalWalls: React.FC = () => {
             <p
               className="absolute top-36 left-8 z-10 text-lg"
               style={getParallaxStyle(0.02)}
-              style={getParallaxStyle(0.02)}
             >
               38.72°N, 9.14°W
             </p>
