@@ -6,7 +6,6 @@ const Hero = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    // Trigger the fade-in and clip-path animations
     const fadeTimer = setTimeout(() => {
       setIsFadedIn(true);
     }, 200);
@@ -23,7 +22,6 @@ const Hero = () => {
 
   return (
     <>
-      {/* Inline styles for the custom animations */}
       <style jsx>{`
         .hero-container {
           opacity: 0;
@@ -79,7 +77,6 @@ const Hero = () => {
         // }
       `}</style>
 
-      {/* Hero section */}
       <div
         className={`hero-container ${
           isFadedIn ? "fade-in" : ""
