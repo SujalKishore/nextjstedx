@@ -1,12 +1,9 @@
 "use client";
-
 import { BulletinBoard } from "@/components/BulletinBoard/BulletinBoard";
 import { useState, useEffect } from "react";
-
 interface CountdownProps {
   targetDate: Date;
 }
-
 const recentEvents = [
   {
     title: "S.Y.M.P",
@@ -19,13 +16,11 @@ const recentEvents = [
     images: ["/bulletin/tot1.png", "/bulletin/tot2.png"],
   },
 ];
-
 const nextEvent = {
   title: "Panel Reveal",
   date: "2025-01-29",
   images: ["/path/to/image5.jpg", "/path/to/image6.jpg"],
 };
-
 const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -33,7 +28,6 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
     minutes: 0,
     seconds: 0,
   });
-
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
