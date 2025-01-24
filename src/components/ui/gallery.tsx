@@ -2,24 +2,19 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
 interface GalleryProps {
   images: string[];
 }
-
 export const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-
   const prevImage = () => {
     setCurrentImageIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
-
   return (
     <div className="mb-12">
       <h3 className="text-2xl font-bold mb-6 text-[#FF3A3A]">Event Gallery</h3>
