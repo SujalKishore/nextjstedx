@@ -5,12 +5,10 @@ import {
   InstagramIcon,
   LinkedinIcon,
 } from "lucide-react";
-
 const Footer = () => {
   return (
     <footer className="relative px-6 py-12 bg-gray-950 text-white">
       <div className="container mx-auto flex flex-wrap justify-between space-y-8 md:space-y-0">
-        {/* Logo */}
         <div className="flex flex-col items-start w-full md:w-auto">
           <img
             src="/images/logo-rights.png"
@@ -18,8 +16,6 @@ const Footer = () => {
             className="w-auto h-12"
           />
         </div>
-
-        {/* Quick Links */}
         <div className="pl-6 w-full md:w-auto">
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <nav className="flex flex-col space-y-2">
@@ -111,5 +107,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
