@@ -215,7 +215,6 @@ export default function SponsorshipPage() {
     </main>
   );
 }
-
 function SponsorShowcase() {
   const [currentSponsor, setCurrentSponsor] = useState(0);
   const sponsors = [
@@ -230,17 +229,14 @@ function SponsorShowcase() {
       description: "Pioneering sustainable tourism practices",
     },
   ];
-
   const nextSponsor = () =>
     setCurrentSponsor((prev) => (prev + 1) % sponsors.length);
   const prevSponsor = () =>
     setCurrentSponsor((prev) => (prev - 1 + sponsors.length) % sponsors.length);
-
   useEffect(() => {
     const timer = setInterval(nextSponsor, 5000);
     return () => clearInterval(timer);
   }, []);
-
   return (
     <div className="mb-12 relative">
       <p className="text-2xl font-bold mb-4">Featured Sponsor</p>
