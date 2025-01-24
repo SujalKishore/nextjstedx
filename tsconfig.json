@@ -22,6 +22,6 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/AnimatedBackground/AnimatedBackground.js"
-  ],
+, "src/components/ThreeScene/threescene.js"  ],
   "exclude": ["node_modules"]
 }
