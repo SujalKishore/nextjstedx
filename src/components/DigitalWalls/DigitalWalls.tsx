@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from "react";
-
 const DigitalWalls: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  // Update scroll position on scroll
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // Function to calculate parallax effect based on scroll
   const getParallaxStyle = (offset: number) => {
     const movement = scrollPosition * -offset; // Negative movement for upward direction
     return { transform: `translateY(${movement}px)` };
   };
-
   return (
     <div className="text-white bg-black mt-96">
       {/* Main Content */}
