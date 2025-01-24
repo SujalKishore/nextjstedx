@@ -182,5 +182,4 @@ const CardGrid: React.FC = () => {
     </div>
   );
 };
-
 export default CardGrid;
