@@ -18,7 +18,8 @@ const Footer = () => {
             <Image
               src="/images/logo-rights.png"
               alt="TEDx Logo"
-              className="w-auto h-12"
+              width={290}
+              height={290}
             />
             <p className="mt-4 text-sm text-white/80">
               Ideas Worth Spreading. Join the movement.
