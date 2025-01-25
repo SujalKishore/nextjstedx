@@ -23,7 +23,7 @@ export const BulletinBoard: React.FC<BulletinBoardProps> = ({
       initial={{ right: 0 }}
       animate={{ right: isOpen ? "0px" : "-320px" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="fixed top-0 bottom-0 right-0 z-50 flex items-stretch"
+      className="fixed top-0 bottom-0 right-0 z-20 flex items-stretch"
     >
       <button
         onClick={toggleBoard}
