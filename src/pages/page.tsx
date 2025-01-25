@@ -173,7 +173,6 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Digital Walls Section */}
       <DigitalWalls />
     </main>
   );
