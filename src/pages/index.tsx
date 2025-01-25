@@ -79,7 +79,7 @@ export default function Hero() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
-      <div
+       <div
         className="absolute inset-0 z-0"
         style={{
           background: `
@@ -117,7 +117,9 @@ export default function Hero() {
             <p className="text-lg text-white/90 leading-relaxed"></p>
           </div>
         </div>
-      </div>
+      </div> 
+      {/* <div><ThreeScene/></div> */}
+      
     </div>
   );
 }
