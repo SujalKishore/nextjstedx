@@ -44,18 +44,48 @@ const speakers = [
     longDescription:
       "David Kim is a pioneering blockchain entrepreneur whose work is reshaping the landscape of finance and digital identity. His innovative blockchain solutions are addressing some of the most pressing challenges in areas such as financial inclusion, secure digital voting systems, and transparent supply chain management. David's projects have not only demonstrated the transformative potential of blockchain technology but have also played a crucial role in making these complex systems more accessible and user-friendly for the general public. His vision of a more decentralized and equitable digital future continues to inspire and drive innovation in the blockchain space.",
   },
+  {
+    name: "Linda Smith",
+    title: "Cybersecurity Expert",
+    image: "/speakers/linda-smith.jpg",
+    longDescription:
+      "Linda Smith is a leading expert in cybersecurity, specializing in threat intelligence and incident response. Her work focuses on identifying and mitigating emerging cyber threats, from sophisticated malware attacks to large-scale data breaches. Linda's research and analysis have been instrumental in helping organizations across various sectors strengthen their cybersecurity posture and respond effectively to cyber incidents. Her commitment to advancing cybersecurity awareness and education has made her a respected voice in the field, and her insights are sought after by industry professionals, policymakers, and the media.",
+  },
+  {
+    name: "Michael Johnson",
+    title: "Digital Transformation Strategist",
+    image: "/speakers/michael-johnson.jpg",
+    longDescription:
+      "Michael Johnson is a digital transformation strategist who helps organizations navigate the complexities of the digital age and harness the power of technology to drive innovation and growth. His expertise spans a wide range of digital technologies, from artificial intelligence and machine learning to cloud computing and cybersecurity. Michael's strategic guidance has enabled businesses to adapt to rapidly changing market conditions, enhance customer experiences, and unlock new opportunities for revenue generation. His thought leadership in digital transformation has made him a trusted advisor to executives and decision-makers seeking to future-proof their organizations in an increasingly digital world.",
+  },
+  {
+    name: "Sophia Lee",
+    title: "HealthTech Innovator",
+    image: "/speakers/sophia-lee.jpg",
+    longDescription:
+      "Sophia Lee is a trailblazing innovator in the field of HealthTech, leveraging cutting-edge technologies to revolutionize healthcare delivery and improve patient outcomes. Her work spans a wide range of applications, from telemedicine and wearable health devices to AI-driven diagnostics and personalized treatment plans. Sophia's vision for the future of healthcare combines a deep understanding of medical science with a passion for innovation, resulting in transformative solutions that are shaping the future of medicine. Her commitment to making healthcare more accessible, affordable, and effective has earned her recognition as a leader in the HealthTech industry.",
+  },
+  {
+    name: "Alex Brown",
+    title: "Social Impact Entrepreneur",
+    image: "/speakers/alex-brown.jpg",
+    longDescription:
+      "Alex Brown is a social impact entrepreneur who is dedicated to creating positive change in the world through innovative business solutions. His ventures focus on"
+  },
 ];
 
 const CardSpeaker: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-8 item">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-1 gap-8 md:justify-center">
         {speakers.map((speaker, index) => (
           <SpeakerCard key={index} {...speaker} />
         ))}
       </div>
     </div>
   );
+
 };
+
 
 export default CardSpeaker;
