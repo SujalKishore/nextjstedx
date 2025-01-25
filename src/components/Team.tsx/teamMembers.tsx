@@ -223,11 +223,11 @@ export default function AboutPage() {
                   How can I join the TEDx organizing team?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  We welcome passionate individuals who want to contribute to
+                  {`We welcome passionate individuals who want to contribute to
                   spreading ideas in our community. You can apply to join our
                   team by sending your resume and a letter of interest
                   explaining why you'd like to be part of TEDx. We have various
-                  roles available throughout the year.
+                  roles available throughout the year.`}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
@@ -246,10 +246,10 @@ export default function AboutPage() {
                   How much time commitment is required?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  Time commitment varies by role and event phase. Generally,
+                  {`Time commitment varies by role and event phase. Generally,
                   team members commit 5-10 hours per week, with increased
                   involvement closer to the event date. We value flexibility and
-                  work with each team member's schedule.
+                  work with each team member's schedule.`}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
@@ -257,10 +257,10 @@ export default function AboutPage() {
                   Do I need previous experience with TEDx?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  While previous TEDx experience is valuable, it's not required.
+                  {`While previous TEDx experience is valuable, it's not required.
                   We look for individuals who are passionate about ideas, have
                   relevant skills for their role, and are committed to our
-                  mission of spreading innovative ideas in the community.
+                  mission of spreading innovative ideas in the community.`}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-6">

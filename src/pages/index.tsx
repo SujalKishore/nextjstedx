@@ -60,9 +60,7 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
           key={unit}
           className="flex flex-col items-center text-center p-4 bg-black/40 backdrop-blur-sm rounded-lg border border-white/10"
         >
-          <div className="text-4xl md:text-6xl font-bold text-white">
-            {value}
-          </div>
+          <div className="text-4xl md:text-6xl font-bold text-white">{value}</div>
           <span className="uppercase text-sm md:text-base tracking-widest text-red-600 font-semibold">
             {unit}
           </span>
@@ -108,15 +106,12 @@ export default function Hero() {
           <div className="max-w-xl mx-auto text-center space-y-8">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-red-600">theme</h3>
-              <h1 className="text-4xl md:text-5xl font-bold text-white">
-                theme
-              </h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-white">theme</h1>
             </div>
             <p className="text-lg text-white/90 leading-relaxed"></p>
           </div>
         </div>
       </div>
-      {/* <div><ThreeScene/></div> */}
     </div>
   );
 }

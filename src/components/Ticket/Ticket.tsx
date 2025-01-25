@@ -9,6 +9,7 @@ const mona = Mona_Sans({
 
 const Ticket = () => {
   const [fonts, setFonts] = useState(mona);
+
   useEffect(() => {
     const applyFonts = async () => {
       let delay = 150;
@@ -22,7 +23,7 @@ const Ticket = () => {
     };
 
     applyFonts();
-  }, [fontArray]);
+  }, []); // Removed fontArray from the dependency array
 
   return (
     <div className="everything">
@@ -37,7 +38,7 @@ const Ticket = () => {
         </div>
       </div>
       <div className="flex justify-center items-center h-[100vh]">
-        {/*Baaki code idhr aayega */}
+        {/* Baaki code idhr aayega */}
       </div>
     </div>
   );

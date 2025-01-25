@@ -13,7 +13,7 @@ const SpeakersPage: React.FC = () => {
           height: "100vh",
           overflow: "hidden",
           background:
-            "linear-gradient(to bottom, rgba(10, 22, 33, 1) 0%, rgba(16, 71, 130, 1) 100%)",
+            "linear-gradient(to bottom, rgba(10, 22, 33, 1) 0%, rgb(0, 0, 0) 100%)",
         }}
       >
         <CustomBackground />
@@ -21,7 +21,7 @@ const SpeakersPage: React.FC = () => {
         {/* Foreground Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
           <h1
-            className="md:text-7xl text-5xl font-bold mb-4 text-white mt-14 md:mt-0"
+            className="md:text-7xl text-5xl font-bold mb-4 text-white mt-14 md:mt-0 text-center px-6 md:px-16"
             style={{
               textShadow: "2px 2px 10px rgba(0, 0, 0, 0.8)",
             }}
@@ -29,7 +29,7 @@ const SpeakersPage: React.FC = () => {
             Our Esteemed Speakers
           </h1>
           <p
-            className="text-lg md:text-2xl max-w-800 text-gray-300 mb-4 text-center"
+            className="text-lg md:text-2xl max-w-800 text-gray-300 mb-4 text-center px-6 md:px-16"
             style={{
               lineHeight: "1.8",
               textShadow: "1px 1px 5px rgba(0, 0, 0, 0.5)",
@@ -42,7 +42,7 @@ const SpeakersPage: React.FC = () => {
       </div>
 
       {/* Black Region with Gradient */}
-      <div className="relative z-10 bg-gradient-to-br from-red-900 via-black to-red-900">
+      <div className="relative z-10 bg-gradient-to-br from-black via-zinc-950 to-red-800">
         <div className="relative z-10">
           <CardSpeaker />
         </div>
