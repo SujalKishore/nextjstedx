@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Link from "next/link";
+
 const MobileNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   return (
     <>
       <button
@@ -64,7 +66,7 @@ const MobileNavbar = () => {
               href="/letstalk"
               className="text-xl text-black hover:text-[#eb0028]"
             >
-              LET'S TALK
+              LET&apos;S TALK
             </Link>
           </li>
           <li>

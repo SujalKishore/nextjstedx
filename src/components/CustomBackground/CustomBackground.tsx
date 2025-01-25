@@ -41,7 +41,7 @@ const CustomBackground: React.FC = () => {
     window.addEventListener("mousemove", onMouseMove);
 
     // Create smaller dots with more density
-    const dots: THREE.Mesh[] = [];
+    const dots: THREE.Mesh<THREE.CircleGeometry, THREE.MeshBasicMaterial>[] = [];
     const geometry = new THREE.CircleGeometry(0.015, 16); // Reduced size of dots
     const material = new THREE.MeshBasicMaterial({
       color: 0xffffff,
@@ -54,7 +54,7 @@ const CustomBackground: React.FC = () => {
       for (let y = -5; y <= 5; y += 0.3) {
         const dot = new THREE.Mesh(geometry, material.clone());
         dot.position.set(x, y, 0);
-        (dot as any).originalPosition = dot.position.clone();
+        (dot as THREE.Mesh).userData.originalPosition = dot.position.clone(); // Attach metadata properly
         scene.add(dot);
         dots.push(dot);
       }
@@ -65,27 +65,28 @@ const CustomBackground: React.FC = () => {
       requestAnimationFrame(animate);
 
       dots.forEach((dot) => {
-        const distanceToMouse = (dot as any).originalPosition.distanceTo(mouseWorld);
+        const originalPosition = dot.userData.originalPosition as THREE.Vector3;
+        const distanceToMouse = originalPosition.distanceTo(mouseWorld);
         const influenceRadius = 1.5; // Increased influence radius
         const maxAttraction = 0.6; // Slightly stronger attraction strength
 
         if (distanceToMouse < influenceRadius) {
           const influence = 1 - distanceToMouse / influenceRadius;
           const attraction = new THREE.Vector3()
-            .subVectors(mouseWorld, (dot as any).originalPosition)
+            .subVectors(mouseWorld, originalPosition)
             .multiplyScalar(influence * influence * maxAttraction);
 
-          dot.position.lerp((dot as any).originalPosition.clone().add(attraction), 0.15);
+          dot.position.lerp(originalPosition.clone().add(attraction), 0.15);
 
           const scale = 0.8 + influence * 1.5; // Slightly reduced scaling effect
           dot.scale.setScalar(scale);
-          (dot.material as THREE.Material).opacity = 0.4 + influence * 0.3;
-          (dot.material as THREE.MeshBasicMaterial).color.set(0xff0000); // Change color to red on hover
+          dot.material.opacity = 0.4 + influence * 0.3;
+          dot.material.color.set(0xff0000); // Change color to red on hover
         } else {
-          dot.position.lerp((dot as any).originalPosition, 0.1);
+          dot.position.lerp(originalPosition, 0.1);
           dot.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1);
-          (dot.material as THREE.Material).opacity = lerp((dot.material as THREE.Material).opacity, 0.4, 0.1);
-          (dot.material as THREE.MeshBasicMaterial).color.set(0x424242); // Default color as brown
+          dot.material.opacity = lerp(dot.material.opacity, 0.4, 0.1);
+          dot.material.color.set(0x424242); // Default color as brown
         }
       });
 

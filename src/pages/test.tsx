@@ -1,4 +1,3 @@
-// pages/test.tsx
 import React, { useEffect, useState } from "react";
 
 const TestPage: React.FC = () => {
@@ -55,7 +54,7 @@ const TestPage: React.FC = () => {
     return () => {
       window.removeEventListener("wheel", handleScroll);
     };
-  }, [currentSection]);
+  }, [currentSection, handleScroll]); // Adding 'handleScroll' to dependencies
 
   return (
     <div className="text-white bg-black overflow-hidden">

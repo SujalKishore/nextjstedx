@@ -1,4 +1,4 @@
-import React, { useState, useEffect, startTransition } from "react";
+import React, { useEffect } from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import EventCard from "@/components/EventCard/EventCard";
@@ -126,4 +126,3 @@ const PreEventsPage: React.FC = () => {
 };
 
 export default PreEventsPage;
-
