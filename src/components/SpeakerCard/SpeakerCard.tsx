@@ -7,14 +7,13 @@ interface SpeakerCardProps {
   title: string;
   image: string;
   longDescription: string;
-  additionalStyles?: string; 
+  additionalStyles?: string;
 }
 const SpeakerCard: React.FC<SpeakerCardProps> = ({
   name,
   title,
   image,
   longDescription,
-  additionalStyles,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpand = () => setIsExpanded(!isExpanded);
