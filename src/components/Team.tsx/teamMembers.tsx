@@ -246,10 +246,10 @@ export default function AboutPage() {
                   How much time commitment is required?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  Time commitment varies by role and event phase. Generally,
+                  {`Time commitment varies by role and event phase. Generally,
                   team members commit 5-10 hours per week, with increased
                   involvement closer to the event date. We value flexibility and
-                  work with each team member's schedule.
+                  work with each team member's schedule.`}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">

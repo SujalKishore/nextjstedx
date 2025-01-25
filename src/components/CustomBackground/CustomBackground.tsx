@@ -7,6 +7,9 @@ const CustomBackground: React.FC = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
+    // Store the ref value in a local variable
+    const container = containerRef.current;
+
     // Scene setup
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x000000);
@@ -22,7 +25,7 @@ const CustomBackground: React.FC = () => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
-    containerRef.current.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
     // Mouse tracking
     const mouse = new THREE.Vector2();
@@ -109,7 +112,7 @@ const CustomBackground: React.FC = () => {
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onWindowResize);
-      containerRef.current?.removeChild(renderer.domElement);
+      container.removeChild(renderer.domElement); // Use local variable here
     };
   }, []);
 
