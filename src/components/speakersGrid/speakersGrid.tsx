@@ -72,6 +72,20 @@ const speakers = [
     longDescription:
       "Alex Brown is a social impact entrepreneur who is dedicated to creating positive change in the world through innovative business solutions. His ventures focus on"
   },
+  {
+    name: "Sophia Lee",
+    title: "HealthTech Innovator",
+    image: "/speakers/sophia-lee.jpg",
+    longDescription:
+      "Sophia Lee is a trailblazing innovator in the field of HealthTech, leveraging cutting-edge technologies to revolutionize healthcare delivery and improve patient outcomes. Her work spans a wide range of applications, from telemedicine and wearable health devices to AI-driven diagnostics and personalized treatment plans. Sophia's vision for the future of healthcare combines a deep understanding of medical science with a passion for innovation, resulting in transformative solutions that are shaping the future of medicine. Her commitment to making healthcare more accessible, affordable, and effective has earned her recognition as a leader in the HealthTech industry.",
+  },
+  {
+    name: "Alex Brown",
+    title: "Social Impact Entrepreneur",
+    image: "/speakers/alex-brown.jpg",
+    longDescription:
+      "Alex Brown is a social impact entrepreneur who is dedicated to creating positive change in the world through innovative business solutions. His ventures focus on"
+  },
 ];
 
 const CardSpeaker: React.FC = () => {
