@@ -4,12 +4,9 @@ import { useInView } from "react-intersection-observer";
 import EventCard from "@/components/EventCard/EventCard";
 import AnimatedBackground from "@/components/AnimatedBackground/AnimatedBackground";
 import MorphingText from "@/components/ui/morphing-text";
-const texts = [
-  "Adventure Day",
-  "Beyond the Frame",
-  "Trick or Terror",
-  "S.Y.M.P",
-];
+
+const texts = ["Adventure Day", "Beyond the Frame", "Trick or Terror", "S.Y.M.P"];
+
 interface Event {
   id: string;
   title: string;
@@ -20,6 +17,7 @@ interface Event {
   images: string[];
   status: "upcoming" | "past";
 }
+
 const events: Event[] = [
   {
     id: "Panel Reveal",
@@ -27,7 +25,7 @@ const events: Event[] = [
     date: "2025-01-29",
     time: "18:00 - 19:00",
     location: "Auditorium",
-    description: "lorem  ipsum dolor sit amet, consectetur adipis",
+    description: "Lorem ipsum dolor sit amet, consectetur adipis",
     images: ["/pre-events/workshop1.jpg", "/pre-events/workshop2.jpg"],
     status: "upcoming",
   },
@@ -53,34 +51,23 @@ const events: Event[] = [
     images: ["/pre-events/salon1.jpg", "/pre-events/salon3.jpg"],
     status: "past",
   },
-  {
-    id: "event3",
-    title: "TEDx AI and the Future of Work",
-    date: "2023-09-05",
-    time: "18:30 - 21:00",
-    location: "Tech Hub Conference Center",
-    description:
-      "Explore the impact of artificial intelligence on the future of work. Engage in thought-provoking discussions with experts in AI and workforce development.",
-    images: ["/pre-events/salon1.jpg", "/pre-events/salon3.jpg"],
-    status: "past",
-  },
 ];
+
 const PreEventsPage: React.FC = () => {
-  const [activeSection, setActiveSection] = useState("upcoming");
   const { scrollY } = useViewportScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 100]);
   const [upcomingRef, upcomingInView] = useInView({ threshold: 0.5 });
   const [pastRef, pastInView] = useInView({ threshold: 0.5 });
+
   useEffect(() => {
-    if (upcomingInView) {
-      startTransition(() => setActiveSection("upcoming"));
-    }
-    if (pastInView) {
-      startTransition(() => setActiveSection("past"));
+    if (upcomingInView || pastInView) {
+      // Handle any side effect for section changes, if needed
     }
   }, [upcomingInView, pastInView]);
+
   const upcomingEvents = events.filter((event) => event.status === "upcoming");
   const pastEvents = events.filter((event) => event.status === "past");
+
   return (
     <div className="min-h-screen bg-black text-white relative">
       <section className="relative h-[50vh] md:h-[100vh] overflow-hidden flex flex-col items-center justify-center z-20 text-center">
@@ -106,7 +93,7 @@ const PreEventsPage: React.FC = () => {
             Pre<span className="text-red-600"> Events</span>
           </motion.h1>
           <motion.div
-            className=" text-white "
+            className="text-white"
             style={{ marginTop: "20px" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -137,4 +124,5 @@ const PreEventsPage: React.FC = () => {
     </div>
   );
 };
+
 export default PreEventsPage;

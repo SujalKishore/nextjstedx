@@ -1,12 +1,12 @@
 "use client";
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { YearSelector } from "@/components/YearSelector/YearSelector";
 import { ThemeImage } from "@/components/ThemeImage/ThemeImage";
 import { Description } from "@/components/desc/desc";
 import { SpeakersList } from "@/components/SpeakersList/SpeakersList";
 import TopBanner from "@/components/XHero/XHero";
-import dynamic from "next/dynamic";
+//import dynamic from "next/dynamic";
 import Carousel from "@/components/Carousel/Carousel";
 const yearContent: {
   [key: number]: {
@@ -320,30 +320,15 @@ const yearContent: {
     gallery: ["/bulletin/symp1.png", "/gallery/bulletin/symp2.png", ""],
   },
 };
-const GalleryApp = dynamic(
-  () => import("@/components/App").then((mod) => mod.default),
-  {
-    ssr: false,
-  }
-);
 export default function RewindPage() {
   const [selectedYear, setSelectedYear] = useState<number>(2024);
   const [isLoading, setIsLoading] = useState(true);
-  const [isGalleryFocused, setIsGalleryFocused] = useState(false);
+
   useEffect(() => {
     setIsLoading(true);
     setTimeout(() => setIsLoading(false), 500);
   }, [selectedYear]);
-  useEffect(() => {
-    if (isGalleryFocused) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isGalleryFocused]);
+
   const content = yearContent[selectedYear];
   if (!content) {
     return (
@@ -352,10 +337,11 @@ export default function RewindPage() {
       </main>
     );
   }
+
   return (
     <main className="min-h-screen bg-black text-white">
       <TopBanner />
-      <section className="bg-[#1A0000] py-4  top-0 z-20">
+      <section className="bg-[#1A0000] py-4 top-0 z-20">
         <div className="container mx-auto">
           <YearSelector
             onSelectYear={setSelectedYear}
