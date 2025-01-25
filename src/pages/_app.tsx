@@ -25,7 +25,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">
-      {/* Conditionally render the mobile or desktop navbar */}
       {isMobile ? <HeaderMob /> : <Header />}
 
       <Component {...pageProps} />
