@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 p-8 shadow-lg text-white">
+    <footer className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 p-8 shadow-lg text-white">
       <div className="container mx-auto space-y-12">
         {/* Top Section */}
         <div className="flex flex-wrap justify-between items-start space-y-8 md:space-y-0">
