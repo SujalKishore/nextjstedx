@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import DigitalWalls from "@/components/DigitalWalls/DigitalWalls";
 import { BulletinBoard } from "@/components/BulletinBoard/BulletinBoard";
+import ParallaxSlider from "@/components/ParallaxSlider/ParallaxSlider";
 
 const recentEvents = [
   {
@@ -172,8 +173,11 @@ export default function Hero() {
           </motion.div>
         ))}
       </div>
-
-      <DigitalWalls />
+      {/* 
+      <DigitalWalls /> */}
+      <main className="relative w-full h-screen">
+        <ParallaxSlider />
+      </main>
     </main>
   );
 }
