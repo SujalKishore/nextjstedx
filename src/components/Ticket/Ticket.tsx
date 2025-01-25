@@ -1,33 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import { Mona_Sans } from 'next/font/google';
-import gsap from 'gsap';
-import './fontArray';
-import fontArray from './fontArray';
-import WaveSection from './hero/Wavesection';
+import React, { useState, useEffect } from "react";
+import { Mona_Sans } from "next/font/google";
+import fontArray from "./fontArray";
+import WaveSection from "./hero/Wavesection";
 
 const mona = Mona_Sans({
-  subsets:['latin']
-})
+  subsets: ["latin"],
+});
 
 const Ticket = () => {
-  const [fonts, setFonts] = useState(mona)
+  const [fonts, setFonts] = useState(mona);
   useEffect(() => {
     const applyFonts = async () => {
-      let delay = 150; // Initial delay in milliseconds
-      const maxDelay = 200; // Maximum delay
-      const increment = 20; // Increment value for each step
-  
+      let delay = 150;
+      const maxDelay = 200;
+      const increment = 20;
       for (const font of fontArray) {
         setFonts(font);
-        await new Promise(resolve => setTimeout(resolve, delay));
-        delay = Math.min(delay + increment, maxDelay); // Gradually increase the delay
+        await new Promise((resolve) => setTimeout(resolve, delay));
+        delay = Math.min(delay + increment, maxDelay);
       }
     };
-  
+
     applyFonts();
-  }, [fontArray]);  
-  
+  }, [fontArray]);
+
   return (
     <div className="everything">
       <div className="hero h-screen flex items-center justify-center">

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { YearSelector } from "@/components/YearSelector/YearSelector";
 import { ThemeImage } from "@/components/ThemeImage/ThemeImage";

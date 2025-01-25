@@ -5,6 +5,7 @@ import {
   InstagramIcon,
   LinkedinIcon,
 } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between items-start space-y-8 md:space-y-0">
           {/* Logo */}
           <div className="flex flex-col items-start w-full md:w-auto">
-            <img
+            <Image
               src="/images/logo-rights.png"
               alt="TEDx Logo"
               className="w-auto h-12"
