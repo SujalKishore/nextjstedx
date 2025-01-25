@@ -1,155 +1,118 @@
 import React, { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 const CustomBackground: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    if (!containerRef.current) return;
 
-    if (!canvas) return;
+    // Scene setup
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000000);
 
-    const context = canvas.getContext("2d");
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    camera.position.z = 5;
 
-    if (!context) return;
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
+    containerRef.current.appendChild(renderer.domElement);
 
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth * 1.75;
-      canvas.height = window.innerHeight * 1.75;
-      context.fillStyle = "#ffffff";
-      context.strokeStyle = "#ffffff";
-      context.lineWidth = 0.4;
+    // Mouse tracking
+    const mouse = new THREE.Vector2();
+    const raycaster = new THREE.Raycaster();
+    const mouseWorld = new THREE.Vector3();
+
+    const onMouseMove = (event: MouseEvent) => {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      raycaster.setFromCamera(mouse, camera);
+      raycaster.ray.intersectPlane(
+        new THREE.Plane(new THREE.Vector3(0, 0, 1), 0),
+        mouseWorld
+      );
     };
+    window.addEventListener("mousemove", onMouseMove);
 
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
+    // Create smaller dots with more density
+    const dots: THREE.Mesh[] = [];
+    const geometry = new THREE.CircleGeometry(0.015, 16); // Reduced size of dots
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.4, // Slightly higher opacity
+    });
 
-    const dots = {
-      nb: 0.3 * Math.max(canvas.width, canvas.height),
-      distance: Math.min(0.1 * Math.min(canvas.width, canvas.height), 75),
-      array: [] as Dot[],
-    };
-
-    const mousePosition = { x: -1000, y: -1000 }; // Initially out of bounds to avoid immediate connections
-
-    class Dot {
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      radius: number;
-
-      constructor() {
-        if (!canvas) throw new Error("Canvas is not initialized");
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (-0.5 + Math.random()) * 2;
-        this.vy = (-0.5 + Math.random()) * 2;
-        this.radius = Math.random() * 2.25;
-      }
-
-      create() {
-        if (!context) return;
-        context.beginPath();
-        context.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        context.fill();
-      }
-
-      move() {
-        if (!canvas) return;
-        if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
-        if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-
-        this.x += this.vx;
-        this.y += this.vy;
-      }
-
-      drawLines() {
-        // Only connect dots that are within the mouse hover distance
-        for (let i = 0; i < dots.array.length; i++) {
-          const dot = dots.array[i];
-          const xDist = this.x - dot.x;
-          const yDist = this.y - dot.y;
-
-          const distance = Math.sqrt(xDist ** 2 + yDist ** 2);
-          const mouseDistX = mousePosition.x - this.x;
-          const mouseDistY = mousePosition.y - this.y;
-          const mouseDistance = Math.sqrt(mouseDistX ** 2 + mouseDistY ** 2);
-
-          // Only draw lines if the mouse is near
-          if (distance < dots.distance && mouseDistance < dots.distance) {
-            if (context) {
-              context.beginPath();
-              context.moveTo(this.x, this.y);
-              context.lineTo(dot.x, dot.y);
-              context.stroke();
-            }
-          }
-        }
+    // Increased density of dots by reducing the spacing
+    for (let x = -10; x <= 10; x += 0.3) {
+      for (let y = -5; y <= 5; y += 0.3) {
+        const dot = new THREE.Mesh(geometry, material.clone());
+        dot.position.set(x, y, 0);
+        (dot as any).originalPosition = dot.position.clone();
+        scene.add(dot);
+        dots.push(dot);
       }
     }
 
-    const createDots = () => {
-      context.clearRect(0, 0, canvas.width, canvas.height);
+    // Animation loop
+    const animate = () => {
+      requestAnimationFrame(animate);
 
-      if (dots.array.length < dots.nb) {
-        for (let i = 0; i < dots.nb; i++) {
-          dots.array.push(new Dot());
+      dots.forEach((dot) => {
+        const distanceToMouse = (dot as any).originalPosition.distanceTo(mouseWorld);
+        const influenceRadius = 1.5; // Increased influence radius
+        const maxAttraction = 0.6; // Slightly stronger attraction strength
+
+        if (distanceToMouse < influenceRadius) {
+          const influence = 1 - distanceToMouse / influenceRadius;
+          const attraction = new THREE.Vector3()
+            .subVectors(mouseWorld, (dot as any).originalPosition)
+            .multiplyScalar(influence * influence * maxAttraction);
+
+          dot.position.lerp((dot as any).originalPosition.clone().add(attraction), 0.15);
+
+          const scale = 0.8 + influence * 1.5; // Slightly reduced scaling effect
+          dot.scale.setScalar(scale);
+          (dot.material as THREE.Material).opacity = 0.4 + influence * 0.3;
+          (dot.material as THREE.MeshBasicMaterial).color.set(0xff0000); // Change color to red on hover
+        } else {
+          dot.position.lerp((dot as any).originalPosition, 0.1);
+          dot.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1);
+          (dot.material as THREE.Material).opacity = lerp((dot.material as THREE.Material).opacity, 0.4, 0.1);
+          (dot.material as THREE.MeshBasicMaterial).color.set(0x424242); // Default color as brown
         }
-      }
+      });
 
-      for (let i = 0; i < dots.array.length; i++) {
-        const dot = dots.array[i];
-        dot.create();
-        dot.move();
-        dot.drawLines();
-      }
-
-      requestAnimationFrame(createDots);
+      renderer.render(scene, camera);
     };
 
-    canvas.addEventListener("mousemove", (e) => {
-      mousePosition.x = e.pageX * 1.75;
-      mousePosition.y = e.pageY * 1.75;
-    });
+    const lerp = (start: number, end: number, amt: number) => {
+      return (1 - amt) * start + amt * end;
+    };
 
-    canvas.addEventListener("mouseleave", () => {
-      // Reset mouse position when it leaves the canvas
-      mousePosition.x = -1000;
-      mousePosition.y = -1000;
-    });
+    const onWindowResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
 
-    createDots();
+    window.addEventListener("resize", onWindowResize);
+    animate();
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", onWindowResize);
+      containerRef.current?.removeChild(renderer.domElement);
     };
   }, []);
 
-  return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100vh",
-        overflow: "hidden",
-        background: "linear-gradient(to bottom, #0a1621, #104782)",
-      }}
-    >
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 15,
-          pointerEvents: "none",
-          opacity: 0.55,
-        }}
-      />
-    </div>
-  );
+  return <div ref={containerRef} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 1, pointerEvents: "none" }} />;
 };
 
 export default CustomBackground;
