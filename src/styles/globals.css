@@ -32,6 +32,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
 @layer utilities {
   .perspective-35 {
     perspective: calc(1vw + 1vh) * 35;
@@ -141,4 +142,32 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.experience {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.scrollTarget {
+  position: absolute;
+  height: 1000vh;
+  width: 100px;
+  top: 0;
+  z-index: 0;
+}
+
+.vignette-radial:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: radial-gradient(circle, transparent 60%, black 150%);
+  pointer-events: none;
 }
