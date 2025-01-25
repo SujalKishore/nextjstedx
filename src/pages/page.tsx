@@ -143,7 +143,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Section Links */}
       <div className="h-2/5 flex flex-col md:flex-row">
         {["Tickets", "About", "Speakers"].map((title, index) => (
           <motion.div
