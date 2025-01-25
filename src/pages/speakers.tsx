@@ -1,66 +1,27 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
+import CustomBackground from "@/components/CustomBackground/CustomBackground"; // Import your CustomBackground component
 import CardSpeaker from "@/components/speakersGrid/speakersGrid";
+
 const SpeakersPage: React.FC = () => {
-  const [vantaEffect, setVantaEffect] = useState<any>(null);
-  const vantaRef = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    let VANTA: any;
-    (async () => {
-      if (!vantaEffect && typeof window !== "undefined") {
-        try {
-          const THREE = await import("three");
-          if (typeof window !== "undefined") {
-            (window as any).THREE = THREE;
-          }
-          //@ts-ignore
-          const module = await import("vanta/src/vanta.fog");
-          VANTA = module.default;
-          setVantaEffect(
-            VANTA({
-              el: vantaRef.current,
-              mouseControls: true,
-              touchControls: true,
-              gyroControls: false,
-              minHeight: 200.0,
-              minWidth: 200.0,
-              highlightColor: 0xff0000,
-              midtoneColor: 0x4b160e,
-              lowlightColor: 0x660808,
-              baseColor: 0x552727,
-            })
-          );
-        } catch (error) {
-          console.error("Error loading Vanta.js or Three.js:", error);
-        }
-      }
-    })();
-    return () => {
-      if (vantaEffect) {
-        vantaEffect.destroy();
-        setVantaEffect(null);
-      }
-    };
-  }, [vantaEffect]);
   return (
     <div style={{ minHeight: "100vh", position: "relative" }}>
-      {/* Vanta.js Background */}
+      {/* Custom Animated Canvas Background */}
+      <CustomBackground /> {/* Use the CustomBackground component here */}
+
+      {/* Foreground Content */}
       <div
-        className="md:min-h-[80vh] min-h-[70vh] align-items-center flex flex-col"
-        ref={vantaRef}
+        className="relative z-10 flex flex-col items-center justify-center"
         style={{
-          position: "relative",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          padding: "2rem",
+          perspective: "300px",
+          background:
+            "linear-gradient(to bottom, rgba(10, 22, 33, 1) 0%, rgba(16, 71, 130, 1) 100%)",
         }}
       >
         <h1
           className="md:text-7xl text-5xl font-bold mb-4 text-white mt-14 md:mt-0"
           style={{
             textShadow: "2px 2px 10px rgba(0, 0, 0, 0.8)",
-            marginBottom: "1rem",
           }}
         >
           Our Esteemed Speakers
@@ -78,15 +39,7 @@ const SpeakersPage: React.FC = () => {
       </div>
 
       {/* Black Region with Gradient */}
-      <div
-        className="relative z-10 bg-black"
-        style={{
-          background:
-            "linear-gradient(360deg, rgba(50, 10, 10, 1), rgba(0, 0, 0, 1))",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      <div className="relative z-10 bg-gradient-to-br from-red-900 via-black to-red-900">
         <div className="relative z-10">
           <CardSpeaker />
         </div>
@@ -94,4 +47,5 @@ const SpeakersPage: React.FC = () => {
     </div>
   );
 };
+
 export default dynamic(() => Promise.resolve(SpeakersPage), { ssr: false });
