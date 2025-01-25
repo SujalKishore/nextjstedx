@@ -1,12 +1,11 @@
 "use client";
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { YearSelector } from "@/components/YearSelector/YearSelector";
 import { ThemeImage } from "@/components/ThemeImage/ThemeImage";
 import { Description } from "@/components/desc/desc";
 import { SpeakersList } from "@/components/SpeakersList/SpeakersList";
 import TopBanner from "@/components/XHero/XHero";
-import dynamic from "next/dynamic";
 import Carousel from "@/components/Carousel/Carousel";
 const yearContent: {
   [key: number]: {
@@ -320,16 +319,11 @@ const yearContent: {
     gallery: ["/bulletin/symp1.png", "/gallery/bulletin/symp2.png", ""],
   },
 };
-const GalleryApp = dynamic(
-  () => import("@/components/App").then((mod) => mod.default),
-  {
-    ssr: false,
-  }
-);
+
 export default function RewindPage() {
   const [selectedYear, setSelectedYear] = useState<number>(2024);
   const [isLoading, setIsLoading] = useState(true);
-  const [isGalleryFocused, setIsGalleryFocused] = useState(false);
+  const [isGalleryFocused] = useState(false);
   useEffect(() => {
     setIsLoading(true);
     setTimeout(() => setIsLoading(false), 500);

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 const DigitalWalls: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
@@ -11,7 +12,7 @@ const DigitalWalls: React.FC = () => {
 
     // GSAP Animations
     const sections = document.querySelectorAll(".animated-section");
-    sections.forEach((section, index) => {
+    sections.forEach((section) => {
       gsap.fromTo(
         section,
         { autoAlpha: 0, y: 100 },
@@ -81,7 +82,7 @@ const DigitalWalls: React.FC = () => {
                 className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300"
                 style={getParallaxStyle(0.05)}
               >
-                <img
+                <Image
                   src="https://source.unsplash.com/600x400/?nature"
                   alt="Nature"
                   className="rounded h-full object-cover w-full"
@@ -126,7 +127,7 @@ const DigitalWalls: React.FC = () => {
                 className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300"
                 style={getParallaxStyle(0.05)}
               >
-                <img
+                <Image
                   src="https://source.unsplash.com/600x400/?ocean"
                   alt="Ocean"
                   className="rounded h-full object-cover w-full"
@@ -171,7 +172,7 @@ const DigitalWalls: React.FC = () => {
                 className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300"
                 style={getParallaxStyle(0.05)}
               >
-                <img
+                <Image
                   src="https://source.unsplash.com/600x400/?cityscape"
                   alt="Cityscape"
                   className="rounded h-full object-cover w-full"
