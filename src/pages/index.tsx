@@ -2,10 +2,11 @@
 import { BulletinBoard } from "@/components/BulletinBoard/BulletinBoard";
 import DigitalWalls from "@/components/DigitalWalls/DigitalWalls";
 import { useState, useEffect } from "react";
-import ThreeScene from "@/components/ThreeScene/threescene";
+
 interface CountdownProps {
   targetDate: Date;
 }
+
 const recentEvents = [
   {
     title: "S.Y.M.P",
@@ -23,6 +24,7 @@ const nextEvent = {
   date: "2025-01-29",
   images: ["/path/to/image5.jpg", "/path/to/image6.jpg"],
 };
+
 const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -30,6 +32,7 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
     minutes: 0,
     seconds: 0,
   });
+
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
@@ -41,13 +44,16 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
       setTimeLeft({ days, hours, minutes, seconds });
+
       if (difference < 0) {
         clearInterval(interval);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     }, 1000);
+
     return () => clearInterval(interval);
   }, [targetDate]);
+
   return (
     <div className="grid grid-cols-2 gap-6 md:gap-8 justify-center items-center">
       {Object.entries(timeLeft).map(([unit, value]) => (
@@ -66,8 +72,11 @@ const CountdownTimer: React.FC<CountdownProps> = ({ targetDate }) => {
     </div>
   );
 };
+
 export default function Hero() {
+  const [isNavActive, setIsNavActive] = useState(false); // State to track navbar visibility
   const eventDate = new Date("2025-01-01T00:00:00");
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-black">
        <div
@@ -80,7 +89,9 @@ export default function Hero() {
         }}
       />
       <canvas></canvas>
+
       <BulletinBoard recentEvents={recentEvents} nextEvent={nextEvent} />
+
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 min-h-screen">
         <div className="flex flex-col justify-center items-center p-12 bg-gradient-to-br from-black/95 to-black/90 backdrop-blur-sm">
           <div className="max-w-xl mx-auto text-center space-y-12">
