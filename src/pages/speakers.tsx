@@ -19,9 +19,7 @@ const SpeakersPage: React.FC = () => {
         <CustomBackground />
 
         {/* Foreground Text */}
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center z-10"
-        >
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
           <h1
             className="md:text-7xl text-5xl font-bold mb-4 text-white mt-14 md:mt-0"
             style={{
@@ -37,8 +35,8 @@ const SpeakersPage: React.FC = () => {
               textShadow: "1px 1px 5px rgba(0, 0, 0, 0.5)",
             }}
           >
-            Meet the inspiring thought leaders and innovators from various fields
-            who are set to share their valuable insights and experiences.
+            Meet the inspiring thought leaders and innovators from various
+            fields who are set to share their valuable insights and experiences.
           </p>
         </div>
       </div>
