@@ -52,11 +52,15 @@ export default function Header() {
         >
           <div className="flex items-center">
             <Link href="/">
-              <Image
-                src="/images/logo-rights.png"
-                alt="TedX Logo"
-                className="w-auto h-8 cursor-pointer transition-transform duration-500 hover:scale-110"
-              />
+              <div className="w-150 h-150">
+                <Image
+                  src="/images/logo-rights.png"
+                  alt="TedX Logo"
+                  width={190}
+                  height={190}
+                  className="cursor-pointer transition-transform duration-500 hover:scale-110"
+                />
+              </div>
             </Link>
           </div>
 
