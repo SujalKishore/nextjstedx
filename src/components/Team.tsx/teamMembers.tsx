@@ -276,11 +276,11 @@ export default function AboutPage() {
               </AccordionItem>
             </Accordion>
           </div>
-          <div className="text-center mt-12 z-10">
+          {/* <div className="text-center mt-12 z-10">
             <Button className="bg-[#FF3A3A] hover:bg-[#FF3A3A]/90 text-white text-lg px-8 py-3">
               Contact Us
             </Button>
-          </div>
+          </div> */}
         </div>
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1920')] bg-cover bg-center opacity-10 mix-blend-overlay z-0" />
       </section>

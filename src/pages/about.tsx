@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 const About: React.FC = () => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.setAttribute("data-who", "💎 Made with naker.io 💎");
+    // //
+    // // script.setAttribute("data-who", "💎 Made with naker.io 💎");
     script.src = "https://d23jutsnau9x47.cloudfront.net/back/v1.0.9/viewer.js";
     script.dataset.option = JSON.stringify({
       environment: {
@@ -28,10 +29,10 @@ const About: React.FC = () => {
       },
       waterMark: false,
     });
-    document.getElementById("naker-container")?.appendChild(script);
-    return () => {
-      document.getElementById("naker-container")?.removeChild(script);
-    };
+     document.getElementById("naker-container")?.appendChild(script);
+     return () => {
+       document.getElementById("naker-container")?.removeChild(script);
+     };
   }, []);
   return (
     <div className="bg-black text-white min-h-screen">

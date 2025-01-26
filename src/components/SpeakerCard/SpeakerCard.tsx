@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { TeamMemberX } from "../TeamMemberX/TeamMemberX";
+
 interface SpeakerCardProps {
   name: string;
   title: string;
@@ -9,6 +10,7 @@ interface SpeakerCardProps {
   longDescription: string;
   additionalStyles?: string;
 }
+
 const SpeakerCard: React.FC<SpeakerCardProps> = ({
   name,
   title,
@@ -17,6 +19,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpand = () => setIsExpanded(!isExpanded);
+
   return (
     <div className="relative">
       <motion.div
@@ -57,6 +60,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
         </div>
         <div className="absolute bottom-0 left-0 w-full h-1 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-10" />
       </motion.div>
+
       <AnimatePresence>
         {isExpanded && (
           <motion.div
@@ -68,26 +72,61 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
             onClick={toggleExpand}
           >
             <div className="relative w-full h-[85%] max-w-[900px]">
-              <Image
-                src={image || "/placeholder.svg"}
-                alt={name}
-                height={900}
-                width={900}
-                objectFit="cover"
-                objectPosition="center"
-                quality={100}
-              />
-              <div className="absolute inset-0 z-[-10] transform scale-x-[1.75] scale-y-[1.75]">
-                <TeamMemberX className="text-red-600" />
+              {/* Laptop view */}
+              <div className="hidden md:block relative w-full h-full">
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={image || "/placeholder.svg"}
+                    alt={name}
+                    height={900}
+                    width={900}
+                    objectFit="cover"
+                    objectPosition="center"
+                    quality={100}
+                  />
+                </div>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10">
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h2 className="text-3xl md:text-6xl font-bold mb-2">{name}</h2>
+                    <p className="text-xl md:text-2xl text-red-600 mb-4">{title}</p>
+                    <p className="text-sm md:text-lg leading-relaxed max-w-6xl">
+                      {longDescription}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <h2 className="text-6xl font-bold mb-2">{name}</h2>
-                  <p className="text-2xl text-red-600 mb-4">{title}</p>
-                  <p className="text-lg leading-relaxed max-w-6xl">
+
+              {/* Mobile view */}
+              <div className="md:hidden flex flex-col w-full h-full">
+                <div className="relative w-full h-[60%]">
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={image || "/placeholder.svg"}
+                      alt={name}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                      quality={100}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <h2 className="text-3xl font-bold mb-2">{name}</h2>
+                      <p className="text-xl text-red-600 mb-4">{title}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full h-[40%] bg-black p-4 overflow-y-auto">
+                  <p className="text-sm leading-relaxed text-white">
                     {longDescription}
                   </p>
                 </div>
+              </div>
+
+              {/* Team Member X in the background */}
+              <div className="absolute inset-0 z-[-10] transform scale-x-[1.75] scale-y-[1.75]">
+                <TeamMemberX className="text-red-600" />
               </div>
             </div>
           </motion.div>
@@ -96,4 +135,5 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
     </div>
   );
 };
+
 export default SpeakerCard;
