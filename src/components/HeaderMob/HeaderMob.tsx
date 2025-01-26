@@ -48,7 +48,7 @@ export default function MobileNavbar() {
           {isOpen ? (
             <X size={30} />
           ) : (
-            <div className="relative w-[250px] h-[250px] overflow-hidden rounded-full flex items-center justify-center scale-150">
+            <div className="relative w-[250px] h-[50px] overflow-hidden rounded-full flex items-center justify-center scale-150">
               <Image
                 src="/images/color_hourglass.png"
                 alt="Menu Icon"
