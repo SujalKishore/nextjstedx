@@ -20,7 +20,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
   return (
     <div className="relative">
       <motion.div
-        className="relative group overflow-hidden rounded-xl bg-gradient-to-br from-red-800/20 via-black to-gray-900 shadow-lg cursor-pointer h-96 w-[90%] transform transition-transform"
+        className="relative group overflow-hidden rounded-xl bg-gradient-to-br from-red-800/20 via-black to-gray-900 shadow-lg cursor-pointer h-96 w-[100%] transform transition-transform"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.2 }}
         onClick={toggleExpand}

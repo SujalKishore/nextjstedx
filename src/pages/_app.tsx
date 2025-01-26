@@ -6,7 +6,7 @@ import Header from "@/components/Header/Header";
 import HeaderMob from "@/components/HeaderMob/HeaderMob";
 import { useEffect, useState } from "react";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -23,12 +23,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, []);
 
+  const showHeaderFooter = router.pathname !== "/";
+
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">
-      {isMobile ? <HeaderMob /> : <Header />}
-
+      {showHeaderFooter && (isMobile ? <HeaderMob /> : <Header />)}
       <Component {...pageProps} />
-      <Footer />
+      {showHeaderFooter && <Footer />}
     </ThemeProvider>
   );
 }
