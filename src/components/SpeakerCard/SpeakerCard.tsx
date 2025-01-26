@@ -135,5 +135,4 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
     </div>
   );
 };
-
 export default SpeakerCard;
