@@ -35,7 +35,7 @@ export default function Hero() {
           </div>
           <div className="space-y-4">
             <h3 className="text-2xl md:text-4xl font-bold text-white">
-              We are under construction. Stay tuned for something amazing!
+              We will be back. Stay tuned for something amazing!
             </h3>
           </div>
         </div>
