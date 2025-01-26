@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    checkScreenSize(); // Initial check
+    checkScreenSize();
 
     window.addEventListener("resize", checkScreenSize);
 
