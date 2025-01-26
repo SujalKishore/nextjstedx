@@ -23,7 +23,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     };
   }, []);
 
-  const showHeaderFooter = router.pathname !== "/";
+  const showHeaderFooter =
+    router.pathname !== "/" && router.pathname !== "/page";
 
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">

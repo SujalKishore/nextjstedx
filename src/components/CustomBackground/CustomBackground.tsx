@@ -5,7 +5,7 @@ const CustomBackground: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current) return () => {};
 
     // Store the ref value in a local variable
     const container = containerRef.current;
@@ -44,7 +44,8 @@ const CustomBackground: React.FC = () => {
     window.addEventListener("mousemove", onMouseMove);
 
     // Create smaller dots with more density
-    const dots: THREE.Mesh<THREE.CircleGeometry, THREE.MeshBasicMaterial>[] = [];
+    const dots: THREE.Mesh<THREE.CircleGeometry, THREE.MeshBasicMaterial>[] =
+      [];
     const geometry = new THREE.CircleGeometry(0.015, 16); // Reduced size of dots
     const material = new THREE.MeshBasicMaterial({
       color: 0xffffff,
@@ -116,7 +117,20 @@ const CustomBackground: React.FC = () => {
     };
   }, []);
 
-  return <div ref={containerRef} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 1, pointerEvents: "none" }} />;
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 1,
+        pointerEvents: "none",
+      }}
+    />
+  );
 };
 
 export default CustomBackground;

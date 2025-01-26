@@ -11,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
 const teamMembers = [
   {
     name: "Shreeya Singh",
@@ -73,6 +74,7 @@ const teamMembers = [
     linkedin: "https://linkedin.com/in/frankharris",
   },
 ];
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -116,6 +118,16 @@ export default function AboutPage() {
           <Card className="bg-black/50 border border-[#FF3A3A]/20 overflow-hidden rounded-lg">
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="relative w-full h-80 rounded-lg overflow-hidden md:order-2">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 rounded-lg" />
+                  <Image
+                    src="/images/theme.jpeg"
+                    alt="Event Theme"
+                    layout="fill"
+                    objectFit="cover"
+                    className="object-center w-full h-full z-0 filter brightness-90 rounded-lg"
+                  />
+                </div>
                 <div className="text-center md:text-left md:order-1">
                   <h3 className="text-3xl font-bold mb-4 text-[#FF3A3A]">
                     The Future of Innovation
@@ -130,16 +142,6 @@ export default function AboutPage() {
                   <Button className="bg-[#FF3A3A] hover:bg-[#FF3A3A]/90 text-white text-lg px-6 py-3">
                     Learn More
                   </Button>
-                </div>
-                <div className="relative w-full h-80 rounded-lg overflow-hidden md:order-2">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 rounded-lg" />
-                  <Image
-                    src="/images/theme.jpeg"
-                    alt="Event Theme"
-                    layout="fill"
-                    objectFit="cover"
-                    className="object-center w-full h-full z-0 filter brightness-90 rounded-lg"
-                  />
                 </div>
               </div>
             </CardContent>
@@ -200,7 +202,6 @@ export default function AboutPage() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1A0000] to-[#FF3A3A] opacity-50 z-0" />
         <div className="relative container mx-auto px-4 z-10">
-          {" "}
           <h2 className="text-4xl font-bold mb-12 text-center text-white">
             Frequently Asked <span className="text-[#FF3A3A]">Questions</span>
           </h2>
