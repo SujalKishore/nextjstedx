@@ -5,7 +5,7 @@ import Image from "next/image";
 
 // Placeholder components for the scrollable sections with the new layout
 const Component1 = () => (
-  <div className="w-full ml-auto overflow-y-scroll mb">
+  <div className="w-full ml-auto overflow-y-scroll">
     <main>
       {/* Vienna Section */}
       <section
@@ -43,7 +43,7 @@ const Component1 = () => (
 const Component2 = () => (
   <div className="w-full ml-auto overflow-y-scroll">
     <main>
-      {/* Vienna Section */}
+      {/* Lisbon Section */}
       <section
         id="lisbon"
         className="relative h-screen bg-cover bg-center"
@@ -116,6 +116,7 @@ export default function StickyScrollGallery() {
   const observerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
+    const refs = observerRefs.current; // Stable reference
     const sections = [
       {
         title: "Custom Title for Section 1",
@@ -142,41 +143,38 @@ export default function StickyScrollGallery() {
       );
     });
 
-    observerRefs.current.forEach((ref, index) => {
+    refs.forEach((ref, index) => {
       if (ref) intersectionObservers[index].observe(ref);
     });
 
     return () => {
-      observerRefs.current.forEach((ref, index) => {
+      refs.forEach((ref, index) => {
         if (ref) intersectionObservers[index].unobserve(ref);
       });
     };
   }, []);
 
+  const components = [Component1, Component2, Component3];
   return (
     <div className="flex h-screen">
       <div className="w-2/3 overflow-y-auto">
-        {[<Component1 />, <Component2 />, <Component3 />].map(
-          (Component, index) => (
-            <div
-              key={index}
-              ref={(el) => {
-                observerRefs.current[index] = el;
-              }}
-              className="h-screen flex items-center justify-center"
-            >
-              <div className="w-full max-w-16xl flex flex-col items-center justify-center space-y-10">
-                {Component}
-              </div>
+        {components.map((Component, index) => (
+          <div
+            key={`section-${index}`} // Proper key
+            ref={(el) => {
+              observerRefs.current[index] = el;
+            }}
+            className="h-screen flex items-center justify-center"
+          >
+            <div className="w-full max-w-16xl flex flex-col items-center justify-center space-y-10">
+              <Component />
             </div>
-          )
-        )}
+          </div>
+        ))}
       </div>
       <div className="w-1/3 sticky top-0 flex items-center justify-center bg-gray-100/70 p-10 text-black">
         <div className="max-w-md">
-          <h2 className="text-5xl font-bold mb-6">{`Section ${
-            activeIndex + 1
-          }: ${
+          <h2 className="text-5xl font-bold mb-6">{`Section ${activeIndex + 1}: ${
             [
               "Custom Title for Section 1",
               "Custom Title for Section 2",
