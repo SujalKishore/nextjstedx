@@ -9,7 +9,7 @@ const About: React.FC = () => {
     script.dataset.option = JSON.stringify({
       environment: {
         gradient: "horizontal",
-        sensitivity: 0.8,
+        sensitivity: 1,
         colorStart: [14, 1, 1, 1],
         colorEnd: [0, 0, 0, 1],
       },
