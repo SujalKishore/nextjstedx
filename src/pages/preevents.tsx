@@ -5,7 +5,12 @@ import EventCard from "@/components/EventCard/EventCard";
 import AnimatedBackground from "@/components/AnimatedBackground/AnimatedBackground";
 import MorphingText from "@/components/ui/morphing-text";
 
-const texts = ["Adventure Day", "Beyond the Frame", "Trick or Terror", "S.Y.M.P"];
+const texts = [
+  "Adventure Day",
+  "Beyond the Frame",
+  "Trick or Terror",
+  "S.Y.M.P",
+];
 
 interface Event {
   id: string;
@@ -26,7 +31,7 @@ const events: Event[] = [
     time: "18:00 - 19:00",
     location: "Auditorium",
     description: "Lorem ipsum dolor sit amet, consectetur adipis",
-    images: ["/pre-events/workshop1.jpg", "/pre-events/workshop2.jpg"],
+    images: ["/images/rewindhero.jpeg", "/images/rewindhero.jpeg"],
     status: "upcoming",
   },
   {
