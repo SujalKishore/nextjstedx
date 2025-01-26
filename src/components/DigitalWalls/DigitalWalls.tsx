@@ -1,188 +1,144 @@
 import React, { useEffect, useState } from "react";
-import gsap from "gsap";
 import Image from "next/image";
-const DigitalWalls: React.FC = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-  useEffect(() => {
-    // Add scroll listener
-    window.addEventListener("scroll", handleScroll);
 
-    // GSAP Animations
-    const sections = document.querySelectorAll(".animated-section");
+const DigitalWalls: React.FC = () => {
+  const [activeSection, setActiveSection] = useState("Vienna");
+
+  const sections = [
+    { id: "vienna", title: "Vienna", coordinates: "48.21°N, 16.36°E" },
+    { id: "lisbon", title: "Lisbon", coordinates: "38.72°N, 9.14°W" },
+    { id: "newyork", title: "New York", coordinates: "40.71°N, 74.01°W" },
+  ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
     sections.forEach((section) => {
-      gsap.fromTo(
-        section,
-        { autoAlpha: 0, y: 100 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top center",
-            end: "bottom center",
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
+      const element = document.getElementById(section.id);
+      if (element) observer.observe(element);
     });
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => observer.disconnect();
   }, []);
 
-  const getParallaxStyle = (offset: number) => ({
-    transform: `translateY(${scrollPosition * -offset}px)`,
-  });
-
   return (
-    <div className="text-white bg-black mt-96">
-      <main className="space-y-8">
-        {/* Vienna Section */}
-        <section
-          id="vienna"
-          className="relative min-h-screen mb-8 animated-section"
-        >
-          <header
-            className="relative h-[90vh] bg-cover bg-center"
+    <div className="flex h-screen">
+      <div className="w-2/5 bg-black text-white flex flex-col justify-start p-8 fixed top-0 h-screen overflow-y-scroll">
+        <div className="sticky top-0">
+          <h1 className="text-5xl font-bold mb-4 transition-opacity duration-500">
+            {sections.find((s) => s.id === activeSection)?.title}
+          </h1>
+          <p className="text-lg transition-opacity duration-500">
+            {sections.find((s) => s.id === activeSection)?.coordinates}
+          </p>
+        </div>
+      </div>
+
+      {/* Right Scrollable Section */}
+      <div className="w-3/5 ml-auto overflow-y-scroll">
+        <main>
+          {/* Vienna Section */}
+          <section
+            id="vienna"
+            className="relative h-screen bg-cover bg-center"
             style={{
               backgroundImage:
                 "url('https://lonelyplanetimages.imgix.net/mastheads/stock-photo-st-stephens-church-112868985.jpg?sharp=10&w=2000')",
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
-            <h1
-              className="absolute top-20 left-8 z-10 text-5xl font-bold"
-              style={getParallaxStyle(0.05)}
-            >
-              Vienna
-            </h1>
-            <p
-              className="absolute top-36 left-8 z-10 text-lg"
-              style={getParallaxStyle(0.02)}
-            >
-              48.21°N, 16.36°E
-            </p>
             <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-5/6 grid grid-cols-3 gap-4">
-              <div
-                className="bg-gray-800 p-4 rounded h-40 transform hover:scale-105 transition duration-300"
-                style={getParallaxStyle(0.02)}
-              >
+              <div className="bg-gray-800 p-4 rounded h-40 transform hover:scale-105 transition duration-300">
                 <p>
                   <span className="text-2xl">27°C</span>
                   <br />
                   Cloudy
                 </p>
               </div>
-              <div
-                className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300"
-                style={getParallaxStyle(0.05)}
-              >
+              <div className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300">
                 <Image
-                  src="https://source.unsplash.com/600x400/?nature"
+                  src="/images/sponsor.jpg"
                   alt="Nature"
-                  className="rounded h-full object-cover w-full"
+                  className="rounded object-cover"
+                  width={600}
+                  height={400}
                 />
               </div>
             </div>
-          </header>
-        </section>
-        <section id="lisbon" className="relative min-h-screen mb-8">
-          <header
-            className="relative h-[90vh] bg-cover bg-center"
+          </section>
+
+          {/* Lisbon Section */}
+          <section
+            id="lisbon"
+            className="relative h-screen bg-cover bg-center"
             style={{
               backgroundImage:
                 "url('https://lonelyplanetimages.imgix.net/mastheads/54989636.jpg?sharp=10&w=2000')",
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
-            <h1
-              className="absolute top-20 left-8 z-10 text-5xl font-bold mt-10"
-              style={getParallaxStyle(0.05)}
-            >
-              Lisbon
-            </h1>
-            <p
-              className="absolute top-36 left-8 z-10 text-lg"
-              style={getParallaxStyle(0.02)}
-            >
-              38.72°N, 9.14°W
-            </p>
             <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-5/6 grid grid-cols-3 gap-4">
-              <div
-                className="bg-gray-800 p-4 rounded h-40 transform hover:scale-105 transition duration-300"
-                style={getParallaxStyle(0.02)}
-              >
+              <div className="bg-gray-800 p-4 rounded h-40 transform hover:scale-105 transition duration-300">
                 <p>
                   <span className="text-2xl">22°C</span>
                   <br />
                   Sunny
                 </p>
               </div>
-              <div
-                className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300"
-                style={getParallaxStyle(0.05)}
-              >
+              <div className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300">
                 <Image
-                  src="https://source.unsplash.com/600x400/?ocean"
+                  src="/images/sponsorhero.jpg"
                   alt="Ocean"
-                  className="rounded h-full object-cover w-full"
+                  className="rounded object-cover"
+                  width={600}
+                  height={400}
                 />
               </div>
             </div>
-          </header>
-        </section>
-        <section id="newyork" className="relative min-h-screen mb-8">
-          <header
-            className="relative h-[90vh] bg-cover bg-center"
+          </section>
+
+          {/* New York Section */}
+          <section
+            id="newyork"
+            className="relative h-screen bg-cover bg-center"
             style={{
               backgroundImage:
                 "url('https://lonelyplanetimages.imgix.net/mastheads/GettyImages-538096543_medium.jpg?sharp=10&w=2000')",
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black" />
-            <h1
-              className="absolute top-20 left-8 z-10 text-5xl font-bold mt-20"
-              style={getParallaxStyle(0.05)}
-            >
-              New York
-            </h1>
-            <p
-              className="absolute top-36 left-8 z-10 text-lg"
-              style={getParallaxStyle(0.02)}
-            >
-              40.71°N, 74.01°W
-            </p>
             <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-5/6 grid grid-cols-3 gap-4">
-              <div
-                className="bg-gray-800 p-4 rounded h-40 transform hover:scale-105 transition duration-300"
-                style={getParallaxStyle(0.02)}
-              >
+              <div className="bg-gray-800 p-4 rounded h-40 transform hover:scale-105 transition duration-300">
                 <p>
                   <span className="text-2xl">18°C</span>
                   <br />
                   Rainy
                 </p>
               </div>
-              <div
-                className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300"
-                style={getParallaxStyle(0.05)}
-              >
+              <div className="bg-gray-800 rounded h-40 col-span-2 transform hover:scale-105 transition duration-300">
                 <Image
-                  src="https://source.unsplash.com/600x400/?cityscape"
+                  src="/images/sponsor.jpg"
                   alt="Cityscape"
-                  className="rounded h-full object-cover w-full"
+                  className="rounded object-cover"
+                  width={600}
+                  height={400}
                 />
               </div>
             </div>
-          </header>
-        </section>
-      </main>
+          </section>
+        </main>
+      </div>
     </div>
   );
 };
+
 export default DigitalWalls;
