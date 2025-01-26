@@ -32,8 +32,7 @@ const DigitalWalls: React.FC = () => {
 
   return (
     <div className="flex h-screen">
-      {/* Left Fixed Section */}
-      <div className="w-2/5 bg-black text-white flex flex-col justify-start p-8 fixed top-0 h-screen overflow-y-scroll mt-200">
+      <div className="w-2/5 bg-black text-white flex flex-col justify-start p-8 fixed top-0 h-screen overflow-y-scroll">
         <div className="sticky top-0">
           <h1 className="text-5xl font-bold mb-4 transition-opacity duration-500">
             {sections.find((s) => s.id === activeSection)?.title}
