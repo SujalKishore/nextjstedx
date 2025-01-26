@@ -7,15 +7,7 @@ const SpeakersPage: React.FC = () => {
   return (
     <div style={{ minHeight: "100vh", position: "relative" }}>
       {/* Background Section */}
-      <div
-        style={{
-          position: "relative",
-          height: "100vh",
-          overflow: "hidden",
-          background:
-            "linear-gradient(to bottom, rgba(10, 22, 33, 1) 0%, rgb(0, 0, 0) 100%)",
-        }}
-      >
+      <div className="relative h-[85vh] md:h-[100vh] overflow-hidden bg-gradient-to-b from-[#0a1621] to-black">
         <CustomBackground />
 
         {/* Foreground Text */}
