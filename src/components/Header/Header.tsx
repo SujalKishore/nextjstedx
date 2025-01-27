@@ -112,15 +112,8 @@ export default function Header() {
             }`}
           >
             <Link
-              href="/merchandise"
-              className="text-white border-2 border-[#eb0028] px-4 py-2 rounded-full bg-[#eb0028] hover:bg-[#fc4f4f] hover:text-white transition duration-300"
-            >
-              Merchandise
-            </Link>
-
-            <Link
               href="/register"
-              className="bg-[#eb0028] text-white px-4 py-2 rounded-full hover:bg-[#fc4f4f] transition-colors duration-300"
+              className="bg-[#eb0028] text-white px-6 py-2 rounded-full hover:bg-[#fc4f4f] transition-colors duration-300"
             >
               Tickets
             </Link>

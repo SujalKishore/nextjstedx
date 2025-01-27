@@ -322,12 +322,6 @@ const yearContent: {
 };
 export default function RewindPage() {
   const [selectedYear, setSelectedYear] = useState<number>(2024);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 500);
-  }, [selectedYear]);
 
   const content = yearContent[selectedYear];
   if (!content) {
@@ -350,33 +344,21 @@ export default function RewindPage() {
         </div>
       </section>
       <AnimatePresence mode="wait">
-        {isLoading ? (
-          <motion.div
-            key="loader"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex justify-center items-center h-[50vh]"
-          >
-            <div className="w-16 h-16 border-4 border-[#FF3A3A] border-t-transparent rounded-full animate-spin"></div>
-          </motion.div>
-        ) : (
-          <motion.section
-            key={selectedYear}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="py-20 bg-gradient-to-b from-black to-[#1A0000]"
-          >
-            <div className="container mx-auto px-4">
-              <ThemeImage theme={content.theme} imageSrc={content.themeImage} />
-              <Description description={content.description} />
-              <SpeakersList speakers={content.speakers} />
-              <Carousel />
-            </div>
-          </motion.section>
-        )}
+        <motion.section
+          key={selectedYear}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+          className="py-20 bg-gradient-to-b from-black to-[#1A0000]"
+        >
+          <div className="container mx-auto px-4">
+            <ThemeImage theme={content.theme} imageSrc={content.themeImage} />
+            <Description description={content.description} />
+            <SpeakersList speakers={content.speakers} />
+            <Carousel />
+          </div>
+        </motion.section>
       </AnimatePresence>
     </main>
   );

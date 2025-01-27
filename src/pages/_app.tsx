@@ -24,7 +24,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   }, []);
 
   const showHeaderFooter =
-    router.pathname !== "/" && router.pathname !== "/page";
+    router.pathname !== "/" &&
+    router.pathname !== "/page" &&
+    router.pathname !== "/wordle";
 
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">
