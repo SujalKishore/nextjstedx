@@ -1,0 +1,73 @@
+// components/CustomTimer.tsx
+import { useEffect, useState } from "react";
+
+const CustomTimer = () => {
+  const [days, setDays] = useState("00");
+  const [hours, setHours] = useState("00");
+  const [minutes, setMinutes] = useState("00");
+  const [seconds, setSeconds] = useState("00");
+
+  const newYearEnd = "Mar 09 2025 00:00:00";
+
+  useEffect(() => {
+    // Timer Countdown
+    const countdown = () => {
+      const newYearEndDate = new Date(newYearEnd);
+      const currentDate = new Date();
+      const totalSeconds =
+        (newYearEndDate.getTime() - currentDate.getTime()) / 1000;
+
+      setDays(formatTime(Math.floor(totalSeconds / 3600 / 24)));
+      setHours(formatTime(Math.floor((totalSeconds / 3600) % 24)));
+      setMinutes(formatTime(Math.floor((totalSeconds / 60) % 60)));
+      setSeconds(formatTime(Math.floor(totalSeconds % 60)));
+    };
+
+    const formatTime = (time: number) =>
+      time < 10 ? `0${time}` : time.toString();
+
+    countdown();
+    const interval = setInterval(countdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div>
+      <section className="timeContainer flex justify-center items-center h-full">
+        <div className="wrapper flex justify-around gap-5 p-5 max-w-[800px] w-full">
+          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-red-600 text-white rounded-lg shadow-lg">
+            <h2 className="text-3xl">{days}</h2>
+            <span className="text-lg">DAYS</span>
+          </div>
+          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-red-600 text-white rounded-lg shadow-lg">
+            <h2 className="text-3xl">{hours}</h2>
+            <span className="text-lg">HOURS</span>
+          </div>
+          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-[#1C1C1C] text-white rounded-lg shadow-lg">
+            <h2 className="text-3xl">{minutes}</h2>
+            <span className="text-lg">MINUTES</span>
+          </div>
+          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-[#1C1C1C] text-white rounded-lg shadow-lg">
+            <h2 className="text-3xl">{seconds}</h2>
+            <span className="text-lg">SECONDS</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Animation Keyframes */}
+      <style jsx global>{`
+        @keyframes rotatingCircle {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default CustomTimer;

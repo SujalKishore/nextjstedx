@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/Header/Header";
 import HeaderMob from "@/components/HeaderMob/HeaderMob";
 import Footer from "@/components/Footer/Footer";
+import CustomTimer from "@/components/Timer/Timer";
 
 interface InnovativeSectionProps {
   title: string;
@@ -118,7 +119,7 @@ const HeroSection = () => {
     };
   }, []);
 
-  const logoScale = 2.5 + scrollProgress * 5.5;
+  const logoScale = 2.3 + scrollProgress * 5.5;
   const blurIntensity = scrollProgress * 10;
   const contentOpacity = scrollProgress >= 1 ? 1 : 0;
   const contentTranslateY = scrollProgress >= 1 ? 0 : 100;
@@ -133,13 +134,14 @@ const HeroSection = () => {
         }`}
       >
         <div className="h-screen relative">
-          <div className="absolute left-0 top-0 w-1/2 h-1/2 bg-gradient-to-br from-black-600 opacity-45 to-transparent transform overflow-hidden z-30 blur-sm">
+          <div className="absolute left-0 top-0 w-1/2 h-1/2 bg-gradient-to-br from-black-600 to-transparent transform overflow-hidden z-30 blur-sm">
             <Image
               src="/images/test/7.jpg"
               alt="Hourglass"
               layout="fill"
               objectFit="cover"
             />
+            <div className="absolute inset-0 bg-black/50"></div>
           </div>
           <div className="absolute right-0 bottom-0 w-1/2 h-1/2 bg-gradient-to-tl from-red-600 to-transparent transform overflow-hidden z-30 blur-sm">
             <Image
@@ -149,33 +151,29 @@ const HeroSection = () => {
               objectFit="cover"
             />
           </div>
-          <div className="absolute top-1/4 right-1/4 z-50 text-white text-lg md:text-2xl">
-            <div className="flex space-x-2">
-              <div className="flex flex-col items-center bg-white/10 p-4 rounded-lg shadow-lg">
-                <span className="text-2xl font-bold">
-                  {Math.floor(timeLeft / (24 * 60 * 60))}
-                </span>
-                <span className="text-sm text-gray-300">Days</span>
-              </div>
-              <div className="flex flex-col items-center bg-white/10 p-4 rounded-lg shadow-lg">
-                <span className="text-2xl font-bold">
-                  {Math.floor((timeLeft % (24 * 60 * 60)) / (60 * 60))}
-                </span>
-                <span className="text-sm text-gray-300">Hours</span>
-              </div>
-              <div className="flex flex-col items-center bg-white/10 p-4 rounded-lg shadow-lg">
-                <span className="text-2xl font-bold">
-                  {Math.floor((timeLeft % (60 * 60)) / 60)}
-                </span>
-                <span className="text-sm text-gray-300">Minutes</span>
-              </div>
-              <div className="flex flex-col items-center bg-white/10 p-4 rounded-lg shadow-lg">
-                <span className="text-2xl font-bold">{timeLeft % 60}</span>
-                <span className="text-sm text-gray-300">Seconds</span>
-              </div>
-            </div>
-          </div>
+          <div className="absolute md:right-1/2 right-1/3 bottom-0 w-1/2 h-1/2 bg-gradient-to-bl from-cyan-600 via-black to-black transform overflow-hidden z-0 blur-sm"></div>
+          <div className="absolute md:left-1/2 left-1/3 top-0 w-1/2 h-1/2 bg-gradient-to-tr from-red-600 via-black to-black transform overflow-hidden z-20 blur-sm"></div>
 
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-[1000]">
+            <h1 className="text-6xl md:text-6xl font-bold text-white">
+              INVE
+              <span className="inline-block transform scale-x-[-1] text-cyan-400">
+                R
+              </span>
+              SO{" "}
+              <span className="text-white whitespace-nowrap">
+                CLESSID
+                <span className="inline-block transform scale-x-[-1] text-red-600">
+                  R
+                </span>
+                A
+              </span>
+            </h1>
+            <p className="text-xl md:text-xl mt-4 mb-12 text-white">
+              As <span className="text-red-600 font-bold">time</span> folds,
+              perspectives unfold.
+            </p>
+          </div>
           <div className="relative z-40 flex items-center justify-center w-full h-full">
             <div className="relative">
               <div className="w-[300px] h-[300px] md:w-[600px] md:h-[600px] border-white/10 border-2 transform rotate-45 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
@@ -196,6 +194,9 @@ const HeroSection = () => {
                 />
               </div>
             </div>
+          </div>
+          <div className="mt-24 absolute top-2/4 bottom-0 left-1/2 transform -translate-x-1/2 text-white text-lg md:text-2xl z-50 flex items-center justify-center">
+            <CustomTimer />
           </div>
         </div>
       </div>
