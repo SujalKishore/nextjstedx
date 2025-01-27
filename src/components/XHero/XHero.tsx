@@ -95,15 +95,6 @@ const Hero = () => {
           >
             TEDx <span className="text-[#FF3A3A]">Rewind</span>
           </motion.h1>
-          <motion.p
-            className="text-2xl md:text-3xl font-light"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            <span className="text-[#030101]">Revisit the ideas</span> that
-            shaped our past events.
-          </motion.p>
         </div>
       </div>
     </>
