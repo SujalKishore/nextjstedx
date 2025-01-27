@@ -98,12 +98,12 @@ export default function MobileNavbar() {
           </div>
 
           {/* White Button for "MERCHANDISE" */}
-          <button
+          {/* <button
             onClick={() => handleLinkClick("/merchandise")}
             className="bg-white text-black px-6 py-4 w-[90%] rounded-lg font-bold shadow-md text-left hover:shadow-lg transition text-lg"
           >
             MERCHANDISE
-          </button>
+          </button> */}
 
           {/* Black Rectangle for "TICKETS" */}
           <button

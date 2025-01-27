@@ -31,14 +31,11 @@ const Ticket = () => {
         <div className="absolute inset-0 z-[-1]">
           <WaveSection />
         </div>
-        <div className="w-full h-screen lg:text-9xl text-7xl text-center font-bold bg-white bg-opacity-20 backdrop-blur-lg pt-16 drop-shadow-sm flex flex-col items-center justify-center">
-          <div className="lg:text-6xl text-[#eb0028] text-5xl">Buy</div>
+        <div className="w-full h-screen lg:text-9xl text-7xl text-center font-bold bg-black bg-opacity-20 backdrop-blur-lg pt-16 drop-shadow-sm flex flex-col items-center justify-center">
+          <div className="lg:text-7xl py-6 text-red-800 text-5xl">Buy</div>
           <div className={fonts.className}>Tickets</div>
-          <div className="lg:text-4xl text-3xl">Now</div>
+          <div className="lg:text-4xl py-4 text-3xl">Now</div>
         </div>
-      </div>
-      <div className="flex justify-center items-center h-[100vh]">
-        {/* Baaki code idhr aayega */}
       </div>
     </div>
   );
