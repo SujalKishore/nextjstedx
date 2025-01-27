@@ -73,7 +73,7 @@ const InnovativeSection: React.FC<InnovativeSectionProps> = ({
 
 const HeroSection = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(10 * 24 * 60 * 60);
+  const [, setTimeLeft] = useState(10 * 24 * 60 * 60);
   const [isFixed, setIsFixed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
