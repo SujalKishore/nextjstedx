@@ -366,29 +366,29 @@ const yearContent: {
       },
       {
         name: "Harish Mehta",
-        topic: "Blockchain and Social Good",
+        topic: "Joy of Failing",
         image: "/rewind/Parvaaz/Harish_Mehta.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
+          "https://www.youtube.com/watch?v=u4KNmBXKe-4&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=1",
       },{
-        name: "Author Sherry",
-        topic: "Blockchain and Social Good",
+        name: "Supreet Singh Arora",
+        topic: "Psychology of Personal Identity",
         image: "/rewind/Parvaaz/Author_sherry.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
+          "https://www.youtube.com/watch?v=cxGsANXP3OQ&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=8",
       },{
-        name: "Lakshay",
-        topic: "Blockchain and Social Good",
+        name: "Lakshay Jangid",
+        topic: "Patience on one wheel",
         image: "/rewind/Parvaaz/lakshay.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
+          "https://www.youtube.com/watch?v=7sXgpj_Co9I&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=3",
       },{
         name: "Major General D.Bipin Bakshi",
-        topic: "Blockchain and Social Good",
-        image: "/rewind/Parvaaz/MajGenDBipin_Bakshi.jpg",
+        topic: "Seeking new horizons,Breaking mindsets",
+        image: "/rewind/Parvaaz/MajGenDrBipin_Bakshi.Jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
@@ -400,40 +400,40 @@ const yearContent: {
         tedTalkUrl:
           "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
       },{
-        name: "Ridhi",
-        topic: "Blockchain and Social Good",
+        name: "Ridhi Khakhar",
+        topic: "On carving your own path through perseverance",
         image: "/rewind/Parvaaz/ridhi.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
+          "https://www.youtube.com/watch?v=fA6ady8Xrq8&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=4",
       },{
         name: "Sagar Lalwani",
-        topic: "Blockchain and Social Good",
+        topic: "Take the risk or lose the chance",
         image: "/rewind/Parvaaz/Sagar_Lalwani.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
+          "https://www.youtube.com/watch?v=Fg9ixhDzPEo&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=5",
       },{
-        name: "Sangeeta",
-        topic: "Blockchain and Social Good",
+        name: "Sangeeta Sindhi Bahl",
+        topic: "Become who you aspire to be",
         image: "/rewind/Parvaaz/sangeeta.jpeg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
+          "https://www.youtube.com/watch?v=7-8v_IM7OKs&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=6",
       },{
-        name: "Srikant",
-        topic: "Blockchain and Social Good",
+        name: "Srikanth Velamakanni",
+        topic: "Unveiling the magic behind great AI",
         image: "/rewind/Parvaaz/srikant.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
+          "https://www.youtube.com/watch?v=PuyKr-jnguA&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=7",
       },{
-        name: "H",
-        topic: "Blockchain and Social Good",
+        name: "Yoga Bhabagna Jonala",
+        topic: "Will Classical Dancing help in life",
         image: "/rewind/Parvaaz/yoga.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
+          "",
       },
     ],
     gallery: [
@@ -449,20 +449,100 @@ const yearContent: {
     themeImage: "/themes/thinc.png",
     speakers: [
       {
-        name: "Olivia Martinez",
-        topic: "Biomimicry in Design",
-        image: "",
+        name: "Aastha Tiwari",
+        topic: "The Heart Way or the Hard Way",
+        image: "/rewind/THINC/11.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/olivia_martinez_biomimicry_in_design",
+          "https://www.youtube.com/watch?v=xZzVeKW_3yU&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=1",
       },
       {
-        name: "Ryan Patel",
-        topic: "AI and Human Creativity",
-        image: "/speakers/2023-ryan-patel.jpg",
+        name: "Dr. Aqsa Shaikh",
+        topic: "The White Coat Has A Rainbow",
+        image: "/rewind/THINC/12.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=1ckPQR64wwM&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=2",
+      },
+      {
+        name: "Anuranjita Kumar",
+        topic: "Can I Have It All: Trials and Tribulations of Working Women",
+        image: "/rewind/THINC/8.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=frWC8qmCuOQ&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=3",
+      },
+      {
+        name: "Deepak Pareek",
+        topic: "No Guts, No Glory! ",
+        image: "/rewind/THINC/9.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=kdIOiNHyDyM&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=4",
+      },
+      {
+        name: "Ganesh Sahai",
+        topic: "P-3 Way To Innovation: Play, Pilot, Production",
+        image: "/rewind/THINC/3.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=FZS-RSRl73w&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=5",
+      },
+      {
+        name: "Harsh Goela",
+        topic: "Stories in Stock Markets",
+        image: "/rewind/THINC/10.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=6DItV7xFDSQ&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=6",
+      },
+      {
+        name: "Nishtha Khushu",
+        topic: "The Dancing Dream",
+        image: "/rewind/THINC/6.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=M2fb3S9DTj8&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=7",
+      },
+      {
+        name: "Pravishi Das",
+        topic: "Be the Sun. Where you are. As who you are.",
+        image: "/rewind/THINC/1.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=cuoNArh218Y&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=8",
+      },
+      {
+        name: "Sanghamitra Bose",
+        topic: "The Invisible Children - My Ikigai",
+        image: "/rewind/THINC/2.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=nd6vtdczD04&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=9",
+      },
+      {
+        name: "Sushma Gaikwad",
+        topic: "Awaken The Warrior Within",
+        image: "/rewind/THINC/7.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=_pXgXRKmpXE&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=10",
+      },
+      {
+        name: "Tapesh Kumar",
+        topic: "Stories of Failure",
+        image: "/rewind/THINC/4.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=4hafBaWCifU&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=11",
+      },
+      {
+        name: "Vijay Prakash Sharma",
+        topic: "Music is my passion",
+        image: "/rewind/THINC/5.jpg",
+        socialLinks: {},
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=TGNYCxoUQWU&list=PL2LgFpGtqcj6XxtHVl43VNYAKVwhqI6uz&index=12",
       },
     ],
     gallery: [
@@ -479,107 +559,107 @@ const yearContent: {
     speakers: [
       {
         name: "Nikita Sharma",
-        topic: "Biomimicry in Design",
+        topic: "You Are It",
         image: "/prev-speakers/nikita24.png",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/olivia_martinez_biomimicry_in_design",
+          "https://www.youtube.com/watch?v=goCrg3YuQmA&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=11",
       },
       {
-        name: "Vijendra Chauhan",
-        topic: "AI and Human Creativity",
+        name: "Dr Vijender Chauhan",
+        topic: "No Success is Monocolor",
         image: "/prev-speakers/vijendra24.png",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=LdK_eQExh1M&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=5",
       },
       {
         name: "Gaurav Juyal",
-        topic: "AI and Human Creativity",
+        topic: "Drapery and How It is Awesome",
         image: "/prev-speakers/gaurav24.png",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "",
       },
       {
         name: "Siddharth Jain",
-        topic: "AI and Human Creativity",
+        topic: "Finding Your Superpower",
         image: "/prev-speakers/siddharth24.png",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=l7w3bUkyFb0&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=6",
       },
       {
         name: "Devyani Sharma",
-        topic: "AI and Human Creativity",
+        topic: "Life Driven by Dance",
         image: "/rewind/24/devyani.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=WHZBHGE7b-g&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=7",
       },
       {
         name: "Akshay Chopra",
-        topic: "AI and Human Creativity",
+        topic: "From Nothing to Something & Beyond - Lessons from the trenches",
         image: "/rewind/24/akshay.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=vkTNMjEYoh0&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=12",
       },
       {
         name: "Navin Reddy",
-        topic: "AI and Human Creativity",
+        topic: "The New Way of Learning Tech",
         image: "/rewind/24/navin.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=YBe4EE8QIAU&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=8",
       },
       {
         name: "Vipin Mishra",
-        topic: "AI and Human Creativity",
+        topic: "In The Zone: Finding Fulfillment & Joy",
         image: "/rewind/24/vipin.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=YIO37VZ8Zvg&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=3",
       },
       {
         name: "Padamjeet Sehrawat",
-        topic: "AI and Human Creativity",
+        topic: "You Are Your Best Answer",
         image: "/rewind/24/Padamjeet.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=pQF-tUolRGc&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=2",
       },
       {
         name: "Nirbhik Datta",
-        topic: "AI and Human Creativity",
+        topic: "Unveiling the Subconscious: Exploring the Depths with Mentalism",
         image: "/rewind/24/nirbhik.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=zAKyzgdkOA4&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=1",
       },
       {
         name: "Aditya Goela CFA",
-        topic: "AI and Human Creativity",
+        topic: "How CFA Course Changed my Life",
         image: "/rewind/24/aditya.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=thR82rUg8VI&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=10",
       },
       {
-        name: "Kausar Shah",
-        topic: "AI and Human Creativity",
+        name: "Dr Kausar Shah",
+        topic: "Dark Sides of Confident Leadership",
         image: "/rewind/24/kausar.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=Y7MdhKjFCOk&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=9",
       },
       {
         name: "Shivani Kalra",
-        topic: "AI and Human Creativity",
+        topic: "Because I Said No",
         image: "/rewind/24/shivani.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.ted.com/talks/ryan_patel_ai_and_human_creativity",
+          "https://www.youtube.com/watch?v=mKexuy238zA&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=5",
       },
     ],
     gallery: ["/bulletin/symp1.png", "/gallery/bulletin/symp2.png", ""],
