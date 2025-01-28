@@ -18,7 +18,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   return (
     <motion.div
       layout
-      className="bg-gray-900 rounded-lg overflow-hidden shadow-lg"
+      className="bg-gradient-to-b from-black to-[#1A0000] rounded-lg overflow-hidden shadow-lg"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -68,7 +68,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="p-6 bg-gray-800"
+            className="p-6 bg-gradient-to-b from-[#1A0000] to-black"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {event.images.map((image, index) => (
