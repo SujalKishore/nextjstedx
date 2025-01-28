@@ -27,8 +27,8 @@ const Carousel: React.FC = () => {
       setIsMobile(window.innerWidth < 768);
     };
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleImageClick = (index: number) => {
@@ -39,19 +39,27 @@ const Carousel: React.FC = () => {
 
   return (
     <div className="relative flex items-center justify-center h-[70vh]">
-      <div 
+      <div
         ref={carouselRef}
         className={`
           flex 
-          ${isMobile ? 'overflow-x-auto snap-x no-scrollbar gap-4 px-4' : 'gap-2'}
+          ${
+            isMobile
+              ? "overflow-x-auto snap-x no-scrollbar gap-4 px-4"
+              : "gap-2"
+          }
           items-center 
-          ${isMobile ? 'w-full' : ''}
+          ${isMobile ? "w-full" : ""}
         `}
       >
         {images.map((image, index) => {
           const isHovered = !isMobile && hoveredIndex === index;
-          const isAdjacent = !isMobile && (hoveredIndex === index - 1 || hoveredIndex === index + 1);
-          const isDistant = !isMobile && (hoveredIndex === index - 2 || hoveredIndex === index + 2);
+          const isAdjacent =
+            !isMobile &&
+            (hoveredIndex === index - 1 || hoveredIndex === index + 1);
+          const isDistant =
+            !isMobile &&
+            (hoveredIndex === index - 2 || hoveredIndex === index + 2);
 
           return (
             <div
@@ -64,13 +72,13 @@ const Carousel: React.FC = () => {
                 flex-shrink-0 
                 bg-cover 
                 bg-center 
-                ${!isMobile && 'cursor-pointer'}
+                ${!isMobile && "cursor-pointer"}
                 transition-all 
                 duration-500 
                 transform
-                ${isMobile ? 'snap-center' : ''}
+                ${isMobile ? "snap-center" : ""}
                 ${
-                  !isMobile 
+                  !isMobile
                     ? expandedIndex === index
                       ? "w-[24vw] h-[50vh] z-10 scale-105"
                       : "w-[calc(4vw+4vh)] h-[calc(26vw+-10vh)] grayscale brightness-50"
@@ -85,10 +93,10 @@ const Carousel: React.FC = () => {
                 ${!isMobile && isAdjacent ? "scale-105 brightness-75" : ""}
                 ${!isMobile && isDistant ? "brightness-50" : ""}
               `}
-              style={{ 
+              style={{
                 backgroundImage: `url(${image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             />
           );

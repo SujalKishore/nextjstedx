@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 interface Event {
   title: string;
   date: string;
@@ -12,6 +13,7 @@ interface BulletinBoardProps {
   recentEvents: Event[];
   nextEvent: Event;
 }
+
 export const BulletinBoard: React.FC<BulletinBoardProps> = ({
   recentEvents,
   nextEvent,
@@ -23,7 +25,7 @@ export const BulletinBoard: React.FC<BulletinBoardProps> = ({
       initial={{ right: 0 }}
       animate={{ right: isOpen ? "0px" : "-320px" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="fixed top-0 bottom-0 right-0 z-20 flex items-stretch"
+      className="fixed top-0 bottom-0 right-0 z-50 flex items-stretch"
     >
       <button
         onClick={toggleBoard}
@@ -60,9 +62,11 @@ export const BulletinBoard: React.FC<BulletinBoardProps> = ({
                     </div>
                   ))}
                 </div>
-                <Button variant="outline" size="sm" className="w-full">
-                  Show More
-                </Button>
+                <Link href="/preevents" passHref>
+                  <Button variant="outline" size="sm" className="w-full">
+                    Show More
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>

@@ -29,15 +29,19 @@ const About: React.FC = () => {
       },
       waterMark: false,
     });
-     document.getElementById("naker-container")?.appendChild(script);
-     return () => {
-       document.getElementById("naker-container")?.removeChild(script);
-     };
+    document.getElementById("naker-container")?.appendChild(script);
+    return () => {
+      document.getElementById("naker-container")?.removeChild(script);
+    };
   }, []);
   return (
     <div className="bg-black text-white min-h-screen">
       <div className="h-[100vh] bg-black flex items-center justify-center text-center relative">
-        <div id="naker-container" className="absolute inset-0 z-0"></div>
+        <div
+          id="naker-container"
+          className="absolute inset-0 z-0 hidden md:block"
+        ></div>
+
         <div className="z-10">
           <div className="container mx-auto px-4 h-full flex items-center">
             <div className="w-full max-w-4xl mx-auto text-center">
