@@ -719,7 +719,7 @@ export default function RewindPage() {
             <ThemeImage theme={content.theme} imageSrc={content.themeImage} />
             <Description description={content.description} />
             <SpeakersList speakers={content.speakers} />
-            <Carousel />
+            {/* <Carousel /> */}
           </div>
         </motion.section>
       </AnimatePresence>
