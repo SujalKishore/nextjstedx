@@ -80,7 +80,7 @@ const Register: React.FC = () => {
           <div
             className="bg-cover bg-center w-full h-[70vh] md:w-1/2 md:h-full rounded-lg shadow-lg transition-transform transform hover:scale-105"
             style={{
-              backgroundImage: `url('/images/VIP_front.png')`,
+              backgroundImage: `url('/images/VIP_Front.png')`,
             }}
           />
           <div
