@@ -16,14 +16,6 @@ const mona = Mona_Sans({
 });
 
 const handleComplete = () => {};
-const fadeIn = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
 
 const Register: React.FC = () => {
   const [showVIPForm, setShowVIPForm] = useState(false);
