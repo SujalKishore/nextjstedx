@@ -1,20 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import { Mona_Sans } from "next/font/google";
 import Ticket from "@/components/Ticket/Ticket";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ScratchToReveal } from "@/components/ui/scratch-to-reveal";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const mona = Mona_Sans({
   subsets: ["latin"],
 });
 
+const handleComplete = () => {};
+const fadeIn = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
 const Register: React.FC = () => {
-  const openTicketForm = () => {
-    alert("Ticket purchase form will open here!"); // Replace with actual form handling logic
+  const [showVIPForm, setShowVIPForm] = useState(false);
+  const [showGeneralForm, setShowGeneralForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    ticketType: "",
+  });
+
+  const handleSubmit = async (ticketType: string) => {
+    try {
+      // Set the ticket type
+      const data = { ...formData, ticketType };
+
+      // Send data to SheetDB
+      const response = await fetch(
+        "https://sheetdb.io/api/v1/YOUR_SHEETDB_ID",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ data }),
+        }
+      );
+
+      if (response.ok) {
+        alert("Your ticket has been successfully booked!");
+        setShowVIPForm(false);
+        setShowGeneralForm(false);
+        setFormData({ name: "", email: "", ticketType: "" }); // Reset form
+      } else {
+        alert("Failed to book ticket. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    }
   };
 
-  const handleComplete = () => {};
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -31,7 +81,7 @@ const Register: React.FC = () => {
 
       {/* VIP Ticket Section */}
       <section className="relative w-full h-[250vh] md:h-screen grid grid-cols-1 md:grid-cols-2 py-8 px-4 mt-18 bg-gradient-to-br from-cyan-700 via-black to-cyan-800">
-        {/* Left Column - Horizontal Split for Ticket Images */}
+        {/* Left Column */}
         <motion.div
           className="flex flex-col h-full space-y-4 px-4 md:flex-row md:space-y-0 md:space-x-4"
           initial="hidden"
@@ -52,43 +102,47 @@ const Register: React.FC = () => {
           />
         </motion.div>
 
-        {/* Right Column - Text Section */}
+        {/* Right Column */}
         <motion.div
-          className="flex items-center justify-center bg-black/70 text-white p-8 rounded-lg shadow-lg h-[90vh] md:h-[95vh]"
+          className="flex items-center justify-center bg-black/70 text-white p-4 md:p-8 rounded-lg shadow-lg h-auto md:h-[95vh]"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
         >
           <div className="max-w-lg space-y-6">
-            <h1 className="text-4xl font-bold mb-4 text-center text-cyan-300">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-cyan-300">
               VIP Ticket Perks
             </h1>
-            <ul className="list-disc list-inside space-y-4 text-lg">
-              <li className="flex items-center gap-2">
-                <span className="text-cyan-400 text-xl">✔</span>Priority entry
-                to the event, avoiding general admission queues.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-cyan-400 text-xl">✔</span> Premium
-                Seating, reserved seating in the VIP section, offering the best
-                views of the stage.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-cyan-400 text-xl">✔</span>Premium event
-                kit with exclusive TEDx merchandise (e.g., tote bag, premium
-                notebook, pen, and badge).
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-cyan-400 text-xl">✔</span>Opportunity to
-                meet and take photos with speakers or performers (if permitted).
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-cyan-400 text-xl">✔</span>
-                Complimentary light refreshments/snacks during breaks.
-              </li>
-            </ul>
-            <div className="flex justify-center mt-6">
-              <p className="text-2xl text-center text-cyan-400 mb-2 whitespace-nowrap mr-4 mt-6">
+            <div className="w-full ">
+              <ul className="list-disc list-inside space-y-4 text-sm md:text-lg break-words">
+                <li className="flex items-center gap-2">
+                  <span className="text-cyan-400 md:text-xl">✔</span> Priority
+                  entry to the event, avoiding general admission queues.
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-cyan-400 md:text-xl">✔</span> Premium
+                  Seating, reserved seating in the VIP section, offering the
+                  best views of the stage.
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-cyan-400 md:text-xl">✔</span> Premium
+                  event kit with exclusive TEDx merchandise (e.g., tote bag,
+                  premium notebook, pen, and badge).
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-cyan-400 md:text-xl">✔</span>{" "}
+                  Opportunity to meet and take photos with speakers or
+                  performers (if permitted).
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-cyan-400 md:text-xl">✔</span>{" "}
+                  Complimentary light refreshments/snacks during breaks.
+                </li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col md:flex-row justify-center items-center mt-6 space-y-4 md:space-y-0 md:space-x-4">
+              <p className="text-xl md:text-2xl text-center text-cyan-400 mb-2 whitespace-nowrap">
                 Get your tickets @
               </p>
 
@@ -105,10 +159,10 @@ const Register: React.FC = () => {
             </div>
             <div className="flex justify-center mt-16">
               <Button
-                onClick={openTicketForm}
-                className="bg-cyan-600 hover:bg-cyan-700 text-black font-bold px-8 py-8 rounded-lg shadow-md text-lg"
+                onClick={() => setShowVIPForm(true)}
+                className="bg-cyan-600 hover:bg-cyan-700 text-black font-bold px-8 py-4 md:py-8 rounded-lg shadow-md text-lg"
               >
-                Buy Tickets
+                Buy VIP Tickets
               </Button>
             </div>
           </div>
@@ -117,7 +171,7 @@ const Register: React.FC = () => {
 
       {/* General Ticket Section */}
       <section className="relative w-full h-[250vh] md:h-screen grid grid-cols-1 md:grid-cols-2 py-8 px-4 bg-gradient-to-br from-red-700 via-black to-red-800">
-        {/* Left Column - Text Section */}
+        {/* Left Column */}
         <motion.div
           className="flex items-center justify-center bg-black/70 text-white p-8 rounded-lg shadow-lg h-[90vh] md:h-[95vh]"
           initial="hidden"
@@ -125,38 +179,37 @@ const Register: React.FC = () => {
           variants={fadeIn}
         >
           <div className="max-w-lg space-y-6">
-            <h1 className="text-4xl font-bold mb-4 text-center text-red-300">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center text-red-300">
               Attendee Ticket Perks
             </h1>
-            <ul className="list-disc list-inside space-y-4 text-lg">
-              <li className="flex items-center gap-2">
-                <span className="text-red-400 text-xl">✔</span> Access to the
-                main event, including speaker sessions and general activities.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-red-400 text-xl">✔</span> Basic event kit
-                (e.g., event schedule, pen, and notebook).
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-red-400 text-xl">✔</span> Access to
-                general seating, available on a first-come, first-served basis.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-red-400 text-xl">✔</span> Participate in
-                open networking sessions with other attendees.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-red-400 text-xl">✔</span> Complimentary
-                light refreshments/snacks during breaks.
-              </li>
-            </ul>
-            {/* <div className="flex justify-center mt-8">
-              <p className="text-3xl text-center text-red-400 font-bold animate-pulse">
-                🔥Early Bird Offer!🔥
-              </p>
-            </div> */}
-            <div className="flex justify-center mt-6">
-              <p className="text-2xl text-center text-red-400 mb-2 whitespace-nowrap mr-4 mt-6">
+            <div className="w-full">
+              <ul className="list-disc list-inside space-y-4 text-sm md:text-lg break-words">
+                <li className="flex items-center gap-2">
+                  <span className="text-red-400 md:text-xl">✔</span> Access to
+                  the main event, including speaker sessions and general
+                  activities.
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-red-400 md:text-xl">✔</span> Basic event
+                  kit (e.g., event schedule, pen, and notebook).
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-red-400 md:text-xl">✔</span> Access to
+                  general seating, available on a first-come, first-served
+                  basis.
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-red-400 md:text-xl">✔</span> Participate
+                  in open networking sessions with other attendees.
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-red-400 md:text-xl">✔</span>{" "}
+                  Complimentary light refreshments/snacks during breaks.
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col md:flex-row justify-center items-center mt-6 space-y-4 md:space-y-0 md:space-x-4">
+              <p className="text-xl md:text-2xl text-center text-red-400 mb-2 whitespace-nowrap">
                 Get your tickets @
               </p>
 
@@ -173,18 +226,18 @@ const Register: React.FC = () => {
             </div>
             <div className="flex justify-center mt-16">
               <Button
-                onClick={openTicketForm}
-                className="bg-red-500 hover:bg-red-600 text-black font-bold px-8 py-8 rounded-lg shadow-md text-lg"
+                onClick={() => setShowGeneralForm(true)}
+                className="bg-red-600 hover:bg-red-700 text-black font-bold px-8 py-4 md:py-8 rounded-lg shadow-md text-lg"
               >
-                Buy Tickets
+                Buy General Tickets
               </Button>
             </div>
           </div>
         </motion.div>
 
-        {/* Right Column - Images */}
+        {/* Right Column */}
         <motion.div
-          className="flex flex-col md:flex-row h-full space-y-4 md:space-y-0 md:space-x-4 px-4"
+          className="flex flex-col md:flex-row h-full space-y-4 md:space-y-0 md:space-x-4 px-4 mt-10"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
@@ -203,6 +256,90 @@ const Register: React.FC = () => {
           />
         </motion.div>
       </section>
+
+      {/* VIP Form Dialog */}
+      <Dialog open={showVIPForm} onOpenChange={setShowVIPForm}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Buy VIP Ticket</DialogTitle>
+          </DialogHeader>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit("VIP");
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Name"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              required
+              className="w-full p-2 border rounded mb-4"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              required
+              className="w-full p-2 border rounded mb-4"
+            />
+            <Button
+              type="submit"
+              className="w-full bg-cyan-600 hover:bg-cyan-700"
+            >
+              Book Ticket
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
+
+      {/* General Form Dialog */}
+      <Dialog open={showGeneralForm} onOpenChange={setShowGeneralForm}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Buy General Ticket</DialogTitle>
+          </DialogHeader>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit("General");
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Name"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              required
+              className="w-full p-2 border rounded mb-4"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              required
+              className="w-full p-2 border rounded mb-4"
+            />
+            <Button
+              type="submit"
+              className="w-full bg-red-600 hover:bg-red-700"
+            >
+              Book Ticket
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
