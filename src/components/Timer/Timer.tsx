@@ -7,7 +7,7 @@ const CustomTimer = () => {
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
 
-  const newYearEnd = "Mar 09 2025 00:00:00";
+  const newYearEnd = "Mar 09 2025 08:30:00";
 
   useEffect(() => {
     // Timer Countdown
@@ -36,21 +36,21 @@ const CustomTimer = () => {
     <div>
       <section className="timeContainer flex justify-center items-center h-full">
         <div className="wrapper flex justify-around gap-5 p-5 max-w-[800px] w-full">
-          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-red-600 text-white rounded-lg shadow-lg">
-            <h2 className="text-3xl">{days}</h2>
-            <span className="text-lg">DAYS</span>
+          <div className="flex flex-col items-center justify-center w-[70px] h-[70px] bg-red-600 text-white rounded-lg shadow-lg">
+            <h2 className="text-2xl">{days}</h2>
+            <span className="text-sm">DAYS</span>
           </div>
-          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-red-600 text-white rounded-lg shadow-lg">
-            <h2 className="text-3xl">{hours}</h2>
-            <span className="text-lg">HOURS</span>
+          <div className="flex flex-col items-center justify-center w-[70px] h-[70px] bg-red-600 text-white rounded-lg shadow-lg">
+            <h2 className="text-2xl">{hours}</h2>
+            <span className="text-sm">HOURS</span>
           </div>
-          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-[#1C1C1C] text-white rounded-lg shadow-lg">
-            <h2 className="text-3xl">{minutes}</h2>
-            <span className="text-lg">MINUTES</span>
+          <div className="flex flex-col items-center justify-center w-[70px] h-[70px] bg-[#1C1C1C] text-white rounded-lg shadow-lg">
+            <h2 className="text-2xl">{minutes}</h2>
+            <span className="text-sm">MINUTES</span>
           </div>
-          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-[#1C1C1C] text-white rounded-lg shadow-lg">
-            <h2 className="text-3xl">{seconds}</h2>
-            <span className="text-lg">SECONDS</span>
+          <div className="flex flex-col items-center justify-center w-[70px] h-[70px] bg-[#1C1C1C] text-white rounded-lg shadow-lg">
+            <h2 className="text-2xl">{seconds}</h2>
+            <span className="text-sm">SECONDS</span>
           </div>
         </div>
       </section>

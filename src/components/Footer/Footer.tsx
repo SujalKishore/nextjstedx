@@ -30,7 +30,7 @@ const Footer = () => {
           <div className="w-full md:w-auto">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/" className="hover:underline hover:text-red-500">
+              <Link href="/speakers" className="hover:underline hover:text-red-500">
                 Speakers
               </Link>
               <Link
@@ -46,7 +46,7 @@ const Footer = () => {
                 Rewind
               </Link>
               <Link
-                href="/contact"
+                href="/about"
                 className="hover:underline hover:text-red-500"
               >
                 About
@@ -61,10 +61,10 @@ const Footer = () => {
               <p>
                 Email:{" "}
                 <a
-                  href="mailto:info@tedx.com"
+                  href="mailto:Tedx@niituniversity.in"
                   className="hover:underline hover:text-red-500"
                 >
-                  info@tedx.com
+                  Tedx@niituniversity.in
                 </a>
               </p>
               <p>
@@ -73,10 +73,10 @@ const Footer = () => {
                   href="tel:+1234567890"
                   className="hover:underline hover:text-red-500"
                 >
-                  +1 (234) 567-890
+                  +91 93155 08567
                 </a>
               </p>
-              <p>Address: 123 Innovation St, Knowledge City</p>
+              <p>NIIT University, NH 8, Delhi - Jaipur Expy,<br></br> Neemrana, Majrakath, Rajasthan 301705</p>
             </address>
           </div>
         </div>
@@ -87,7 +87,7 @@ const Footer = () => {
         {/* Socials */}
         <div className="flex justify-center space-x-6">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/tedxniituniversity/"
             aria-label="Facebook"
             target="_blank"
             rel="noopener noreferrer"
@@ -95,7 +95,7 @@ const Footer = () => {
             <FacebookIcon className="w-6 h-6 hover:text-blue-400 transition-colors" />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://twitter.com/@TEDxNIITUni"
             aria-label="Twitter"
             target="_blank"
             rel="noopener noreferrer"
@@ -103,7 +103,7 @@ const Footer = () => {
             <TwitterIcon className="w-6 h-6 hover:text-sky-300 transition-colors" />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/tedxniituniversity/"
             aria-label="Instagram"
             target="_blank"
             rel="noopener noreferrer"
@@ -111,7 +111,7 @@ const Footer = () => {
             <InstagramIcon className="w-6 h-6 hover:text-pink-400 transition-colors" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/school/tedxniituniversity/?originalSubdomain=in"
             aria-label="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"

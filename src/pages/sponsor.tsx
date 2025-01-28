@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -9,18 +8,41 @@ export default function SponsorshipPage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <section className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0 z-99">
-          <video autoPlay loop muted className="object-cover w-full h-full">
-            <source src="/videos/sponsorhero.mp4" />
-            Your browser does not support the video tag.
-          </video>
+        {/* Cool Animated Gradient Background */}
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background:
+              "radial-gradient(circle at center, #000000, #761901, #000000, #000000)",
+            backgroundSize: "200% 200%",
+            animation: "gradientShift 5s ease infinite",
+          }}
+        ></div>
+
+        {/* Particle Animation */}
+        <div className="absolute inset-0 z-20 overflow-hidden">
+          {Array.from({ length: 50 }).map((_, index) => (
+            <div
+              key={index}
+              className="absolute rounded-full bg-[#E7000B]/80"
+              style={{
+                width: `${Math.random() * 5 + 2}px`,
+                height: `${Math.random() * 5 + 2}px`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                animation: `float ${
+                  Math.random() * 5 + 5
+                }s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 5}s`,
+              }}
+            ></div>
+          ))}
         </div>
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/50 to-transparent"></div>
         <div className="relative z-20 h-full flex items-center">
           <div className="container mx-auto px-4">
             <div className="w-full max-w-4xl mx-auto text-center">
               <motion.h1
-                className="text-6xl font-bold mb-6"
+                className="text-4xl font-bold mb-4 md:mt-10 mt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -41,15 +63,37 @@ export default function SponsorshipPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-              >
-                <Button className="bg-[#FF3A3A] hover:bg-[#FF3A3A]/90 text-white text-lg px-8 py-3">
-                  Explore Our Impact
-                </Button>
-              </motion.div>
+              ></motion.div>
             </div>
           </div>
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        @keyframes float {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+      `}</style>
 
       {/* Past Sponsors */}
       <section className="py-20 bg-gradient-to-b from-[#1A0000] to-black">
@@ -62,16 +106,19 @@ export default function SponsorshipPage() {
             conservation. Together, we&apos;re writing the next chapter of
             exploration.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { name: "Alpine Gear Co.", years: "2021-2023" },
-              { name: "EcoTrek Adventures", years: "2020-2023" },
-              { name: "Mountain Solutions", years: "2019-2023" },
-              { name: "Nature First", years: "2022-2023" },
-              { name: "Summit Technologies", years: "2021-2023" },
-              { name: "Green Path Initiative", years: "2020-2023" },
-              { name: "Adventure Dynamics", years: "2019-2023" },
-              { name: "Sustainable Paths", years: "2022-2023" },
+              { name: "Rallison", image: "/sponsors/rallison.jpg" },
+              { name: "EcoTrek Adventures", image: "/sponsors/ecotrek.jpg" },
+              { name: "Mountain Solutions", image: "/sponsors/mountain.jpg" },
+              { name: "Nature First", image: "/sponsors/naturefirst.jpg" },
+              { name: "Summit Technologies", image: "/sponsors/summit.jpg" },
+              {
+                name: "Green Path Initiative",
+                image: "/sponsors/greenpath.jpg",
+              },
+              { name: "Adventure Dynamics", image: "/sponsors/adventure.jpg" },
+              { name: "Sustainable Paths", image: "/sponsors/sustainable.jpg" },
             ].map((sponsor, index) => (
               <div
                 key={index}
@@ -79,7 +126,7 @@ export default function SponsorshipPage() {
               >
                 <div className="aspect-square relative mb-4 overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=200&width=200"
+                    src={sponsor.image}
                     alt={`${sponsor.name} logo`}
                     fill
                     className="object-contain p-4 filter grayscale group-hover:grayscale-0 transition-all transform group-hover:scale-110"
@@ -87,7 +134,6 @@ export default function SponsorshipPage() {
                 </div>
                 <div className="text-center">
                   <h3 className="font-bold text-lg mb-1">{sponsor.name}</h3>
-                  <p className="text-sm text-[#FF3A3A]">{sponsor.years}</p>
                 </div>
               </div>
             ))}
@@ -128,49 +174,49 @@ function SponsorShowcase() {
   }, [nextSponsor]);
 
   return (
-    <div className="mb-12 relative">
-      <p className="text-2xl font-bold mb-4">Featured Sponsor</p>
-      <div className="relative overflow-hidden rounded-lg">
+    <div className="mb-12 relative text-center">
+      <p className="text-xl font-semibold mb-4 text-[#ff4747]">
+        Featured <span className="text-white">Sponsor</span>
+      </p>
+      <div className="relative overflow-hidden rounded-xl mx-auto shadow-lg border border-gray-700/30 bg-gray-800 w-[90%] sm:w-[500px] h-[200px] sm:h-[300px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSponsor}
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-            className="relative aspect-video"
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.6 }}
+            className="relative w-full h-full"
           >
             <Image
               src={sponsors[currentSponsor].image}
               alt={sponsors[currentSponsor].name}
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="rounded-xl object-cover filter brightness-75 hover:brightness-100 transition-all"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex items-end p-6">
-              <div>
-                <h3 className="text-3xl font-bold text-white mb-2">
-                  {sponsors[currentSponsor].name}
-                </h3>
-                <p className="text-lg text-gray-200">
-                  {sponsors[currentSponsor].description}
-                </p>
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 flex items-end p-4">
+              <h3 className="text-lg font-bold text-white">
+                {sponsors[currentSponsor].name}
+              </h3>
             </div>
           </motion.div>
         </AnimatePresence>
         <button
           onClick={prevSponsor}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-full hover:bg-gray-700/80 transition-colors"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={20} />
         </button>
         <button
           onClick={nextSponsor}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-full hover:bg-gray-700/80 transition-colors"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={20} />
         </button>
       </div>
+      <p className="text-sm mt-4 text-gray-400">
+        {sponsors[currentSponsor].description}
+      </p>
     </div>
   );
 }

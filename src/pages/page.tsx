@@ -32,8 +32,8 @@ const InnovativeSection: React.FC<InnovativeSectionProps> = ({
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
-  const xOffset = useTransform(scrollYProgress, [0, 0.5, 1], [100, 0, -100]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.2]);
+  const xOffset = useTransform(scrollYProgress, [0, 0.5, 0.7], [50, 0, 10]);
   const negatedXOffset = useTransform(xOffset, (value) => -value);
 
   return (
@@ -229,7 +229,6 @@ const HeroSection = () => {
           isReversed={false}
           className="z-30"
         />
-        {/* Spacer div */}
         <div className="h-[100vh]"></div>
         <InnovativeSection
           title="Unleash Your Creativity"
@@ -239,7 +238,6 @@ const HeroSection = () => {
           isReversed={true}
           className="z-30"
         />
-        {/* Spacer div */}
         <div className="h-[100vh]"></div>
         <InnovativeSection
           title="Connect and Collaborate"

@@ -31,8 +31,10 @@ const Ticket = () => {
         <div className="absolute inset-0 z-[-1]">
           <WaveSection />
         </div>
-        <div className="w-full h-screen lg:text-9xl text-7xl text-center font-bold bg-black bg-opacity-20 backdrop-blur-lg pt-16 drop-shadow-sm flex flex-col items-center justify-center">
-          <div className="lg:text-7xl py-6 text-red-800 text-5xl">Buy</div>
+        <div className=" w-full h-screen lg:text-9xl text-7xl text-center font-bold bg-black bg-opacity-20 backdrop-blur-lg pt-16 drop-shadow-sm flex flex-col items-center justify-center">
+          <div className="lg:text-7xl py-6 text-red-800 text-5xl mt-[-10vh]">
+            Buy
+          </div>
           <div className={fonts.className}>Tickets</div>
           <div className="lg:text-4xl py-4 text-3xl">Now</div>
         </div>
