@@ -1,18 +1,20 @@
-"use client";
+"use client"; // Ensures this component is treated as a client component in Next.js
 
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, ReactNode } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/Header/Header";
 import HeaderMob from "@/components/HeaderMob/HeaderMob";
 import Footer from "@/components/Footer/Footer";
 import CustomTimer from "@/components/Timer/Timer";
+import { BulletinBoard } from "@/components/BulletinBoard/BulletinBoard";
+import Link from "next/link";
 
 interface InnovativeSectionProps {
   title: string;
   description: string;
   imageSrc: string;
-  ctaText: string;
+  ctaText: ReactNode;
   isReversed: boolean;
   className?: string;
 }
@@ -153,6 +155,26 @@ const HeroSection = () => {
           </div>
           <div className="absolute md:right-1/2 right-1/3 bottom-0 w-1/2 h-1/2 bg-gradient-to-bl from-cyan-600 via-black to-black transform overflow-hidden z-0 blur-sm"></div>
           <div className="absolute md:left-1/2 left-1/3 top-0 w-1/2 h-1/2 bg-gradient-to-tr from-red-600 via-black to-black transform overflow-hidden z-20 blur-sm"></div>
+          {/* Add BulletinBoard here */}
+          <BulletinBoard
+            recentEvents={[
+              {
+                title: "S.Y.M.P",
+                date: "2024-11-24",
+                images: ["/bulletin/symp1.png", "/bulletin/symp2.png"],
+              },
+              {
+                title: "Trick Or Terror",
+                date: "2024-10-24",
+                images: ["/bulletin/tot1.png", "/bulletin/tot2.png"],
+              },
+            ]}
+            nextEvent={{
+              title: "Echoes of Hourglass",
+              date: "2025-01-28",
+              images: ["/images/theme.jpeg"],
+            }}
+          />
 
           <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-[1000]">
             <h1 className="text-6xl md:text-6xl font-bold text-white">
@@ -219,31 +241,65 @@ const HeroSection = () => {
         }}
       >
         <div className="h-[100vh]"></div>
-        <div className="h-[70vh]"></div>
         {/* Innovative Sections */}
         <InnovativeSection
-          title="Revolutionize Your Workflow"
-          description="Experience unparalleled efficiency with our cutting-edge tools designed to streamline your daily tasks and boost productivity."
-          imageSrc="/images/test/1.png"
-          ctaText="Get Started"
+          title="Our Speakers"
+          description="Our TEDxNIITUniversity speakers are thought leaders, innovators, and visionaries from diverse fields. They share inspiring stories, groundbreaking ideas, and transformative experiences, sparking meaningful conversations and motivating our audience to embrace change and pursue their passions with purpose."
+          imageSrc="/images/rewindhero.jpeg"
+          ctaText={
+            <Link href="/speakers" className="text-white hover:underline">
+              Learn More
+            </Link>
+          }
           isReversed={false}
           className="z-30"
         />
-        <div className="h-[100vh]"></div>
+
         <InnovativeSection
-          title="Unleash Your Creativity"
-          description="Dive into a world of endless possibilities. Our platform provides the canvas for your imagination to run wild and bring your ideas to life."
-          imageSrc="/images/test/2.png"
-          ctaText="Explore Features"
+          title="Our Sponsors"
+          description="Our sponsors play a vital role in making TEDxNIITUniversity possible. Their generous support helps fund the event, ensuring a platform for sharing ideas and empowering future innovators. We are grateful for their commitment to fostering creativity and collaboration."
+          imageSrc="/images/test/7.jpg"
+          ctaText={
+            <Link href="/sponsor" className="text-white hover:underline">
+              Learn More
+            </Link>
+          }
           isReversed={true}
           className="z-30"
         />
-        <div className="h-[100vh]"></div>
         <InnovativeSection
-          title="Connect and Collaborate"
-          description="Break down barriers and foster seamless collaboration. Join a community of innovators and take your projects to new heights."
-          imageSrc="/images/test/3.png"
-          ctaText="Join Now"
+          title="Pre-Events"
+          description="Our pre-events create a vibrant platform for idea exchange and collaboration. Engaging workshops, seminars, and networking opportunities offer participants a chance to prepare, collaborate, and connect, fueling their creative energies for the main TEDxNIITUniversity event."
+          imageSrc="/bulletin/tot1.png"
+          ctaText={
+            <Link href="/preevents" className="text-white hover:underline">
+              Learn More
+            </Link>
+          }
+          isReversed={false}
+          className="z-30"
+        />
+        <InnovativeSection
+          title="Rewind the Editions"
+          description="Rewind the editions captures the essence of previous TEDxNIITUniversity events. Through highlights, memorable talks, and key moments, we revisit the energy, innovation, and inspiration that defined each edition, showcasing the legacy of thought-provoking ideas and vibrant discussions."
+          imageSrc="/themes/saptaranga.png"
+          ctaText={
+            <Link href="/rewind" className="text-white hover:underline">
+              Learn More
+            </Link>
+          }
+          isReversed={true}
+          className="z-30"
+        />
+        <InnovativeSection
+          title="About TEDxNIITUniversity"
+          description="TEDxNIITUniversity is a dynamic stage where bold ideas collide, igniting conversations that challenge, inspire, and transform. Bringing together visionary thought leaders, innovators, and changemakers, this independently organized event pushes the boundaries of creativity and curiosity."
+          imageSrc="/images/test/8.jpg"
+          ctaText={
+            <Link href="/about" className="text-white hover:underline">
+              Learn More
+            </Link>
+          }
           isReversed={false}
           className="z-30"
         />

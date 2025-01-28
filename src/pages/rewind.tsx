@@ -28,8 +28,7 @@ const yearContent: {
 } = {
   2018: {
     theme: "The Precipice",
-    description:
-      "On the brink of change",
+    description: "On the brink of change",
     themeImage: "/rewind/18.jpg",
     speakers: [
       {
@@ -37,63 +36,73 @@ const yearContent: {
         topic: "Flaws in Education",
         image: "/rewind/Precipice/Prasanth_Nori.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=zxusiA7UsHI&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=1",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=zxusiA7UsHI&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=1",
       },
       {
         name: "Nimisha Verma",
         topic: "Isolation",
         image: "/rewind/Precipice/Nimisha_Verma.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=RsqOdZepzVs&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=2",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=RsqOdZepzVs&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=2",
       },
       {
         name: "Anuv Jain",
         topic: "How Sadness Can Be Turned into One of Your Biggest Assets",
         image: "/rewind/Precipice/anuv_jain.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=fAYaSIMsxQs&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=3",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=fAYaSIMsxQs&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=3",
       },
       {
         name: "Dr Ananta Singh Raghuvanshi",
         topic: "Lead at the Edge of The Precipice",
         image: "/rewind/Precipice/Ananta_Singhi.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=BjRjuQnmJLY&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=4",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=BjRjuQnmJLY&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=4",
       },
       {
         name: "Sushant Kalra",
-        topic: "Aao baat karein- Beginning of Eradication of Child Sexual Abuse",
+        topic:
+          "Aao baat karein- Beginning of Eradication of Child Sexual Abuse",
         image: "/rewind/Precipice/sushant_kalra.jfif",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=tZoxCmda56I&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=5",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=tZoxCmda56I&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=5",
       },
       {
         name: "Maj Gen. Umang Sethi",
         topic: "We Before I ",
         image: "/rewind/Precipice/Umang_Sethi.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=nZkhF12fO8c&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=6",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=nZkhF12fO8c&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=6",
       },
       {
         name: "Narayani Gupta",
         topic: "Conversations with the Past",
         image: "/rewind/Precipice/narayanai-gupta.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=yc8-XT-awzY&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=7",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=yc8-XT-awzY&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=7",
       },
       {
         name: "Pankhuri Gidwani",
         topic: "Break the Stereotypes",
         image: "/rewind/Precipice/pankhuri_gidwani.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=XmE4mk8x00s&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=8",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=XmE4mk8x00s&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=8",
       },
       {
         name: "Dr Prem Atreja",
         topic: "To be healthy or not to be",
         image: "/rewind/Precipice/Prem_Atreja.jfif",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=531nxrBke88&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=9",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=531nxrBke88&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=9",
       },
     ],
     gallery: [
@@ -104,8 +113,7 @@ const yearContent: {
   },
   2019: {
     theme: "Sparking Metanoia",
-    description:
-      "",
+    description: "",
     themeImage: "/rewind/19.jpg",
     speakers: [
       {
@@ -197,8 +205,7 @@ const yearContent: {
   },
   2020: {
     theme: "Quo Vadis",
-    description:
-      "where are we headed?",
+    description: "where are we headed?",
     themeImage: "/rewind/20.jpg",
     speakers: [
       {
@@ -290,8 +297,7 @@ const yearContent: {
   },
   2021: {
     theme: "Swadhyaya",
-    description:
-      "An interview with oneself",
+    description: "An interview with oneself",
     themeImage: "/rewind/21.png",
     speakers: [
       {
@@ -299,49 +305,56 @@ const yearContent: {
         topic: "Hard Work,Consistency and Patience",
         image: "/rewind/Swadhyaya/aabir_vyas.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=ftMj6E4wX60&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=7",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=ftMj6E4wX60&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=7",
       },
       {
         name: "Abhash Jha",
         topic: "When No One Helped Me, I Helped Myself",
         image: "/rewind/Swadhyaya/Abhash_Jha.jfif",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=k_FdxLP2qIk&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=5",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=k_FdxLP2qIk&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=5",
       },
       {
         name: "Anirban Bhattacharyya",
         topic: "Morning Raaga",
         image: "/rewind/Swadhyaya/anirban_bhattacharyya.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=jsX0MMr35lk&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=2",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=jsX0MMr35lk&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=2",
       },
       {
         name: "Avinash Singh",
         topic: "Prosper. Or Perish",
         image: "/rewind/Swadhyaya/Avinash_Singh.jfif",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=IiVl2UgszFc&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=4",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=IiVl2UgszFc&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=4",
       },
       {
         name: " EPR Iyer",
         topic: "Hip Hop Empowers",
         image: "/rewind/Swadhyaya/EPR_Iyer.jpeg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=IaHkabRhBq4&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=6",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=IaHkabRhBq4&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=6",
       },
       {
         name: "Richie Mehta",
         topic: "The Meaning of .....",
         image: "/rewind/Swadhyaya/Richie_Mehta.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=N_8CsLScgKg&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=3",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=N_8CsLScgKg&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=3",
       },
       {
         name: "Vanndana Vaadera",
         topic: "Mental Workouts, the Pathway to Abundance",
         image: "/rewind/Swadhyaya/vanndana_vaadera.jpg",
         socialLinks: {},
-        tedTalkUrl: "https://www.youtube.com/watch?v=bB97hvh-7sI&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=8",
+        tedTalkUrl:
+          "https://www.youtube.com/watch?v=bB97hvh-7sI&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=8",
       },
     ],
     gallery: [
@@ -352,8 +365,7 @@ const yearContent: {
   },
   2022: {
     theme: "Parvaaz",
-    description:
-      "Azaad. Aagaaz. Aseem",
+    description: "Azaad. Aagaaz. Aseem",
     themeImage: "/rewind/22.png",
     speakers: [
       {
@@ -371,69 +383,77 @@ const yearContent: {
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=u4KNmBXKe-4&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=1",
-      },{
+      },
+      {
         name: "Supreet Singh Arora",
         topic: "Psychology of Personal Identity",
         image: "/rewind/Parvaaz/Author_sherry.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=cxGsANXP3OQ&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=8",
-      },{
+      },
+      {
         name: "Lakshay Jangid",
         topic: "Patience on one wheel",
         image: "/rewind/Parvaaz/lakshay.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=7sXgpj_Co9I&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=3",
-      },{
+      },
+      {
         name: "Major General D.Bipin Bakshi",
         topic: "Seeking new horizons,Breaking mindsets",
         image: "/rewind/Parvaaz/MajGenDrBipin_Bakshi.Jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
-      },{
+      },
+      {
         name: "Rakshit Tandon",
         topic: "Blockchain and Social Good",
         image: "/rewind/Parvaaz/Rakshit_Tandon.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
-      },{
+      },
+      {
         name: "Ridhi Khakhar",
         topic: "On carving your own path through perseverance",
         image: "/rewind/Parvaaz/ridhi.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=fA6ady8Xrq8&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=4",
-      },{
+      },
+      {
         name: "Sagar Lalwani",
         topic: "Take the risk or lose the chance",
         image: "/rewind/Parvaaz/Sagar_Lalwani.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=Fg9ixhDzPEo&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=5",
-      },{
+      },
+      {
         name: "Sangeeta Sindhi Bahl",
         topic: "Become who you aspire to be",
         image: "/rewind/Parvaaz/sangeeta.jpeg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=7-8v_IM7OKs&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=6",
-      },{
+      },
+      {
         name: "Srikanth Velamakanni",
         topic: "Unveiling the magic behind great AI",
         image: "/rewind/Parvaaz/srikant.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=PuyKr-jnguA&list=PL2LgFpGtqcj4UP5WSECTitMitbzvf0UMU&index=7",
-      },{
+      },
+      {
         name: "Yoga Bhabagna Jonala",
         topic: "Will Classical Dancing help in life",
         image: "/rewind/Parvaaz/yoga.jpg",
         socialLinks: {},
-        tedTalkUrl:
-          "",
+        tedTalkUrl: "",
       },
     ],
     gallery: [
@@ -444,8 +464,7 @@ const yearContent: {
   },
   2023: {
     theme: "T.H.I.N.C",
-    description:
-      "Transform, Hustle, Introspect, Nurture and Create",
+    description: "Transform, Hustle, Introspect, Nurture and Create",
     themeImage: "/themes/thinc.png",
     speakers: [
       {
@@ -553,8 +572,7 @@ const yearContent: {
   },
   2024: {
     theme: "Saptaranga",
-    description:
-      " Where Spectrums Unite",
+    description: " Where Spectrums Unite",
     themeImage: "/themes/saptaranga.png",
     speakers: [
       {
@@ -578,8 +596,7 @@ const yearContent: {
         topic: "Drapery and How It is Awesome",
         image: "/prev-speakers/gaurav24.png",
         socialLinks: {},
-        tedTalkUrl:
-          "",
+        tedTalkUrl: "",
       },
       {
         name: "Siddharth Jain",
@@ -631,7 +648,8 @@ const yearContent: {
       },
       {
         name: "Nirbhik Datta",
-        topic: "Unveiling the Subconscious: Exploring the Depths with Mentalism",
+        topic:
+          "Unveiling the Subconscious: Exploring the Depths with Mentalism",
         image: "/rewind/24/nirbhik.jpg",
         socialLinks: {},
         tedTalkUrl:
