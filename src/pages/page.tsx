@@ -32,7 +32,7 @@ const InnovativeSection: React.FC<InnovativeSectionProps> = ({
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.2]);
+  const scale = useTransform(scrollYProgress, [6, 0.2, 1], [-1, 1, 0.2]);
   const xOffset = useTransform(scrollYProgress, [0, 0.5, 0.7], [50, 0, 10]);
   const negatedXOffset = useTransform(xOffset, (value) => -value);
 

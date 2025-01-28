@@ -16,6 +16,14 @@ const mona = Mona_Sans({
 });
 
 const handleComplete = () => {};
+const fadeIn = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 const Register: React.FC = () => {
   const [showVIPForm, setShowVIPForm] = useState(false);
@@ -23,6 +31,7 @@ const Register: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "", // Added phone field
     ticketType: "",
   });
 
@@ -32,22 +41,19 @@ const Register: React.FC = () => {
       const data = { ...formData, ticketType };
 
       // Send data to SheetDB
-      const response = await fetch(
-        "https://sheetdb.io/api/v1/YOUR_SHEETDB_ID",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ data }),
-        }
-      );
+      const response = await fetch("https://sheetdb.io/api/v1/9n07s6wu29iot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data }),
+      });
 
       if (response.ok) {
         alert("Your ticket has been successfully booked!");
         setShowVIPForm(false);
         setShowGeneralForm(false);
-        setFormData({ name: "", email: "", ticketType: "" }); // Reset form
+        setFormData({ name: "", email: "", phone: "", ticketType: "" }); // Reset form
       } else {
         alert("Failed to book ticket. Please try again.");
       }
@@ -55,15 +61,6 @@ const Register: React.FC = () => {
       console.error("Error:", error);
       alert("An error occurred. Please try again.");
     }
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
   };
 
   return (
@@ -249,86 +246,165 @@ const Register: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* VIP Form Dialog */}
       <Dialog open={showVIPForm} onOpenChange={setShowVIPForm}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Buy VIP Ticket</DialogTitle>
+        <DialogContent className="p-8 bg-transparent overflow-hidden rounded-lg flex justify-center items-center inset-0 z-50 top-1/2 left-1/2">
+          <div className="absolute inset-0 bg-cyan-600/30 opacity-30  z-0">
+            <span className="absolute top-1/3 left-1/4 text-9xl text-white font-bold rotate-45 opacity-50">
+              X
+            </span>
+          </div>
+
+          <DialogHeader className="relative z-10">
+            <DialogTitle className="text-xl md:text-3xl font-bold text-white">
+              VIP Ticket Registration
+            </DialogTitle>
           </DialogHeader>
+
           <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSubmit("VIP");
             }}
+            className="relative z-10 mt-6 space-y-4"
           >
-            <input
-              type="text"
-              placeholder="Name"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              required
-              className="w-full p-2 border rounded mb-4"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              required
-              className="w-full p-2 border rounded mb-4"
-            />
-            <Button
-              type="submit"
-              className="w-full bg-cyan-600 hover:bg-cyan-700"
-            >
-              Book Ticket
-            </Button>
+            <div>
+              <label htmlFor="name" className="block text-white">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                className="input-field py-3 px-4 rounded-lg w-full bg-transparent border-2 border-white text-white placeholder:text-white focus:ring-2 focus:ring-cyan-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-white">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                className="input-field py-3 px-4 rounded-lg w-full bg-transparent border-2 border-white text-white placeholder:text-white focus:ring-2 focus:ring-cyan-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className="block text-white">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                value={formData.phone}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
+                className="input-field py-3 px-4 rounded-lg w-full bg-transparent border-2 border-white text-white placeholder:text-white focus:ring-2 focus:ring-cyan-500"
+                required
+              />
+            </div>
+
+            <div className="flex justify-center mt-6">
+              <Button
+                type="submit"
+                className="w-full text-lg bg-cyan-600 hover:bg-cyan-700 text-white font-bold rounded-lg"
+              >
+                Submit
+              </Button>
+            </div>
           </form>
         </DialogContent>
       </Dialog>
 
       {/* General Form Dialog */}
       <Dialog open={showGeneralForm} onOpenChange={setShowGeneralForm}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Buy General Ticket</DialogTitle>
+        <DialogContent className="p-8 bg-transparent overflow-hidden rounded-lg flex justify-center items-center inset-0 z-50 top-1/2 left-1/2">
+          <div className="absolute inset-0 bg-red-600/30 opacity-30  z-0">
+            <span className="absolute top-1/3 left-1/4 text-9xl text-white font-bold rotate-45 opacity-50">
+              X
+            </span>
+          </div>
+
+          <DialogHeader className="relative z-10">
+            <DialogTitle className="text-xl md:text-3xl font-bold text-white">
+              General Ticket Registration
+            </DialogTitle>
           </DialogHeader>
+
           <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSubmit("General");
             }}
+            className="relative z-10 mt-6 space-y-4"
           >
-            <input
-              type="text"
-              placeholder="Name"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              required
-              className="w-full p-2 border rounded mb-4"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              required
-              className="w-full p-2 border rounded mb-4"
-            />
-            <Button
-              type="submit"
-              className="w-full bg-red-600 hover:bg-red-700"
-            >
-              Book Ticket
-            </Button>
+            <div>
+              <label htmlFor="name" className="block text-white">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                className="input-field py-3 px-4 rounded-lg w-full bg-transparent border-2 border-white text-white placeholder:text-white focus:ring-2 focus:ring-red-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-white">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                className="input-field py-3 px-4 rounded-lg w-full bg-transparent border-2 border-white text-white placeholder:text-white focus:ring-2 focus:ring-red-500"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className="block text-white">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                value={formData.phone}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
+                className="input-field py-3 px-4 rounded-lg w-full bg-transparent border-2 border-white text-white placeholder:text-white focus:ring-2 focus:ring-red-500"
+                required
+              />
+            </div>
+
+            <div className="flex justify-center mt-6">
+              <Button
+                type="submit"
+                className="w-full text-lg bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg"
+              >
+                Submit
+              </Button>
+            </div>
           </form>
         </DialogContent>
       </Dialog>
