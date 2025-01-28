@@ -4,11 +4,13 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
 interface Event {
   title: string;
   date: string;
   images: string[];
 }
+
 interface BulletinBoardProps {
   recentEvents: Event[];
   nextEvent: Event;
@@ -20,12 +22,13 @@ export const BulletinBoard: React.FC<BulletinBoardProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleBoard = () => setIsOpen(!isOpen);
+
   return (
     <motion.div
       initial={{ right: 0 }}
       animate={{ right: isOpen ? "0px" : "-320px" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="fixed top-0 bottom-0 right-0 z-50 flex items-stretch"
+      className="fixed top-0 bottom-0 right-0 z-[9999] flex items-stretch" // Increased z-index for top layer
     >
       <button
         onClick={toggleBoard}
@@ -38,7 +41,7 @@ export const BulletinBoard: React.FC<BulletinBoardProps> = ({
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? 0 : "100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="bg-black bg-opacity-100 w-80 overflow-y-auto"
+        className="bg-black bg-opacity-100 w-80 overflow-y-auto z-[10000]" // Added higher z-index
       >
         <div className="p-4 h-full flex flex-col">
           <h3 className="text-xl font-bold mb-4 text-[#FF3A3A]">
