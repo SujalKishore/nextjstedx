@@ -3,88 +3,88 @@ import SpeakerCard from "../SpeakerCard/SpeakerCard";
 
 const speakers = [
   {
-    name: "Dr. Jane Smith",
-    title: "AI Ethics Researcher",
-    image: "/currSpeaker/neo.png",
+    name: "Aiman Khan",
+    title: "Content Creator",
+    image: "/speakers/aiman.png",
     longDescription:
-      "Dr. Jane Smith is a renowned AI ethics researcher who has dedicated her career to exploring the complex ethical challenges posed by artificial intelligence. Her groundbreaking work focuses on ensuring that AI systems are developed and deployed in ways that respect human rights, promote fairness, and enhance societal well-being. Dr. Smith's research has influenced policy-making at both national and international levels, shaping the future of AI governance.",
+      "Known as @justaiming, Aiman captivates nearly half a million followers with her vibrant personality and impactful content. From mental health advocacy to empowering fashion tips and relatable skits, she inspires women to embrace their individuality with confidence. Her humor, positivity, and authenticity make her platform a must-follow for anyone seeking connection, laughter, and empowerment!",
   },
   {
-    name: "John Doe",
-    title: "Climate Change Activist",
-    image: "/currSpeaker/ron2.png",
+    name: "Tirth Parsana",
+    title: "Content Creator",
+    image: "/speakers/tirth.png",
     longDescription:
-      "John Doe is a tireless climate change activist whose work has inspired millions to take action against global warming. Through his grassroots campaigns and collaborations with leading environmental organizations, John has been instrumental in promoting sustainable living practices and pushing for policy changes to address the climate crisis. His innovative approaches to community engagement have created a ripple effect of positive environmental action across the globe.",
+      "With over 7 million followers and 1 billion views, Tirth has become a digital sensation, turning his platforms into hubs of creativity and inspiration. As the author, he explores deep themes of innocence, guilt, and the human condition. Today, at TEDxNIITUniversity 2025, Tirth is here to share his incredible journey, his rise to fame, and the secrets to standing out in the digital world. Let’s hear it for Tirth Parsana! ",
   },
   {
-    name: "Kim Jon Un",
-    title: "Quantum Computing Pioneer",
-    image: "/speakers/sarah-johnson.jpg",
+    name: "Sneha Chakraborty",
+    title: "Artist & AR NFT Pioneer",
+    image: "/speakers/sneha.png",
     longDescription:
-      "Sarah Johnson is at the forefront of quantum computing research, working to harness the power of quantum mechanics to solve complex computational problems. Her work in quantum algorithms and error correction has paved the way for more stable and powerful quantum systems. Sarah's vision for the future of computing extends beyond theoretical research, as she actively collaborates with industry partners to bring quantum computing applications to life in fields such as cryptography, drug discovery, and financial modeling.",
+      "Meet Sneha, the street art superhero transforming Mumbai’s slums into vibrant canvases of color and hope! Her murals tell powerful stories, turning forgotten walls into symbols of pride by involving local residents as co-creators. As India’s first artist to showcase AR NFT art in a gallery, Sneha is pushing the boundaries of creativity and technology. With every brushstroke, she proves that art isn’t just about beauty—it’s about connection, transformation, and inspiring magic! ",
   },
   {
-    name: "Pratham Chaudhary",
-    title: "Neuroscience Innovator",
-    image: "/images/hero.png",
+    name: "Ashu ghai",
+    title: "Educator & Science Communicator",
+    image: "/speakers/ashu.png",
     longDescription:
-      "Pratham Chaudhary will be coming along with one of the speakers.",
+      "meet a game-changer in science education! Revolutionizing how young minds engage with science, he’s making learning fun, smart, and accessible. As the creator of Science and Fun, with over 7 million subscribers, he turns complex concepts into bite-sized wonders. With captivating experiments and relatable insights, he’s inspiring students to think beyond the classroom and explore the magic of science. With four TEDx Talks to his name, let’s give it up for the incredible Science and Fun mastermind! ",
   },
   {
-    name: "Emily Rodriguez",
-    title: "Space Exploration Visionary",
-    image: "/speakers/emily-rodriguez.jpg",
+    name: "Dr Uterus",
+    title: "Doctor",
+    image: "/speakers/uterus.png",
     longDescription:
-      "Emily Rodriguez is a visionary leader in the field of space exploration, spearheading efforts to make interplanetary travel and colonization a reality. Her work combines cutting-edge aerospace engineering with a deep understanding of the biological and psychological challenges of long-term space habitation. Emily's projects range from developing sustainable life support systems for Mars missions to designing innovative propulsion technologies that could dramatically reduce travel times between planets. Her passion for space exploration is matched only by her commitment to making the benefits of space technology accessible to all of humanity.",
+      "Meet Dr. Mitali, fondly known as Dr. Uterus—the powerhouse redefining women’s health conversations! As a TEDx speaker and fearless advocate, she’s breaking stigmas, busting myths, and making reproductive health a relatable topic. With a perfect mix of expertise and humor, Dr. Mitali turns complex medical jargon into empowering “aha!” moments. She’s not just a doctor—she’s a trailblazer inspiring a revolution in well-being! ",
   },
   {
-    name: "David Kim",
-    title: "Blockchain Entrepreneur",
-    image: "/speakers/david-kim.jpg",
+    name: "Manas Chopra",
+    title: "Co-Founder, Geek Room and a Tech Enthusiast",
+    image: "/speakers/manas.png",
     longDescription:
-      "David Kim is a pioneering blockchain entrepreneur whose work is reshaping the landscape of finance and digital identity. His innovative blockchain solutions are addressing some of the most pressing challenges in areas such as financial inclusion, secure digital voting systems, and transparent supply chain management. David's projects have not only demonstrated the transformative potential of blockchain technology but have also played a crucial role in making these complex systems more accessible and user-friendly for the general public. His vision of a more decentralized and equitable digital future continues to inspire and drive innovation in the blockchain space.",
+      "Meet Manas, the co-founder of Geek Room—a platform revolutionizing how geeks, innovators, and creators connect to learn and build together. More than a tech enthusiast, Manas is a visionary who created a community-driven space where tech lovers, gamers, and dreamers thrive. Geek Room isn’t just a platform; it’s a powerhouse of creativity and collaboration, shaping the next generation of tech leaders! ",
   },
   {
-    name: "Linda Smith",
-    title: "Cybersecurity Expert",
-    image: "/speakers/linda-smith.jpg",
+    name: "Divas Gupta",
+    title: "Public Speaker",
+    image: "/speakers/divas.png",
     longDescription:
-      "Linda Smith is a leading expert in cybersecurity, specializing in threat intelligence and incident response. Her work focuses on identifying and mitigating emerging cyber threats, from sophisticated malware attacks to large-scale data breaches. Linda's research and analysis have been instrumental in helping organizations across various sectors strengthen their cybersecurity posture and respond effectively to cyber incidents. Her commitment to advancing cybersecurity awareness and education has made her a respected voice in the field, and her insights are sought after by industry professionals, policymakers, and the media.",
+      "Meet Divas, our extraordinary 7th TEDx speaker! One of India’s top public speaking coaches, he turns nervous speakers into confident communicators. With over 1.2 million followers and a global community across 14+ countries, Divas has trained Fortune 500 professionals and is the co-founder of Ikigai Learning. He helps people discover their purpose and align it with their career dreams! ",
   },
   {
-    name: "Michael Johnson",
-    title: "Digital Transformation Strategist",
-    image: "/speakers/michael-johnson.jpg",
+    name: "Dr. Gajendra Purohit",
+    title: "Educator",
+    image: "/speakers/gajendra.png",
     longDescription:
-      "Michael Johnson is a digital transformation strategist who helps organizations navigate the complexities of the digital age and harness the power of technology to drive innovation and growth. His expertise spans a wide range of digital technologies, from artificial intelligence and machine learning to cloud computing and cybersecurity. Michael's strategic guidance has enabled businesses to adapt to rapidly changing market conditions, enhance customer experiences, and unlock new opportunities for revenue generation. His thought leadership in digital transformation has made him a trusted advisor to executives and decision-makers seeking to future-proof their organizations in an increasingly digital world.",
+      "Meet the legend who’s revolutionizing how we learn! Known for making even the toughest math equations understandable just hours before exams, he’s redefined how students tackle competitive exams. With a mantra of free, accessible, and empowering knowledge, he’s reaching students everywhere, helping them chase their dreams. Get ready to hear from the educator simplifying complex equations with ease! ",
   },
   {
-    name: "Sophia Lee",
-    title: "HealthTech Innovator",
-    image: "/speakers/sophia-lee.jpg",
+    name: "Humaira Mushtaq",
+    title: "Professional Racer",
+    image: "/speakers/humaira.png",
     longDescription:
-      "Sophia Lee is a trailblazing innovator in the field of HealthTech, leveraging cutting-edge technologies to revolutionize healthcare delivery and improve patient outcomes. Her work spans a wide range of applications, from telemedicine and wearable health devices to AI-driven diagnostics and personalized treatment plans. Sophia's vision for the future of healthcare combines a deep understanding of medical science with a passion for innovation, resulting in transformative solutions that are shaping the future of medicine. Her commitment to making healthcare more accessible, affordable, and effective has earned her recognition as a leader in the HealthTech industry.",
+      "Introducing Humaira Mushtaq, India’s first female racer from Jammu and Kashmir! A true trailblazer, she’s dominating the racetrack and shattering stereotypes in national championships. With her fierce determination and skill, Humaira is proving that motorsports is for everyone, regardless of gender. But she’s not just racing to win—she’s inspiring young women to take the wheel and break barriers. Humaira’s journey shows that with talent, grit, and courage, no dream is too far. Let’s give it up for the unstoppable Humaira Mushtaq! ",
   },
   {
-    name: "Alex Brown",
-    title: "Social Impact Entrepreneur",
-    image: "/speakers/alex-brown.jpg",
+    name: "Dr. L. Venkata Subramaniam",
+    title: "Tech Author & Innovator",
+    image: "/speakers/venkata.png",
     longDescription:
-      "Alex Brown is a social impact entrepreneur who is dedicated to creating positive change in the world through innovative business solutions. His ventures focus on"
+      "Meet Dr. L. Venkata Subramaniam, a visionary at the forefront of India’s quantum revolution! With over 150 research papers, 34 patents, and 3,000+ citations, his expertise spans AI, machine reasoning, and big data analytics. A Ph.D. from IIT Delhi and celebrated TEDx speaker, he makes quantum computing accessible and engaging. In his book Quantum Nation: India's Leap into the Future, he urges India to lead in quantum technology. Known for his humor and depth, Dr. Subramaniam inspires audiences to explore the limitless possibilities of technology with clarity and passion! ",
   },
   {
-    name: "Sophia Lee",
-    title: "HealthTech Innovator",
-    image: "/speakers/sophia-lee.jpg",
+    name: "Nainika Mukherjee",
+    title: "Kathak Dancer & Dance Movement Therapist",
+    image: "/speakers/Nainika.png",
     longDescription:
-      "Sophia Lee is a trailblazing innovator in the field of HealthTech, leveraging cutting-edge technologies to revolutionize healthcare delivery and improve patient outcomes. Her work spans a wide range of applications, from telemedicine and wearable health devices to AI-driven diagnostics and personalized treatment plans. Sophia's vision for the future of healthcare combines a deep understanding of medical science with a passion for innovation, resulting in transformative solutions that are shaping the future of medicine. Her commitment to making healthcare more accessible, affordable, and effective has earned her recognition as a leader in the HealthTech industry.",
+      "a vibrant force who transforms movement into magic! A master’s graduate in counseling psychology and certified Dance Movement Therapy practitioner, she fuses the elegance of Kathak with the science of healing. Trained by legends like Pt. Rajendra Gangani, her journey from rhythmic beats to heartfelt connections is nothing short of inspiring. Starting her Kathak journey in 2005, Nainika didn’t just master her art—she redefined it, exploring how dance can reduce stress and uplift mental health. For all the dance lovers who find peace in movement, she proves that dance isn’t just art—it’s a language of healing.",
   },
   {
-    name: "Alex Brown",
-    title: "Social Impact Entrepreneur",
-    image: "/speakers/alex-brown.jpg",
+    name: "Capt. Dharamveer Singh",
+    title: "Ex-Army Officer & Adventurer",
+    image: "/speakers/capt.png",
     longDescription:
-      "Alex Brown is a social impact entrepreneur who is dedicated to creating positive change in the world through innovative business solutions. His ventures focus on"
+      "After five impactful years in the Army, excelling in tough operations, he transitioned to leadership roles in business, founding the successful venture Apache. A certified mountaineer, marathon runner, and national cricketer, he’s conquered challenges, even finishing as runner-up on Fear Factor: Khatron Ke Khiladi. As a 14-time TEDx speaker, Capt. Dharamveer captivates audiences with tales of resilience and daring, inspiring them to embrace opportunities with his motto, “Be Ready Always.",
   },
 ];
 
@@ -98,8 +98,6 @@ const CardSpeaker: React.FC = () => {
       </div>
     </div>
   );
-
 };
-
 
 export default CardSpeaker;

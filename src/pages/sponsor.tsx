@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { ImmersiveForm } from "@/components/ImmersiveForm/ImmersiveForm";
+//import { ImmersiveForm } from "@/components/ImmersiveForm/ImmersiveForm";
 
 export default function SponsorshipPage() {
   return (
@@ -47,7 +47,7 @@ export default function SponsorshipPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                CHAMPIONS OF <span className="text-[#FF3A3A]">ADVENTURE</span>
+                OUR PREVIOUS <span className="text-[#FF3A3A]">SPONSORS</span>
               </motion.h1>
               <SponsorShowcase />
               <motion.p
@@ -56,8 +56,6 @@ export default function SponsorshipPage() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
               >
-                Discover the visionary partners who fuel our mission to preserve
-                nature and inspire adventure.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -96,29 +94,28 @@ export default function SponsorshipPage() {
       `}</style>
 
       {/* Past Sponsors */}
-      <section className="py-20 bg-gradient-to-b from-[#1A0000] to-black">
+      <section className="py-20 bg-gradient-to-b from-[#1A0000] via-black to-[#1A0000]">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6 text-[#FF3A3A]">
             OUR ESTEEMED PARTNERS
           </h2>
-          <p className="text-gray-400 mb-12 max-w-2xl">
-            Join these visionary brands in our quest to redefine adventure and
-            conservation. Together, we&apos;re writing the next chapter of
-            exploration.
-          </p>
+            <p className="text-gray-400 mb-12 max-w-2xl">
+            We thank our sponsors for their continued support and commitment to making our events successful and impactful.
+            </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               { name: "Rallison", image: "/sponsors/rallison.jpg" },
-              { name: "EcoTrek Adventures", image: "/sponsors/ecotrek.jpg" },
-              { name: "Mountain Solutions", image: "/sponsors/mountain.jpg" },
-              { name: "Nature First", image: "/sponsors/naturefirst.jpg" },
-              { name: "Summit Technologies", image: "/sponsors/summit.jpg" },
+              { name: "Nutty Gritties", image: "/sponsors/dont print.png" },
+              { name: "Ravi Aggarwal Global Rockstar", image: "/sponsors/rav.png" },
+              { name: "GDX", image: "/sponsors/GDX.png" },
+              { name: "StudCops", image: "/sponsors/StudCops.png" },
               {
-                name: "Green Path Initiative",
-                image: "/sponsors/greenpath.jpg",
+                name: "Boombird",
+                image: "/sponsors/boombird.png",
               },
-              { name: "Adventure Dynamics", image: "/sponsors/adventure.jpg" },
-              { name: "Sustainable Paths", image: "/sponsors/sustainable.jpg" },
+              { name: "BCH", image: "/sponsors/bch.png" },
+              { name: "Nescafe", image: "/sponsors/nescafe.jpg" },
+              { name: "Bustro", image: "/sponsors/bustro.png" },
             ].map((sponsor, index) => (
               <div
                 key={index}
@@ -140,7 +137,7 @@ export default function SponsorshipPage() {
           </div>
         </div>
       </section>
-      <ImmersiveForm />
+      {/* <ImmersiveForm /> */}
     </main>
   );
 }
@@ -176,9 +173,9 @@ function SponsorShowcase() {
   return (
     <div className="mb-12 relative text-center">
       <p className="text-xl font-semibold mb-4 text-[#ff4747]">
-        Featured <span className="text-white">Sponsor</span>
+        Featured <span className="text-white">Sponsors</span>
       </p>
-      <div className="relative overflow-hidden rounded-xl mx-auto shadow-lg border border-gray-700/30 bg-gray-800 w-[90%] sm:w-[500px] h-[200px] sm:h-[300px]">
+      <div className="relative overflow-hidden rounded-xl mx-auto shadow-lg border border-gray-700/30 bg-gray-800 w-[95%] sm:w-[700px] h-[500px] sm:h-[400px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSponsor}
