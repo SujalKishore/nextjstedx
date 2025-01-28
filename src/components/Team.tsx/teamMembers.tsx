@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Linkedin } from "lucide-react";
+//import { Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TeamMemberX } from "../TeamMemberX/TeamMemberX";
@@ -17,61 +17,61 @@ const teamMembers = [
     name: "Shreeya Singh",
     role: "Organizer",
     imgSrc: "/core/IMG_7900.png",
-    linkedin: "https://linkedin.com/in/johndoe",
+    //linkedin: "https://linkedin.com/in/johndoe",
   },
   {
     name: "Zain Khan",
     role: "Co-organizer",
     imgSrc: "/core/IMG_7863.png",
-    linkedin: "https://linkedin.com/in/janesmith",
+    //linkedin: "https://linkedin.com/in/janesmith",
   },
   {
     name: "Shivanshi Sharma",
     role: "Editorial Curation and Speakers' Experience Core",
     imgSrc: "/core/IMG_7874.png",
-    linkedin: "https://linkedin.com/in/alicejohnson",
+    //linkedin: "https://linkedin.com/in/alicejohnson",
   },
   {
     name: "Kavneet Kaur",
     role: "Sponsorship and Finance Core",
     imgSrc: "/core/IMG_7931.png",
-    linkedin: "https://linkedin.com/in/boblee",
+    //linkedin: "https://linkedin.com/in/boblee",
   },
   {
     name: "Divay Gupta",
     role: "Design Core",
     imgSrc: "/core/IMG_7902.png",
-    linkedin: "https://linkedin.com/in/charliebrown",
+    //linkedin: "https://linkedin.com/in/charliebrown",
   },
   {
     name: "Koushik Reddy",
     role: "Production Core",
     imgSrc: "/core/IMG_7868.png",
-    linkedin: "https://linkedin.com/in/davidwhite",
+    //linkedin: "https://linkedin.com/in/davidwhite",
   },
   {
     name: "Sujal Kishore",
     role: "Tech Core",
     imgSrc: "/core/IMG_7765.png",
-    linkedin: "https://linkedin.com/in/evagreen",
+    //linkedin: "https://linkedin.com/in/evagreen",
   },
   {
     name: "Amy Sony",
     role: "Creative Core",
     imgSrc: "/core/IMG_7847.png",
-    linkedin: "https://linkedin.com/in/frankharris",
+    //linkedin: "https://linkedin.com/in/frankharris",
   },
   {
     name: "Indranil Saha",
     role: "Marketing and Social Media Core",
     imgSrc: "/core/IMG_8772.png",
-    linkedin: "https://linkedin.com/in/frankharris",
+    //linkedin: "https://linkedin.com/in/frankharris",
   },
   {
     name: "Aditi Saini",
     role: "Capture and Post Production Core",
     imgSrc: "/core/IMG_3158.png",
-    linkedin: "https://linkedin.com/in/frankharris",
+    //linkedin: "https://linkedin.com/in/frankharris",
   },
 ];
 
@@ -81,12 +81,12 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-b from-black to-[#000000] relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center text-[#FF3A3A]">
-            About TED and TEDx
+            About TED and TEDxNIITUniversity
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <Card className="bg-black/50 border border-[#FF3A3A]/20 overflow-hidden rounded-lg">
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-4 text-[#FF3A3A]">TED</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#FF3A3A]">TEDx</h3>
                 <p className="text-white">
                   TED is a nonprofit devoted to spreading ideas, usually in the
                   form of short, powerful talks (18 minutes or less). TED began
@@ -98,12 +98,11 @@ export default function AboutPage() {
             </Card>
             <Card className="bg-black/50 border border-[#FF3A3A]/20 overflow-hidden rounded-lg">
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-4 text-[#FF3A3A]">TEDx</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#FF3A3A]">TEDxNIITUniversity</h3>
                 <p className="text-white">
-                  TEDx are independent TED-like events, which can be organized
-                  by anyone who obtains a free license from TED, agreeing to
-                  follow certain principles. TEDx events are non-profit but may
-                  use an admission fee or commercial sponsorship to cover costs.
+                TEDxNIITUniversity is a stage where ideas converge to challenge, inspire, and transform. Bringing together visionaries, innovators, and changemakers, this event celebrates the power of diverse perspectives to ignite change. Rooted in TED’s mission, it pushes the boundaries of creativity and curiosity, shaping a future as limitless as the ideas shared. Prepare to be moved, provoked, and empowered.
+-one tagline for current events
+
                 </p>
               </CardContent>
             </Card>
@@ -113,7 +112,7 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-b from-black to-[#1A0000] relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold mb-12 text-center text-[#FF3A3A]">
-            Our Event Theme
+            Our Theme
           </h2>
           <Card className="bg-black/50 border border-[#FF3A3A]/20 overflow-hidden rounded-lg">
             <CardContent className="p-6">
@@ -130,14 +129,10 @@ export default function AboutPage() {
                 </div>
                 <div className="text-center md:text-left md:order-1">
                   <h3 className="text-3xl font-bold mb-4 text-[#FF3A3A]">
-                    The Future of Innovation
+                  Inverso Clessidra- as time folds, perspectives unfold
                   </h3>
                   <p className="text-lg text-white mb-6">
-                    Our TEDx event is themed around innovation — exploring the
-                    cutting-edge ideas shaping the future. From technological
-                    breakthroughs to groundbreaking concepts in society, we aim
-                    to spark creativity and discussion on how we can drive the
-                    future forward.
+                  TEDxNIITUniversity is a stage where ideas converge to challenge, inspire, and transform. Bringing together visionaries, innovators, and changemakers, this event celebrates the power of diverse perspectives to ignite change. Rooted in TED’s mission, it pushes the boundaries of creativity and curiosity, shaping a future as limitless as the ideas shared. Prepare to be moved, provoked, and empowered.
                   </p>
                   <Button className="bg-[#FF3A3A] hover:bg-[#FF3A3A]/90 text-white text-lg px-6 py-3">
                     Learn More
@@ -185,14 +180,14 @@ export default function AboutPage() {
                     {member.name}
                   </h3>
                   <p className="text-sm text-gray-400 mb-2">{member.role}</p>
-                  <a
-                    href={member.linkedin}
+                  {/* <a
+                    //href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#FF3A3A] hover:text-[#FF3A3A]/90 inline-block"
                   >
                     <Linkedin className="w-6 h-6" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             ))}
@@ -221,58 +216,42 @@ export default function AboutPage() {
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-white text-left">
-                  How can I join the TEDx organizing team?
+                What is the theme of the TEDxNiituniversity event?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  {`We welcome passionate individuals who want to contribute to
-                  spreading ideas in our community. You can apply to join our
-                  team by sending your resume and a letter of interest
-                  explaining why you'd like to be part of TEDx. We have various
-                  roles available throughout the year.`}
+                  {`The theme for TEDxNIITUniversity 2025 is Inverso Clessidra- as time folds, perspectives unfold.`}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-white text-left">
-                  What roles are available on the team?
+                When and where will the event take place?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  We have diverse roles including event planning, speaker
-                  curation, marketing, technical production, volunteer
-                  coordination, and sponsorship management. Each role is crucial
-                  to creating an impactful TEDx event.
+                The event will take place at NIIT University, neemrana on 9th march 2025 at 9:00AM in the auditorium.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
                 <AccordionTrigger className="text-white text-left">
-                  How much time commitment is required?
+                How can I purchase tickets?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  {`Time commitment varies by role and event phase. Generally,
-                  team members commit 5-10 hours per week, with increased
-                  involvement closer to the event date. We value flexibility and
-                  work with each team member's schedule.`}
+                  {`The tickets can be bought by registering on the website.`}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
                 <AccordionTrigger className="text-white text-left">
-                  Do I need previous experience with TEDx?
+                What should I expect from the event?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  {`While previous TEDx experience is valuable, it's not required.
-                  We look for individuals who are passionate about ideas, have
-                  relevant skills for their role, and are committed to our
-                  mission of spreading innovative ideas in the community.`}
+                  {`Our speakers will share their perspectives on the theme, The discussions will be around topics like technology, science, art, etc. `}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-6">
                 <AccordionTrigger className="text-white text-left">
-                  How can I get involved without joining the core team?
+                How can I get involved as a volunteer / Who can I contact for more information?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                  There are many ways to get involved! You can volunteer during
-                  the event, become a sponsor, nominate speakers, or help
-                  promote the event in your network. Each contribution helps
-                  make our TEDx event more impactful.
+                {`We welcome volunteers to help make our event a success. For more information, please contact TedxNiitUniversity team on the Contact Us section.`}
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
