@@ -41,7 +41,7 @@ const Register: React.FC = () => {
       const data = { ...formData, ticketType };
 
       // Send data to SheetDB
-      const response = await fetch("https://sheetdb.io/api/v1/9n07s6wu29iot", {
+      const response = await fetch("https://sheetdb.io/api/v1/rc3axzjqdcdwy", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
