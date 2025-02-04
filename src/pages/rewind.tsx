@@ -7,7 +7,7 @@ import { Description } from "@/components/desc/desc";
 import { SpeakersList } from "@/components/SpeakersList/SpeakersList";
 import TopBanner from "@/components/XHero/XHero";
 //import dynamic from "next/dynamic";
-import Carousel from "@/components/Carousel/Carousel";
+//import Carousel from "@/components/Carousel/Carousel";
 const yearContent: {
   [key: number]: {
     theme: string;
