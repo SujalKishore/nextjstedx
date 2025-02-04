@@ -6,7 +6,7 @@ import { ThemeImage } from "@/components/ThemeImage/ThemeImage";
 import { Description } from "@/components/desc/desc";
 import { SpeakersList } from "@/components/SpeakersList/SpeakersList";
 import TopBanner from "@/components/XHero/XHero";
-//import dynamic from "next/dynamic";
+//import dyna
 const yearContent: {
   [key: number]: {
     theme: string;
