@@ -15,7 +15,6 @@ const images = [
   "https://highflyer.sirv.com/cloud/2_zja2bq.png",
   "https://highflyer.sirv.com/cloud/11_p1oi8m.png",
 ];
-
 const Carousel: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

@@ -6,6 +6,7 @@ import { ThemeImage } from "@/components/ThemeImage/ThemeImage";
 import { Description } from "@/components/desc/desc";
 import { SpeakersList } from "@/components/SpeakersList/SpeakersList";
 import TopBanner from "@/components/XHero/XHero";
+//import dyna
 const yearContent: {
   [key: number]: {
     theme: string;
@@ -65,7 +66,7 @@ const yearContent: {
         name: "Sushant Kalra",
         topic:
           "Aao baat karein- Beginning of Eradication of Child Sexual Abuse",
-        image: "/rewind/Precipice/sushant_kalra.jfif",
+        image: "/rewind/Precipice/sushant_kalra.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=tZoxCmda56I&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=5",
@@ -97,7 +98,7 @@ const yearContent: {
       {
         name: "Dr Prem Atreja",
         topic: "To be healthy or not to be",
-        image: "/rewind/Precipice/Prem_Atreja.jfif",
+        image: "/rewind/Precipice/Prem_Atreja.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=531nxrBke88&list=PLsRNoUx8w3rNdvD1tNTtHmyWfqTofEDB4&index=9",
@@ -157,7 +158,7 @@ const yearContent: {
       {
         name: "Nidhi Lauria",
         topic: "A Case for Generosity",
-        image: "/rewind/Sparking/Nidhi_Lauria.jfif",
+        image: "/rewind/Sparking/Nidhi_Lauria.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=umH9yka1siY&list=PLsRNoUx8w3rO01rum8RfjQn5LVl5Vq7Ka&index=6",
@@ -309,7 +310,7 @@ const yearContent: {
       {
         name: "Abhash Jha",
         topic: "When No One Helped Me, I Helped Myself",
-        image: "/rewind/Swadhyaya/Abhash_Jha.jfif",
+        image: "/rewind/Swadhyaya/Abhash_Jha.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=k_FdxLP2qIk&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=5",
@@ -325,7 +326,7 @@ const yearContent: {
       {
         name: "Avinash Singh",
         topic: "Prosper. Or Perish",
-        image: "/rewind/Swadhyaya/Avinash_Singh.jfif",
+        image: "/rewind/Swadhyaya/Avinash_Singh.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=IiVl2UgszFc&list=PLsRNoUx8w3rOE8ZdaLiqWRvt8QDozjwEo&index=4",
@@ -401,7 +402,7 @@ const yearContent: {
       {
         name: "Major General D.Bipin Bakshi",
         topic: "Seeking new horizons,Breaking mindsets",
-        image: "/rewind/Parvaaz/MajGenDrBipin_Bakshi.Jpg",
+        image: "/rewind/Parvaaz/maj.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.ted.com/talks/alex_tran_blockchain_and_social_good",
@@ -639,7 +640,7 @@ const yearContent: {
       {
         name: "Padamjeet Sehrawat",
         topic: "You Are Your Best Answer",
-        image: "/rewind/24/Padamjeet.jpg",
+        image: "/rewind/24/pad.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=pQF-tUolRGc&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=2",
@@ -672,7 +673,7 @@ const yearContent: {
       {
         name: "Shivani Kalra",
         topic: "Because I Said No",
-        image: "/rewind/24/shivani.jpg",
+        image: "/rewind/24/shi.jpg",
         socialLinks: {},
         tedTalkUrl:
           "https://www.youtube.com/watch?v=mKexuy238zA&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=5",
