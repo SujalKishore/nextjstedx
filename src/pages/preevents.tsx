@@ -25,16 +25,6 @@ interface Event {
 
 const events: Event[] = [
   {
-    id: "Panel Reveal",
-    title: "Echoes of the Hourglass: Perspectives Unveiling",
-    date: "2025-01-28",
-    time: "18:30 - 20:00",
-    location: "Auditorium",
-    description: "Join us for the grand reveal of the panelists for the main event.",
-    images: [""],
-    status: "upcoming",
-  },
-  {
     id: "event2",
     title: "Adventure Day",
     date: "Stay tuned",
@@ -87,6 +77,16 @@ const events: Event[] = [
     description:
       "Awareness session on the importance of mental health.",
     images: ["/bulletin/symp1.png", "/bulletin/symp2.png"],
+    status: "past",
+  },
+  {
+    id: "Panel Reveal",
+    title: "Echoes of the Hourglass: Perspectives Unveiling",
+    date: "2025-01-28",
+    time: "18:30 - 20:00",
+    location: "Auditorium",
+    description: "Join us for the grand reveal of the panelists for the main event.",
+    images: [""],
     status: "past",
   },
 ];
