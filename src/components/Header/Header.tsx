@@ -55,7 +55,7 @@ export default function Header() {
               <div className="w-150 h-150">
                 <Image
                   src="/images/logo-rights.png"
-                  alt="TedX Logo"
+                  alt="TedxNiituniversity"
                   width={190}
                   height={190}
                   className="cursor-pointer transition-transform duration-500 hover:scale-110"
