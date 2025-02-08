@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 //import { Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+//import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TeamMemberX } from "../TeamMemberX/TeamMemberX";
 import {
