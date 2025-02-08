@@ -134,9 +134,9 @@ export default function AboutPage() {
                   <p className="text-lg text-white mb-6">
                   TEDxNIITUniversity is a stage where ideas converge to challenge, inspire, and transform. Bringing together visionaries, innovators, and changemakers, this event celebrates the power of diverse perspectives to ignite change. Rooted in TED’s mission, it pushes the boundaries of creativity and curiosity, shaping a future as limitless as the ideas shared. Prepare to be moved, provoked, and empowered.
                   </p>
-                  <Button className="bg-[#FF3A3A] hover:bg-[#FF3A3A]/90 text-white text-lg px-6 py-3">
+                  {/* <Button className="bg-[#FF3A3A] hover:bg-[#FF3A3A]/90 text-white text-lg px-6 py-3">
                     Learn More
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </CardContent>
