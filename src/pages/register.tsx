@@ -210,7 +210,7 @@ const Register: React.FC = () => {
                 onComplete={handleComplete}
                 gradientColors={["#C10007", "#FB2C36", "#ffffff"]}
               >
-                <p className="text-7xl text-white font-bold">699/-</p>
+                <p className="text-7xl text-white font-bold">749/-</p>
               </ScratchToReveal>
             </div>
             <div className="flex justify-center mt-16">
