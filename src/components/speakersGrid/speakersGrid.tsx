@@ -45,11 +45,11 @@ const speakers = [
       "Meet Manas, the co-founder of Geek Room—a platform revolutionizing how geeks, innovators, and creators connect to learn and build together. More than a tech enthusiast, Manas is a visionary who created a community-driven space where tech lovers, gamers, and dreamers thrive. Geek Room isn’t just a platform; it’s a powerhouse of creativity and collaboration, shaping the next generation of tech leaders! ",
   },
   {
-    name: "Divas Gupta",
-    title: "Public Speaker",
-    image: "/speakers/divas.png",
+    name: "Shreya Punj",
+    title: "Book Publishing Consultant and Editor",
+    image: "/speakers/shreya.png",
     longDescription:
-      "Meet Divas, our extraordinary 7th TEDx speaker! One of India’s top public speaking coaches, he turns nervous speakers into confident communicators. With over 1.2 million followers and a global community across 14+ countries, Divas has trained Fortune 500 professionals and is the co-founder of Ikigai Learning. He helps people discover their purpose and align it with their career dreams! ",
+      "Introducing Shreya Punj, our 7th TEDx speaker! As an editor at HarperCollins, she helps authors bring their stories to life and connect with readers. With a passion for storytelling, Shreya has worked on bestselling titles and mentors aspiring writers, promoting diverse voices in literature. Her dedication makes her an inspiring figure in the literary community!",
   },
   {
     name: "Dr. Gajendra Purohit",
@@ -75,7 +75,7 @@ const speakers = [
   {
     name: "Nainika Mukherjee",
     title: "Kathak Dancer & Dance Movement Therapist",
-    image: "/speakers/Nainika.png",
+    image: "/speakers/nainika.png",
     longDescription:
       "a vibrant force who transforms movement into magic! A master’s graduate in counseling psychology and certified Dance Movement Therapy practitioner, she fuses the elegance of Kathak with the science of healing. Trained by legends like Pt. Rajendra Gangani, her journey from rhythmic beats to heartfelt connections is nothing short of inspiring. Starting her Kathak journey in 2005, Nainika didn’t just master her art—she redefined it, exploring how dance can reduce stress and uplift mental health. For all the dance lovers who find peace in movement, she proves that dance isn’t just art—it’s a language of healing.",
   },
@@ -85,6 +85,13 @@ const speakers = [
     image: "/speakers/capt.png",
     longDescription:
       "After five impactful years in the Army, excelling in tough operations, he transitioned to leadership roles in business, founding the successful venture Apache. A certified mountaineer, marathon runner, and national cricketer, he’s conquered challenges, even finishing as runner-up on Fear Factor: Khatron Ke Khiladi. As a 14-time TEDx speaker, Capt. Dharamveer captivates audiences with tales of resilience and daring, inspiring them to embrace opportunities with his motto, “Be Ready Always.",
+  },
+  {
+    name: "Amit Dubey",
+    title: "Cybersecurity Expert",
+    image: "/speakers/amit.png",
+    longDescription:
+      "Introducing Amit Dubey, our distinguished speaker! A leading Cyber Security Expert with an M.Tech from IIT Kharagpur, Amit has advised the Indian Parliament and law enforcement agencies on cyber security. He's also an accomplished entrepreneur and author, promoting cyber security awareness through his work and radio show, 'RedFM Hidden Files.'",
   },
 ];
 
