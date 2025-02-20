@@ -1,11 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AboutPage from "@/components/Team.tsx/teamMembers";
 import { motion } from "framer-motion";
+
 const About: React.FC = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
   useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+
     const script = document.createElement("script");
-    // //
-    // // script.setAttribute("data-who", "💎 Made with naker.io 💎");
     script.src = "https://d23jutsnau9x47.cloudfront.net/back/v1.0.9/viewer.js";
     script.dataset.option = JSON.stringify({
       environment: {
@@ -29,18 +45,23 @@ const About: React.FC = () => {
       },
       waterMark: false,
     });
+
     document.getElementById("naker-container")?.appendChild(script);
+
     return () => {
-      document.getElementById("naker-container")?.removeChild(script);
+      const nakerContainer = document.getElementById("naker-container");
+      if (nakerContainer) {
+        nakerContainer.innerHTML = "";
+      }
     };
-  }, []);
+  }, [isDesktop]);
+
   return (
     <div className="bg-black text-white min-h-screen">
       <div className="h-[100vh] bg-black flex items-center justify-center text-center relative">
-        <div
-          id="naker-container"
-          className="absolute inset-0 z-0 hidden md:block"
-        ></div>
+        {isDesktop && (
+          <div id="naker-container" className="absolute inset-0 z-0"></div>
+        )}
 
         <div className="z-10">
           <div className="container mx-auto px-4 h-full flex items-center">
@@ -69,4 +90,5 @@ const About: React.FC = () => {
     </div>
   );
 };
+
 export default About;
