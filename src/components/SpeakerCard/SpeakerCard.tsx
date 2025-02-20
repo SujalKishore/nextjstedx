@@ -50,7 +50,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
             alt={name}
             layout="fill"
             objectFit="cover"
-            objectPosition="top"
+            objectPosition="center"
             className="rounded-t-lg"
           />
         </div>
@@ -81,7 +81,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
                     height={900}
                     width={900}
                     objectFit="cover"
-                    objectPosition="center"
+                    objectPosition="top"
                     quality={100}
                   />
                 </div>
