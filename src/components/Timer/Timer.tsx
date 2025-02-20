@@ -17,14 +17,14 @@ const CustomTimer = () => {
       const totalSeconds =
         (newYearEndDate.getTime() - currentDate.getTime()) / 1000;
 
+      const formatTime = (time: number) =>
+        time < 10 ? `0${time}` : time.toString();
+
       setDays(formatTime(Math.floor(totalSeconds / 3600 / 24)));
       setHours(formatTime(Math.floor((totalSeconds / 3600) % 24)));
       setMinutes(formatTime(Math.floor((totalSeconds / 60) % 60)));
       setSeconds(formatTime(Math.floor(totalSeconds % 60)));
     };
-
-    const formatTime = (time: number) =>
-      time < 10 ? `0${time}` : time.toString();
 
     countdown();
     const interval = setInterval(countdown, 1000);
@@ -33,7 +33,7 @@ const CustomTimer = () => {
   }, []);
 
   return (
-    <div>
+    <div className="relative z-[11000]">
       <section className="timeContainer flex justify-center items-center h-full">
         <div className="wrapper flex justify-around gap-5 p-5 max-w-[800px] w-full">
           <div className="flex flex-col items-center justify-center w-[70px] h-[70px] bg-red-600 text-white rounded-lg shadow-lg">

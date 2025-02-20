@@ -219,12 +219,8 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <div className="relative z-[500]">
-            {" "}
-            {/* Lower z-index */}
-            <div className="mt-24 absolute top-2/4 bottom-0 left-1/2 transform -translate-x-1/2 text-white text-lg md:text-2xl z-[1000] flex items-center justify-center">
-              <CustomTimer />
-            </div>
+          <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 text-white text-lg md:text-2xl z-[99999] md:mt-32 mt-20">
+            <CustomTimer />
           </div>
         </div>
       </div>
