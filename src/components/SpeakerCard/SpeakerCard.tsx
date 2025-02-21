@@ -68,22 +68,24 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-end justify-center bg-black bg-opacity-90"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
             onClick={toggleExpand}
           >
             <div className="relative w-full h-[85%] max-w-[900px]">
               {/* Laptop view */}
               <div className="hidden md:block relative w-full h-full">
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src={image || "/placeholder.svg"}
-                    alt={name}
-                    height={900}
-                    width={900}
-                    objectFit="cover"
-                    objectPosition="top"
-                    quality={100}
-                  />
+                <div className="absolute inset-0 z-0 top-0 flex flex-col items-center">
+                  <div className="relative w-[60%] h-[90%] mt-22">
+                    <Image
+                      src={image || "/placeholder.svg"}
+                      alt={name}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                      quality={100}
+                      className="rounded-lg"
+                    />
+                  </div>
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10">
@@ -99,8 +101,8 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
 
               {/* Mobile view */}
               <div className="md:hidden flex flex-col w-full h-full">
-                <div className="relative w-full h-[60%]">
-                  <div className="absolute inset-0 z-0">
+                <div className="relative w-full h-[60%] flex items-center justify-center pt-12">
+                  <div className="relative w-[80%] h-[100%]">
                     <Image
                       src={image || "/placeholder.svg"}
                       alt={name}
@@ -108,9 +110,10 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
                       objectFit="cover"
                       objectPosition="center"
                       quality={100}
+                      className="rounded-lg"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent">
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                       <h2 className="text-3xl font-bold mb-2">{name}</h2>
                       <p className="text-xl text-red-600 mb-4">{title}</p>
@@ -135,4 +138,5 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
     </div>
   );
 };
+
 export default SpeakerCard;
