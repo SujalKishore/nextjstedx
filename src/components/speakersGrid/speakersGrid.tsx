@@ -75,7 +75,7 @@ const speakers = [
   {
     name: "Nainika Mukherjee",
     title: "Kathak Dancer & Dance Movement Therapist",
-    image: "/speakers/nainika.png",
+    image: "/speakers/nainika1.png",
     longDescription:
       "a vibrant force who transforms movement into magic! A master’s graduate in counseling psychology and certified Dance Movement Therapy practitioner, she fuses the elegance of Kathak with the science of healing. Trained by legends like Pt. Rajendra Gangani, her journey from rhythmic beats to heartfelt connections is nothing short of inspiring. Starting her Kathak journey in 2005, Nainika didn’t just master her art—she redefined it, exploring how dance can reduce stress and uplift mental health. For all the dance lovers who find peace in movement, she proves that dance isn’t just art—it’s a language of healing.",
   },
