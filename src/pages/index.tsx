@@ -155,24 +155,27 @@ const HeroSection = () => {
           </div>
           <div className="absolute md:right-1/2 right-1/3 bottom-0 w-1/2 h-1/2 bg-gradient-to-bl from-cyan-600 via-black to-black transform overflow-hidden z-0 blur-sm"></div>
           <div className="absolute md:left-1/2 left-1/3 top-0 w-1/2 h-1/2 bg-gradient-to-tr from-red-600 via-black to-black transform overflow-hidden z-20 blur-sm"></div>
-          <div className="z-[9999]">
+          <div className="z-[999999]">
             {" "}
             <BulletinBoard
               recentEvents={[
                 {
-                  title: "S.Y.M.P",
-                  date: "2024-11-24",
-                  images: ["/bulletin/symp1.png", "/bulletin/symp2.png"],
+                  title: "Echoes of Hourglass",
+                  date: "2025-01-28",
+                  images: [
+                    "/bulletin/panel (1).jpg",
+                    "/bulletin/panel (2).jpg",
+                  ],
                 },
                 {
-                  title: "Trick Or Terror",
-                  date: "2024-10-24",
-                  images: ["/bulletin/tot1.png", "/bulletin/tot2.png"],
+                  title: "Adventure Day",
+                  date: "2025-02-16",
+                  images: ["/bulletin/ad3.jpg", "/bulletin/ad1.jpg"],
                 },
               ]}
               nextEvent={{
-                title: "Echoes of Hourglass",
-                date: "2025-01-28",
+                title: "TEDxNIITUniversity",
+                date: "2025-03-09",
                 images: ["/images/theme.jpeg"],
               }}
             />
@@ -219,7 +222,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 text-white text-lg md:text-2xl z-[99999] md:mt-32 mt-20">
+          <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 text-white text-lg md:text-2xl z-[9999] md:mt-32 mt-20">
             <CustomTimer />
           </div>
         </div>
