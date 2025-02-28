@@ -25,17 +25,6 @@ interface Event {
 
 const events: Event[] = [
   {
-    id: "event2",
-    title: "Adventure Day",
-    date: "Stay tuned",
-    time: "Stay tuned",
-    location: "Stay tuned",
-    description:
-      "Event where all the volunteers have fun with diverse games and activities.",
-    images: [""],
-    status: "upcoming",
-  },
-  {
     id: "Main Day",
     title: "TEDxNIITUniversity 2025",
     date: "2025-03-09",
@@ -47,36 +36,14 @@ const events: Event[] = [
     status: "upcoming",
   },
   {
-    id: "event3",
-    title: "Beyond the Frame",
-    date: "2024-09-02",
-    time: "18:30 - 21:00",
-    location: "Auditorium",
+    id: "event2",
+    title: "Adventure Day",
+    date: "2025-02-16",
+    time: "Entire Day",
+    location: "Bowl Area",
     description:
-      "The theme reveal of the 8th edition of TEDxNIITUniversity.",
-    images: ["/bulletin/pan1.jpg", "/bulletin/pan2.jpg","/bulletin/pan3.jpg","/bulletin/pan4.jpg"],
-    status: "past",
-  },
-  {
-    id: "event4",
-    title: "Trick or Terror",
-    date: "2024-10-24",
-    time: "19:00 - 21:00",
-    location: "Amphitheatre-1",
-    description:
-      "A Halloween-themed event to celebrate the spooky season.",
-    images: ["/bulletin/tot1.png", "/bulletin/tot2.png"],
-    status: "past",
-  },
-  {
-    id: "event5",
-    title: "Say.Your.Mind.People",
-    date: "2024-11-21",
-    time: "18:30 - 20:00",
-    location: "Auditorium",
-    description:
-      "Awareness session on the importance of mental health.",
-    images: ["/bulletin/symp1.png", "/bulletin/symp2.png"],
+      "Event where all the volunteers have fun with diverse games and activities.",
+    images: ["/bulletin/ad3.jpg", "/bulletin/ad2.jpg", "/bulletin/ad1.jpg"],
     status: "past",
   },
   {
@@ -85,8 +52,49 @@ const events: Event[] = [
     date: "2025-01-28",
     time: "18:30 - 20:00",
     location: "Auditorium",
-    description: "Join us for the grand reveal of the panelists for the main event.",
-    images: [""],
+    description:
+      "Join us for the grand reveal of the panelists for the main event.",
+    images: [
+      "/bulletin/panel (1).jpg",
+      "/bulletin/panel (2).jpg",
+      "/bulletin/panel (3).jpg",
+      "/bulletin/panel (4).jpg",
+    ],
+    status: "past",
+  },
+  {
+    id: "event5",
+    title: "Say.Your.Mind.People",
+    date: "2024-11-21",
+    time: "18:30 - 20:00",
+    location: "Auditorium",
+    description: "Awareness session on the importance of mental health.",
+    images: ["/bulletin/symp1.png", "/bulletin/symp2.png"],
+    status: "past",
+  },
+  {
+    id: "event4",
+    title: "Trick or Terror",
+    date: "2024-10-24",
+    time: "19:00 - 21:00",
+    location: "Amphitheatre-1",
+    description: "A Halloween-themed event to celebrate the spooky season.",
+    images: ["/bulletin/tot1.png", "/bulletin/tot2.png"],
+    status: "past",
+  },
+  {
+    id: "event3",
+    title: "Beyond the Frame",
+    date: "2024-09-02",
+    time: "18:30 - 21:00",
+    location: "Auditorium",
+    description: "The theme reveal of the 8th edition of TEDxNIITUniversity.",
+    images: [
+      "/bulletin/pan1.jpg",
+      "/bulletin/pan2.jpg",
+      "/bulletin/pan3.jpg",
+      "/bulletin/pan4.jpg",
+    ],
     status: "past",
   },
 ];
