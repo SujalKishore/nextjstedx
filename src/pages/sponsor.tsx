@@ -47,7 +47,7 @@ export default function SponsorshipPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                OUR PREVIOUS <span className="text-[#FF3A3A]">SPONSORS</span>
+                OUR <span className="text-[#FF3A3A]">SPONSORS</span>
               </motion.h1>
               <SponsorShowcase />
               <motion.p
@@ -55,8 +55,7 @@ export default function SponsorshipPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-              >
-              </motion.p>
+              ></motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -99,23 +98,27 @@ export default function SponsorshipPage() {
           <h2 className="text-3xl font-bold mb-6 text-[#FF3A3A]">
             OUR ESTEEMED PARTNERS
           </h2>
-            <p className="text-gray-400 mb-12 max-w-2xl">
-            We thank our sponsors for their continued support and commitment to making our events successful and impactful.
-            </p>
+          <p className="text-gray-400 mb-12 max-w-2xl">
+            We thank our sponsors for their continued support and commitment to
+            making our events successful and impactful.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { name: "Rallison", image: "/sponsors/rallison.jpg" },
-              { name: "Nutty Gritties", image: "/sponsors/dont print.png" },
-              { name: "Ravi Aggarwal Global Rockstar", image: "/sponsors/rav.png" },
+              { name: "LIC", image: "/nsponsor/LIC.png" },
+              { name: "Aria", image: "/nsponsor/aria.jpg" },
+              {
+                name: "Herody App",
+                image: "/nsponsor/herody.png",
+              },
               { name: "GDX", image: "/sponsors/GDX.png" },
               { name: "StudCops", image: "/sponsors/StudCops.png" },
               {
-                name: "Boombird",
-                image: "/sponsors/boombird.png",
+                name: "ReduceIT",
+                image: "/nsponsor/reduceit.jpg",
               },
               { name: "BCH", image: "/sponsors/bch.png" },
               { name: "Nescafe", image: "/sponsors/nescafe.jpg" },
-              { name: "Bustro", image: "/sponsors/bustro.png" },
+              { name: "StartupNews.fyi", image: "/nsponsor/startupnews.png" },
             ].map((sponsor, index) => (
               <div
                 key={index}
@@ -146,14 +149,49 @@ function SponsorShowcase() {
   const [currentSponsor, setCurrentSponsor] = useState(0);
   const sponsors = [
     {
-      name: "Rallison",
-      image: "/sponsors/rallison.jpg",
-      description: "Empowering adventurers with cutting-edge equipment",
+      name: "LIC",
+      image: "/nsponsor/LIC.png",
+      description: "Leading insurance provider ensuring your future",
     },
     {
-      name: "Servo",
-      image: "/sponsors/servo.jpg",
-      description: "Pioneering sustainable tourism practices",
+      name: "Aria",
+      image: "/nsponsor/aria.jpg",
+      description: "Innovative solutions for a sustainable future",
+    },
+    {
+      name: "Herody App",
+      image: "/nsponsor/herody.png",
+      description: "Connecting heroes with opportunities",
+    },
+    {
+      name: "GDX",
+      image: "/sponsors/GDX.png",
+      description: "Revolutionizing security experiences",
+    },
+    {
+      name: "StudCops",
+      image: "/sponsors/StudCops.png",
+      description: "Empowering students with essential tools",
+    },
+    {
+      name: "ReduceIT",
+      image: "/nsponsor/reduceit.jpg",
+      description: "Innovative IT solutions for modern businesses",
+    },
+    {
+      name: "BCH",
+      image: "/sponsors/bch.png",
+      description: "Building a healthier community",
+    },
+    {
+      name: "Nescafe",
+      image: "/sponsors/nescafe.jpg",
+      description: "Bringing people together over coffee",
+    },
+    {
+      name: "StartupNews.fyi",
+      image: "/nsponsor/startupnews.png",
+      description: "Your daily dose of startup news",
     },
   ];
 

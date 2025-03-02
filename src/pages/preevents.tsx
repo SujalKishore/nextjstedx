@@ -32,7 +32,7 @@ const events: Event[] = [
     location: "Auditorium",
     description:
       "The main event where the speakers will share their ideas worth spreading.",
-    images: [""],
+    images: [],
     status: "upcoming",
   },
   {

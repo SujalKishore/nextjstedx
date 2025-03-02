@@ -6,7 +6,8 @@ import { ThemeImage } from "@/components/ThemeImage/ThemeImage";
 import { Description } from "@/components/desc/desc";
 import { SpeakersList } from "@/components/SpeakersList/SpeakersList";
 import TopBanner from "@/components/XHero/XHero";
-//import dyna
+import Carousel from "@/components/Carousel/Carousel";
+
 const yearContent: {
   [key: number]: {
     theme: string;
@@ -718,7 +719,7 @@ export default function RewindPage() {
             <ThemeImage theme={content.theme} imageSrc={content.themeImage} />
             <Description description={content.description} />
             <SpeakersList speakers={content.speakers} />
-            {/* <Carousel /> */}
+            <Carousel />
           </div>
         </motion.section>
       </AnimatePresence>

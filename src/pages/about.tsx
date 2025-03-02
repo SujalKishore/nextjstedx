@@ -3,66 +3,9 @@ import AboutPage from "@/components/Team.tsx/teamMembers";
 import { motion } from "framer-motion";
 
 const About: React.FC = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => {
-      window.removeEventListener("resize", checkScreenSize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isDesktop) return;
-
-    const script = document.createElement("script");
-    script.src = "https://d23jutsnau9x47.cloudfront.net/back/v1.0.9/viewer.js";
-    script.dataset.option = JSON.stringify({
-      environment: {
-        gradient: "horizontal",
-        sensitivity: 1,
-        colorStart: [14, 1, 1, 1],
-        colorEnd: [0, 0, 0, 1],
-      },
-      particle: {
-        life: 5,
-        power: 0.01,
-        texture:
-          "https://res.cloudinary.com/naker-io/image/upload/v1566560053/star_07.png",
-        number: 392,
-        colorStart: [74, 72, 53, 1],
-        colorEnd: [235, 0, 40, 1],
-        sizeStart: 1.13,
-        sizeEnd: 2.26,
-        direction1: { x: 100, y: 100, z: 100 },
-        direction2: { x: -100, y: -100, z: -100 },
-      },
-      waterMark: false,
-    });
-
-    document.getElementById("naker-container")?.appendChild(script);
-
-    return () => {
-      const nakerContainer = document.getElementById("naker-container");
-      if (nakerContainer) {
-        nakerContainer.innerHTML = "";
-      }
-    };
-  }, [isDesktop]);
-
   return (
     <div className="bg-black text-white min-h-screen">
       <div className="h-[100vh] bg-black flex items-center justify-center text-center relative">
-        {isDesktop && (
-          <div id="naker-container" className="absolute inset-0 z-0"></div>
-        )}
-
         <div className="z-10">
           <div className="container mx-auto px-4 h-full flex items-center">
             <div className="w-full max-w-4xl mx-auto text-center">

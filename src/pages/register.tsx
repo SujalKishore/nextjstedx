@@ -226,7 +226,7 @@ const Register: React.FC = () => {
 
         {/* Right Column */}
         <motion.div
-          className="flex flex-col md:flex-row h-full space-y-4 md:space-y-0 md:space-x-4 px-4 mt-10"
+          className="flex flex-col md:flex-row h-full space-y-4 md:space-y-0 md:space-x-4 px-4 mt-10 md:mt-0"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
