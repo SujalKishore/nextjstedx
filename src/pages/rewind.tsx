@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { YearSelector } from "@/components/YearSelector/YearSelector";
 import { ThemeImage } from "@/components/ThemeImage/ThemeImage";
@@ -636,7 +636,7 @@ const yearContent: {
         image: "/rewind/24/vipin.jpg",
         socialLinks: {},
         tedTalkUrl:
-          "https://www.youtube.com/watch?v=YIO37VZ8Zvg&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=3",
+          'https://www.youtube.com/watch?v=YIO37VZ8Zvg&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=3          "https://www.youtube.com/watch?v=YIO37VZ8Zvg&list=PLvllwQSEky3NIo-Xfj-uJWiCoeh8XlNb5&index=3',
       },
       {
         name: "Padamjeet Sehrawat",
@@ -719,7 +719,7 @@ export default function RewindPage() {
             <ThemeImage theme={content.theme} imageSrc={content.themeImage} />
             <Description description={content.description} />
             <SpeakersList speakers={content.speakers} />
-            <Carousel />
+            {selectedYear === 2024 && <Carousel />}
           </div>
         </motion.section>
       </AnimatePresence>

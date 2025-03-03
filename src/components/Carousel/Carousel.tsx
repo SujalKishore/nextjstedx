@@ -2,18 +2,19 @@
 import React, { useState, useRef, useEffect } from "react";
 
 const images = [
-  "https://highflyer.sirv.com/cloud/15_voqq0c.png",
-  "https://highflyer.sirv.com/cloud/21_wbsty7.png",
-  "https://highflyer.sirv.com/cloud/1_zlqnwl.jpg",
-  "https://highflyer.sirv.com/cloud/16_epnmqm.png",
-  "https://highflyer.sirv.com/cloud/Screenshot_23_8_nbzwdm.png",
-  "https://highflyer.sirv.com/cloud/29_jbd4di.jpg",
-  "https://highflyer.sirv.com/cloud/14_zkwtff.png",
-  "https://highflyer.sirv.com/cloud/8_ucihr5.png",
-  "https://highflyer.sirv.com/cloud/18_bguamv.png",
-  "https://highflyer.sirv.com/cloud/Screenshot_18_4_mscxmr.jpg",
-  "https://highflyer.sirv.com/cloud/2_zja2bq.png",
-  "https://highflyer.sirv.com/cloud/11_p1oi8m.png",
+  "/gallery/2024/pic.JPG",
+  "/gallery/2024/pic2.JPG",
+  "/gallery/2024/pic3.JPG",
+  "/gallery/2024/pic4.JPG",
+  "/gallery/2024/pic5.JPG",
+  "/gallery/2024/pic6.JPG",
+  "/gallery/2024/pic7.JPG",
+  "/gallery/2024/pic8.JPG",
+  "/gallery/2024/pic9.JPG",
+  "/gallery/2024/pic10.JPG",
+  "/gallery/2024/pic11.JPG",
+  "/gallery/2024/pic12.JPG",
+  "/gallery/2024/pic13.JPG",
 ];
 const Carousel: React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
