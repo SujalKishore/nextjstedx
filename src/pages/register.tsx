@@ -327,7 +327,6 @@ const Register: React.FC = () => {
         </DialogContent>
       </Dialog>
 
-      {/* General Form Dialog */}
       <Dialog open={showGeneralForm} onOpenChange={setShowGeneralForm}>
         <DialogContent className="p-8 bg-transparent overflow-hidden rounded-lg flex justify-center items-center inset-0 z-50 top-1/2 left-1/2">
           <div className="absolute inset-0 bg-red-600/30 opacity-30  z-0">
