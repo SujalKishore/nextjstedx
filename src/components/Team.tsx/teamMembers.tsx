@@ -16,61 +16,61 @@ const teamMembers = [
   {
     name: "Shreeya Singh",
     role: "Organizer",
-    imgSrc: "/core/IMG_7900.png",
+    imgSrc: "/core/s.png",
     //linkedin: "https://linkedin.com/in/johndoe",
   },
   {
     name: "Zain Khan",
     role: "Co-organizer",
-    imgSrc: "/core/IMG_7863.png",
+    imgSrc: "/core/coo.png",
     //linkedin: "https://linkedin.com/in/janesmith",
   },
   {
     name: "Shivanshi Sharma",
     role: "Editorial Curation and Speakers' Experience Core",
-    imgSrc: "/core/IMG_7874.png",
+    imgSrc: "/core/ec.png",
     //linkedin: "https://linkedin.com/in/alicejohnson",
   },
   {
     name: "Kavneet Kaur",
     role: "Sponsorship and Finance Core",
-    imgSrc: "/core/IMG_7931.png",
+    imgSrc: "/core/spon.png",
     //linkedin: "https://linkedin.com/in/boblee",
   },
   {
     name: "Divay Gupta",
     role: "Design Core",
-    imgSrc: "/core/IMG_7902.png",
+    imgSrc: "/core/dd.png",
     //linkedin: "https://linkedin.com/in/charliebrown",
   },
   {
     name: "Koushik Reddy",
     role: "Production Core",
-    imgSrc: "/core/IMG_7868.png",
+    imgSrc: "/core/pro.png",
     //linkedin: "https://linkedin.com/in/davidwhite",
   },
   {
     name: "Sujal Kishore",
     role: "Tech Core",
-    imgSrc: "/core/IMG_7765.png",
+    imgSrc: "/core/tec.png",
     //linkedin: "https://linkedin.com/in/evagreen",
   },
   {
     name: "Amy Sony",
     role: "Creative Core",
-    imgSrc: "/core/IMG_7847.png",
+    imgSrc: "/core/cre.png",
     //linkedin: "https://linkedin.com/in/frankharris",
   },
   {
     name: "Indranil Saha",
     role: "Marketing and Social Media Core",
-    imgSrc: "/core/IMG_8772.png",
+    imgSrc: "/core/ma.png",
     //linkedin: "https://linkedin.com/in/frankharris",
   },
   {
     name: "Aditi Saini",
     role: "Capture and Post Production Core",
-    imgSrc: "/core/IMG_3158.png",
+    imgSrc: "/core/pp.png",
     //linkedin: "https://linkedin.com/in/frankharris",
   },
 ];
@@ -98,11 +98,18 @@ export default function AboutPage() {
             </Card>
             <Card className="bg-black/50 border border-[#FF3A3A]/20 overflow-hidden rounded-lg">
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-4 text-[#FF3A3A]">TEDxNIITUniversity</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#FF3A3A]">
+                  TEDxNIITUniversity
+                </h3>
                 <p className="text-white">
-                TEDxNIITUniversity is a stage where ideas converge to challenge, inspire, and transform. Bringing together visionaries, innovators, and changemakers, this event celebrates the power of diverse perspectives to ignite change. Rooted in TED’s mission, it pushes the boundaries of creativity and curiosity, shaping a future as limitless as the ideas shared. Prepare to be moved, provoked, and empowered.
--one tagline for current events
-
+                  TEDxNIITUniversity is a stage where ideas converge to
+                  challenge, inspire, and transform. Bringing together
+                  visionaries, innovators, and changemakers, this event
+                  celebrates the power of diverse perspectives to ignite change.
+                  Rooted in TED’s mission, it pushes the boundaries of
+                  creativity and curiosity, shaping a future as limitless as the
+                  ideas shared. Prepare to be moved, provoked, and empowered.
+                  -one tagline for current events
                 </p>
               </CardContent>
             </Card>
@@ -129,10 +136,17 @@ export default function AboutPage() {
                 </div>
                 <div className="text-center md:text-left md:order-1">
                   <h3 className="text-3xl font-bold mb-4 text-[#FF3A3A]">
-                  Inverso Clessidra- as time folds, perspectives unfold
+                    Inverso Clessidra- as time folds, perspectives unfold
                   </h3>
                   <p className="text-lg text-white mb-6">
-                  TEDxNIITUniversity is a stage where ideas converge to challenge, inspire, and transform. Bringing together visionaries, innovators, and changemakers, this event celebrates the power of diverse perspectives to ignite change. Rooted in TED’s mission, it pushes the boundaries of creativity and curiosity, shaping a future as limitless as the ideas shared. Prepare to be moved, provoked, and empowered.
+                    TEDxNIITUniversity is a stage where ideas converge to
+                    challenge, inspire, and transform. Bringing together
+                    visionaries, innovators, and changemakers, this event
+                    celebrates the power of diverse perspectives to ignite
+                    change. Rooted in TED’s mission, it pushes the boundaries of
+                    creativity and curiosity, shaping a future as limitless as
+                    the ideas shared. Prepare to be moved, provoked, and
+                    empowered.
                   </p>
                   {/* <Button className="bg-[#FF3A3A] hover:bg-[#FF3A3A]/90 text-white text-lg px-6 py-3">
                     Learn More
@@ -216,7 +230,7 @@ export default function AboutPage() {
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-white text-left">
-                What is the theme of the TEDxNiituniversity event?
+                  What is the theme of the TEDxNiituniversity event?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
                   {`The theme for TEDxNIITUniversity 2025 is Inverso Clessidra- as time folds, perspectives unfold.`}
@@ -224,15 +238,16 @@ export default function AboutPage() {
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-white text-left">
-                When and where will the event take place?
+                  When and where will the event take place?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                The event will take place at NIIT University, neemrana on 9th march 2025 at 9:00AM in the auditorium.
+                  The event will take place at NIIT University, neemrana on 9th
+                  march 2025 at 9:00AM in the auditorium.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
                 <AccordionTrigger className="text-white text-left">
-                How can I purchase tickets?
+                  How can I purchase tickets?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
                   {`The tickets can be bought by registering on the website.`}
@@ -240,7 +255,7 @@ export default function AboutPage() {
               </AccordionItem>
               <AccordionItem value="item-5">
                 <AccordionTrigger className="text-white text-left">
-                What should I expect from the event?
+                  What should I expect from the event?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
                   {`Our speakers will share their perspectives on the theme, The discussions will be around topics like technology, science, art, etc. `}
@@ -248,10 +263,11 @@ export default function AboutPage() {
               </AccordionItem>
               <AccordionItem value="item-6">
                 <AccordionTrigger className="text-white text-left">
-                How can I get involved as a volunteer / Who can I contact for more information?
+                  How can I get involved as a volunteer / Who can I contact for
+                  more information?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-300">
-                {`We welcome volunteers to help make our event a success. For more information, please contact TedxNiitUniversity team on the Contact Us section.`}
+                  {`We welcome volunteers to help make our event a success. For more information, please contact TedxNiitUniversity team on the Contact Us section.`}
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
