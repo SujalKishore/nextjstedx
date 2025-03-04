@@ -45,13 +45,6 @@ const speakers = [
       "Meet Manas, the co-founder of Geek Room—a platform revolutionizing how geeks, innovators, and creators connect to learn and build together. More than a tech enthusiast, Manas is a visionary who created a community-driven space where tech lovers, gamers, and dreamers thrive. Geek Room isn’t just a platform; it’s a powerhouse of creativity and collaboration, shaping the next generation of tech leaders! ",
   },
   {
-    name: "Shreya Punj",
-    title: "Book Publishing Consultant and Editor",
-    image: "/speakers/shreya.png",
-    longDescription:
-      "Introducing Shreya Punj, our 7th TEDx speaker! As an editor at HarperCollins, she helps authors bring their stories to life and connect with readers. With a passion for storytelling, Shreya has worked on bestselling titles and mentors aspiring writers, promoting diverse voices in literature. Her dedication makes her an inspiring figure in the literary community!",
-  },
-  {
     name: "Dr. Gajendra Purohit",
     title: "Educator",
     image: "/speakers/gajendra.png",
