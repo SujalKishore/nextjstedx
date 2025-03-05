@@ -33,12 +33,17 @@ const Register: React.FC = () => {
     email: "",
     phone: "", // Added phone field
     ticketType: "",
+    bundle: "Single", // Default to single ticket
   });
 
   const handleSubmit = async (ticketType: string) => {
     try {
       // Set the ticket type
-      const data = { ...formData, ticketType };
+      const data = {
+        ...formData,
+        ticketType,
+        bundle: ticketType === "VIP" ? "Single" : formData.bundle,
+      };
 
       // Send data to SheetDB
       const response = await fetch("https://sheetdb.io/api/v1/rc3axzjqdcdwy", {
@@ -53,7 +58,13 @@ const Register: React.FC = () => {
         alert("Your ticket has been successfully booked!");
         setShowVIPForm(false);
         setShowGeneralForm(false);
-        setFormData({ name: "", email: "", phone: "", ticketType: "" }); // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          ticketType: "",
+          bundle: "",
+        }); // Reset form
       } else {
         alert("Failed to book ticket. Please try again.");
       }
@@ -197,6 +208,14 @@ const Register: React.FC = () => {
                 </li>
               </ul>
             </div>
+
+            <p className="text-xl md:text-2xl text-center text-red-400 mb-2 whitespace-nowrap">
+              Limited Bundle Options: <br />
+              <span className="text-white">
+                Double - 1299/- <br />
+                Triple - 1899/-
+              </span>
+            </p>
             <div className="flex flex-col md:flex-row justify-center items-center mt-6 space-y-4 md:space-y-0 md:space-x-4">
               <p className="text-xl md:text-2xl text-center text-red-400 mb-2 whitespace-nowrap">
                 Get your tickets @
@@ -210,7 +229,7 @@ const Register: React.FC = () => {
                 onComplete={handleComplete}
                 gradientColors={["#C10007", "#FB2C36", "#ffffff"]}
               >
-                <p className="text-7xl text-white font-bold">749/-</p>
+                <p className="text-7xl text-white font-bold">699/-</p>
               </ScratchToReveal>
             </div>
             <div className="flex justify-center mt-16">
@@ -328,7 +347,7 @@ const Register: React.FC = () => {
       </Dialog>
 
       <Dialog open={showGeneralForm} onOpenChange={setShowGeneralForm}>
-        <DialogContent className="p-8 bg-transparent overflow-hidden rounded-lg flex justify-center items-center inset-0 z-50 top-1/2 left-1/2">
+        <DialogContent className="p-8 bg-transparent overflow-hidden rounded-lg flex justify-center items-center inset-0 z-50 top-1/2 left-1/2 ">
           <div className="absolute inset-0 bg-red-600/30 opacity-30  z-0">
             <span className="absolute top-1/3 left-1/4 text-9xl text-white font-bold rotate-45 opacity-50">
               X
@@ -394,6 +413,24 @@ const Register: React.FC = () => {
                 className="input-field py-3 px-4 rounded-lg w-full bg-transparent border-2 border-white text-white placeholder:text-white focus:ring-2 focus:ring-red-500"
                 required
               />
+            </div>
+            <div>
+              <label htmlFor="bundle" className="block text-white">
+                Select Bundle
+              </label>
+              <select
+                id="bundle"
+                value={formData.bundle}
+                onChange={(e) =>
+                  setFormData({ ...formData, bundle: e.target.value })
+                }
+                className="input-field py-3 px-4 rounded-lg w-full bg-transparent border-2 border-white text-red-400 focus:ring-2 focus:ring-red-500"
+                required
+              >
+                <option value="Single">Single - 699/-</option>
+                <option value="Double">Double - 1299/-</option>
+                <option value="Triple">Triple - 1899/-</option>
+              </select>
             </div>
 
             <div className="flex justify-center mt-6">
