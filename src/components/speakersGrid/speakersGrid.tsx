@@ -24,11 +24,11 @@ const speakers = [
       "Meet Sneha, the street art superhero transforming Mumbai’s slums into vibrant canvases of color and hope! Her murals tell powerful stories, turning forgotten walls into symbols of pride by involving local residents as co-creators. As India’s first artist to showcase AR NFT art in a gallery, Sneha is pushing the boundaries of creativity and technology. With every brushstroke, she proves that art isn’t just about beauty—it’s about connection, transformation, and inspiring magic! ",
   },
   {
-    name: "Ashu ghai",
-    title: "Educator & Science Communicator",
-    image: "/speakers/ashu.png",
+    name: "Palakh Khanna",
+    title: "Mentor and Environmentalist",
+    image: "/speakers/palakh.png",
     longDescription:
-      "meet a game-changer in science education! Revolutionizing how young minds engage with science, he’s making learning fun, smart, and accessible. As the creator of Science and Fun, with over 7 million subscribers, he turns complex concepts into bite-sized wonders. With captivating experiments and relatable insights, he’s inspiring students to think beyond the classroom and explore the magic of science. With four TEDx Talks to his name, let’s give it up for the incredible Science and Fun mastermind! ",
+      "Meet Palakh, a dynamic youth changemaker, 2x TEDx speaker, and content creator with 85K+ followers, inspiring action and impact. As the founder of Break The Ice, she’s breaking barriers and driving change. Recognized as one of Asia’s 100 Women Power Leaders (2023) and Businessworld Wellbeing’s 30 Under 30, she’s also featured in UN Women’s Coffee Table Book among 75 inspiring women leaders. A Global Youth Ambassador for A World At School, Palakh is proving that leadership is about action, connection, and transformation!",
   },
   {
     name: "Dr Uterus",
