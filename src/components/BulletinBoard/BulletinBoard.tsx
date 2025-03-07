@@ -28,20 +28,19 @@ export const BulletinBoard: React.FC<BulletinBoardProps> = ({
       initial={{ right: 0 }}
       animate={{ right: isOpen ? "0px" : "-320px" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="fixed top-0 bottom-0 right-0 z-[99999] flex items-stretch" // Increased z-index for top layer
+      className="fixed top-0 bottom-0 right-0 z-[99999] flex items-stretch"
     >
       <button
         onClick={toggleBoard}
         className="bg-[#fa3e3e] text-white h-[15vh] w-12 flex-shrink-0 flex flex-col items-center justify-center focus:outline-none mt-[110%] rounded-l-md"
       >
-        <span className="transform -rotate-90 whitespace-nowrap text-lg font-bold"></span>
         {isOpen ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
       </button>
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? 0 : "100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="bg-black bg-opacity-100 w-80 overflow-y-auto z-[10000]" // Added higher z-index
+        className="bg-black bg-opacity-100 w-80 overflow-y-auto z-[10000]"
       >
         <div className="p-4 h-full flex flex-col">
           <h3 className="text-xl font-bold mb-4 text-[#FF3A3A]">
@@ -92,6 +91,16 @@ export const BulletinBoard: React.FC<BulletinBoardProps> = ({
                     />
                   </div>
                 ))}
+              </div>
+              <div className="mt-4">
+                <Link href="/timeline" passHref>
+                  <Button
+                    variant="default"
+                    className="w-full bg-[#FF3A3A] text-white"
+                  >
+                    View Timeline
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

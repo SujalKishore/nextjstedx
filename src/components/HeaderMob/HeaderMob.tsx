@@ -75,6 +75,7 @@ export default function MobileNavbar() {
               { name: "SPONSORS", href: "/sponsor" },
               { name: "REWIND", href: "/rewind" },
               { name: "PRE-EVENTS", href: "/preevents" },
+              { name: "TIMELINE", href: "/timeline" },
               { name: "ABOUT", href: "/about" },
             ].map((link) => (
               <div

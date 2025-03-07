@@ -97,6 +97,12 @@ export default function Header() {
               Pre-Events
             </Link>
             <Link
+              href="/timeline"
+              className="text-white hover:text-[#eb0028] transition duration-100 whitespace-nowrap"
+            >
+              Timeline
+            </Link>
+            <Link
               href="/about"
               className="text-white hover:text-[#eb0028] transition duration-300"
             >
