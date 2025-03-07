@@ -30,7 +30,10 @@ const Footer = () => {
           <div className="w-full md:w-auto">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/speakers" className="hover:underline hover:text-red-500">
+              <Link
+                href="/speakers"
+                className="hover:underline hover:text-red-500"
+              >
                 Speakers
               </Link>
               <Link
@@ -44,6 +47,12 @@ const Footer = () => {
                 className="hover:underline hover:text-red-500"
               >
                 Rewind
+              </Link>
+              <Link
+                href="/preevents"
+                className="hover:underline hover:text-red-500"
+              >
+                Pre-Events
               </Link>
               <Link
                 href="/about"
@@ -76,7 +85,10 @@ const Footer = () => {
                   +91 93155 08567
                 </a>
               </p>
-              <p>NIIT University, NH 8, Delhi - Jaipur Expy,<br></br> Neemrana, Majrakath, Rajasthan 301705</p>
+              <p>
+                NIIT University, NH 8, Delhi - Jaipur Expy,<br></br> Neemrana,
+                Majrakath, Rajasthan 301705
+              </p>
             </address>
           </div>
         </div>
