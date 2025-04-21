@@ -260,6 +260,8 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 text-white text-lg md:text-2xl z-[9999] md:mt-32 mt-20">
+            <p className="text-center text-3xl font-bold">Main Event Concluded</p>
+            <p className="text-center text-sm">Stay Tuned For <span className="text-[#eb0028] font-bold">TEDx</span>'26!!</p>
             <CustomTimer />
           </div>
         </div>
