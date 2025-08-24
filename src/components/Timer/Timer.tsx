@@ -20,10 +20,17 @@ const CustomTimer = () => {
       const formatTime = (time: number) =>
         time < 10 ? `0${time}` : time.toString();
 
-      setDays(formatTime(Math.floor(totalSeconds / 3600 / 24)));
-      setHours(formatTime(Math.floor((totalSeconds / 3600) % 24)));
-      setMinutes(formatTime(Math.floor((totalSeconds / 60) % 60)));
-      setSeconds(formatTime(Math.floor(totalSeconds % 60)));
+      if (currentDate >= newYearEndDate){
+        setDays("00");
+        setHours("00");
+        setMinutes("00");
+        setSeconds("00");
+      }else{
+        setDays(formatTime(Math.floor(totalSeconds / 3600 / 24)));
+        setHours(formatTime(Math.floor((totalSeconds / 3600) % 24)));
+        setMinutes(formatTime(Math.floor((totalSeconds / 60) % 60)));
+        setSeconds(formatTime(Math.floor(totalSeconds % 60)));
+      }
     };
 
     countdown();
