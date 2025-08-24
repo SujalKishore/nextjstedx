@@ -28,12 +28,12 @@ const events: Event[] = [
     id: "Main Day",
     title: "TEDxNIITUniversity 2025",
     date: "2025-03-09",
-    time: "Stay tuned",
+    time: "9:00 - 5:30",
     location: "Auditorium",
     description:
       "The main event where the speakers will share their ideas worth spreading.",
     images: [],
-    status: "upcoming",
+    status: "past",
   },
   {
     id: "event2",
@@ -153,9 +153,15 @@ const PreEventsPage: React.FC = () => {
         <section ref={upcomingRef} className="mb-16">
           <h2 className="text-3xl font-semibold mb-8">Upcoming Events</h2>
           <div className="space-y-8">
-            {upcomingEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
+            {upcomingEvents.length > 0 ? (
+              upcomingEvents.map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))
+            ) : (
+              <p className="text-gray-400 text-center text-xl">
+                Stay tuned for TEDx&apos;26!!
+              </p>
+            )}
           </div>
         </section>
         <section ref={pastRef}>
