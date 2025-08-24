@@ -158,7 +158,9 @@ const PreEventsPage: React.FC = () => {
                 <EventCard key={event.id} event={event} />
               ))
             ) : (
-              <p className="text-gray-400 text-center text-xl">Stay tuned for TEDx'26!!</p>
+              <p className="text-gray-400 text-center text-xl">
+                Stay tuned for TEDx&apos;26!!
+              </p>
             )}
           </div>
         </section>

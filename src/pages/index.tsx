@@ -82,22 +82,21 @@ const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  
   const handleConfetti = () => {
     const duration = 3 * 1000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
- 
+
     const randomInRange = (min: number, max: number) =>
       Math.random() * (max - min) + min;
- 
+
     const interval = window.setInterval(() => {
       const timeLeft = animationEnd - Date.now();
- 
+
       if (timeLeft <= 0) {
         return clearInterval(interval);
       }
- 
+
       const particleCount = 50 * (timeLeft / duration);
       confetti({
         ...defaults,
@@ -109,14 +108,14 @@ const HeroSection = () => {
         particleCount,
         origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
       });
-    },250);
+    }, 250);
   };
 
   useEffect(() => {
     if (Date() >= "Mar 09 2025 08:30:00") {
-      handleConfetti()
+      handleConfetti();
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -260,8 +259,13 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 text-white text-lg md:text-2xl z-[9999] md:mt-32 mt-20">
-            <p className="text-center text-3xl font-bold">Main Event Concluded</p>
-            <p className="text-center text-sm">Stay Tuned For <span className="text-[#eb0028] font-bold">TEDx</span>'26!!</p>
+            <p className="text-center text-3xl font-bold">
+              Main Event Concluded
+            </p>
+            <p className="text-center text-sm">
+              Stay Tuned For{" "}
+              <span className="text-[#eb0028] font-bold">TEDx</span>&apos;26!!
+            </p>
             <CustomTimer />
           </div>
         </div>
